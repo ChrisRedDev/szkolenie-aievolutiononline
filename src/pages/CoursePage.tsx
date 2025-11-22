@@ -1,5 +1,6 @@
 import HeroSection from "@/components/course/HeroSection";
 import FreepikFeatures from "@/components/course/FreepikFeatures";
+import ImportantLinks from "@/components/course/ImportantLinks";
 import AIModels from "@/components/course/AIModels";
 import WorkflowSection from "@/components/course/WorkflowSection";
 import PromptBuilder from "@/components/course/PromptBuilder";
@@ -13,6 +14,7 @@ const CoursePage = () => {
     <div className="min-h-screen bg-background">
       <HeroSection />
       <FreepikFeatures />
+      <ImportantLinks />
       <AIModels />
       <WorkflowSection />
       <PromptBuilder />
