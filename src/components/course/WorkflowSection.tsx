@@ -1,5 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import workflowImage from "@/assets/workflow-example.jpg";
+import creation1 from "@/assets/creation-1.jpg";
+import creation2 from "@/assets/creation-2.jpg";
+import creation3 from "@/assets/creation-3.jpg";
+import creation4 from "@/assets/creation-4.jpg";
+import creation5 from "@/assets/creation-5.jpg";
+import creation6 from "@/assets/creation-6.jpg";
+import creation7 from "@/assets/creation-7.jpg";
+import creation8 from "@/assets/creation-8.jpg";
 
 const WorkflowSection = () => {
   const workflowSteps = [
@@ -19,6 +29,17 @@ const WorkflowSection = () => {
     "16:9 Banner Sklep"
   ];
 
+  const creationImages = [
+    creation1,
+    creation2,
+    creation3,
+    creation4,
+    creation5,
+    creation6,
+    creation7,
+    creation8,
+  ];
+
   return (
     <section className="py-20 px-6 bg-muted/20">
       <div className="max-w-6xl mx-auto">
@@ -28,6 +49,20 @@ const WorkflowSection = () => {
         <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
           Freepik Spaces to narzędzie node-based, gdzie łączymy blok po bloku działania AI: background removal, style presets, generacja scen, consistency filters, upscaling i output w wielu rozmiarach.
         </p>
+
+        <div className="mb-12">
+          <h3 className="text-2xl font-semibold mb-6 text-center">
+            Przykładowe Workflow
+          </h3>
+          <div className="flex justify-center mb-8">
+            <img 
+              src={workflowImage} 
+              alt="Przykładowe workflow Freepik Spaces" 
+              className="max-w-full h-auto rounded-lg shadow-glow border border-border/50"
+              loading="lazy"
+            />
+          </div>
+        </div>
 
         <div className="mb-16">
           <h3 className="text-2xl font-semibold mb-8 text-center">
@@ -63,7 +98,7 @@ const WorkflowSection = () => {
           </div>
         </div>
 
-        <Card className="bg-card border-border/50 neon-glow">
+        <Card className="bg-card border-border/50 neon-glow mb-12">
           <CardHeader>
             <CardTitle className="text-2xl text-center">Formaty Wyjściowe</CardTitle>
           </CardHeader>
@@ -80,6 +115,34 @@ const WorkflowSection = () => {
             </div>
           </CardContent>
         </Card>
+
+        <div className="mb-8">
+          <h3 className="text-2xl font-semibold mb-8 text-center">
+            Efekty - Generacje
+          </h3>
+          <Carousel className="w-full max-w-5xl mx-auto">
+            <CarouselContent>
+              {creationImages.map((image, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-2">
+                    <Card className="border-border/50 overflow-hidden">
+                      <CardContent className="p-0">
+                        <img 
+                          src={image} 
+                          alt={`Przykład generacji ${index + 1}`}
+                          className="w-full h-auto object-cover"
+                          loading="lazy"
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
       </div>
     </section>
   );
