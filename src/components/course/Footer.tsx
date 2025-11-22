@@ -1,4 +1,5 @@
 import { Facebook, Mail } from "lucide-react";
+import logo from "@/assets/logo-main.png";
 
 const Footer = () => {
   return (
@@ -43,6 +44,14 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-border/30 text-center">
+          <div className="flex justify-center mb-6">
+            <img 
+              src={logo} 
+              alt="AI Evolution Polska Logo" 
+              className="h-24 w-auto"
+              loading="lazy"
+            />
+          </div>
           <p className="text-xs text-muted-foreground">
             © 2024 AI Evolution Polska. Wszelkie prawa zastrzeżone.
           </p>
