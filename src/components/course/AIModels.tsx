@@ -80,7 +80,7 @@ const AIModels = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-secondary/5 pointer-events-none" />
       
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-blue bg-clip-text text-transparent animate-pulse-glow">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-blue bg-clip-text text-transparent">
           Modele AI w Freepik – Jak Działają
         </h2>
         <p className="text-center text-muted-foreground mb-16 max-w-3xl mx-auto text-lg leading-relaxed">
@@ -100,10 +100,12 @@ const AIModels = () => {
                 
                 <CardHeader className="relative z-10">
                   <div className="flex items-start gap-4 mb-3">
-                    <div className="flex items-center gap-3">
-                      <span className="text-4xl">{model.emoji}</span>
-                      <div className={`p-3 ${model.bgColor} rounded-xl group-hover:scale-110 transition-transform duration-300`}>
-                        <Icon className={`w-7 h-7 bg-gradient-to-br ${model.color} bg-clip-text text-transparent`} />
+                    <div className="flex items-center gap-4">
+                      <span className="text-5xl filter drop-shadow-lg">{model.emoji}</span>
+                      <div className={`p-4 ${model.bgColor} rounded-2xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg`}>
+                        <Icon className={`w-8 h-8 text-transparent bg-gradient-to-br ${model.color} bg-clip-text`} style={{
+                          filter: 'drop-shadow(0 0 8px currentColor)'
+                        }} />
                       </div>
                     </div>
                   </div>
