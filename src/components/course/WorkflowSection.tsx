@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import workflowImage from "@/assets/workflow-example.jpg";
 import referenceImage from "@/assets/reference.jpg";
+import furnitureSet from "@/assets/furniture-set.png";
 import example1 from "@/assets/example.jpg";
 import example2 from "@/assets/example2.jpg";
 import example3 from "@/assets/example3.jpg";
@@ -73,8 +74,8 @@ const WorkflowSection = () => {
         <div className="mb-12">
           <div className="flex justify-center mb-8">
             <img 
-              src={referenceImage} 
-              alt="Reference image Freepik Spaces" 
+              src={furnitureSet} 
+              alt="Furniture set example Freepik Spaces" 
               className="max-w-full h-auto rounded-lg shadow-glow border border-border/50"
               loading="lazy"
             />
@@ -179,6 +180,21 @@ const WorkflowSection = () => {
           <h3 className="text-2xl font-semibold mb-8 text-center">
             Efekty - Przykłady
           </h3>
+          
+          <div className="mb-8">
+            <h4 className="text-xl font-semibold mb-4 text-center">
+              Obraz Referencyjny
+            </h4>
+            <div className="flex justify-center mb-8">
+              <img 
+                src={referenceImage} 
+                alt="Reference image Freepik Spaces" 
+                className="max-w-full h-auto rounded-lg shadow-glow border border-border/50"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
           <Carousel className="w-full max-w-5xl mx-auto">
             <CarouselContent className="-ml-2 md:-ml-4">
               {exampleImages.map((image, index) => (
