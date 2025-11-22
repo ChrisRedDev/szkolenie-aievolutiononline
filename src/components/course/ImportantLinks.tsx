@@ -53,8 +53,8 @@ const ImportantLinks = () => {
   ];
 
   return (
-    <section className="py-16 px-4">
-      <div className="container mx-auto max-w-6xl">
+    <section className="py-16 px-4 bg-gradient-radial bg-grid-pattern relative overflow-hidden">
+      <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
             Ważne Linki

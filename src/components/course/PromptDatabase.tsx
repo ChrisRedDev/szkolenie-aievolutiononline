@@ -3,8 +3,8 @@ import { FileText } from "lucide-react";
 
 const PromptDatabase = () => {
   return (
-    <section className="py-16 px-4 border-t border-primary/20">
-      <div className="container mx-auto max-w-4xl text-center">
+    <section className="py-16 px-4 border-t border-primary/20 bg-gradient-radial relative overflow-hidden">
+      <div className="container mx-auto max-w-4xl text-center relative z-10">
         <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-8 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10">
           <FileText className="w-12 h-12 mx-auto mb-4 text-primary animate-pulse" />
           <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">

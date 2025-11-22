@@ -4,7 +4,7 @@ import { Sparkles, Infinity, ExternalLink } from "lucide-react";
 
 const FreepikFeatures = () => {
   return (
-    <section className="py-20 px-6 bg-muted/20">
+    <section className="py-20 px-6 bg-gradient-glow bg-grid-small relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
           Co daje nam narzędzie Freepik i subsrypcja Premium+

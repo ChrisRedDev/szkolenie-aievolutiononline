@@ -1,7 +1,7 @@
 const HeroSection = () => {
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-6 bg-gradient-grid relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="bg-card border border-border/50 rounded-2xl overflow-hidden neon-glow">
           <div className="aspect-video bg-muted relative">
             <iframe

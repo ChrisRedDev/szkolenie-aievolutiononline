@@ -24,8 +24,8 @@ const PromptBuilder = () => {
   ];
 
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-6 bg-gradient-glow bg-grid-small relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-4">
             <div className="p-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-2xl neon-glow">

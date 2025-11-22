@@ -62,8 +62,8 @@ const WorkflowSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-muted/20">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-6 bg-gradient-grid relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
           Jak działa Freepik Spaces
         </h2>
