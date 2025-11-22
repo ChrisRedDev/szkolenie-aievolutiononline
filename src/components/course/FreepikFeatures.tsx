@@ -70,7 +70,7 @@ const FreepikFeatures = () => {
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-secondary rounded-full mt-2" />
-                <p className="text-muted-foreground">Freepik daje mozliwosc do produkcji kontentu w ogromnej skali</p>
+                <p className="text-muted-foreground">Freepik daje możliwość do produkcji kontentu w ogromnej skali</p>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-secondary rounded-full mt-2" />
