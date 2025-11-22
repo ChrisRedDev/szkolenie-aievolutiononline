@@ -13,7 +13,7 @@ const ImportantLinks = () => {
     {
       title: "Gemini Workflow Agent",
       description: "Agent workflow dla Gemini",
-      url: "https://gemini.google.com/app",
+      url: "https://gemini.google.com/gem/1N_bDMpbu0uDf0tsYPrEI6XIHRYT9PTfQ?usp=sharing",
       icon: Sparkles,
       gradient: "from-blue-500 via-cyan-500 to-teal-500",
       glowColor: "shadow-cyan-500/30"
@@ -21,7 +21,7 @@ const ImportantLinks = () => {
     {
       title: "ChatGPT Workflow Agent",
       description: "Agent workflow dla ChatGPT",
-      url: "https://chat.openai.com",
+      url: "https://chatgpt.com/g/g-691f773244d48191b239aa8fccbd7ab4-ai-evolution-agent-frepik-workflow",
       icon: MessageSquare,
       gradient: "from-green-500 via-emerald-500 to-teal-600",
       glowColor: "shadow-green-500/30"
