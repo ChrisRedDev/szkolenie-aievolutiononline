@@ -30,23 +30,8 @@ const ExtraFeatures = () => {
     },
     {
       icon: Video,
-      title: "Kling AI Video",
-      description: "Generowanie płynnych animacji video z pierwszej i ostatniej klatki",
-    },
-    {
-      icon: Film,
-      title: "VEO 3 by Google",
-      description: "Najnowszy model video od Google - realistyczne i dynamiczne wideo",
-    },
-    {
-      icon: Clapperboard,
-      title: "Runway Gen-3",
-      description: "Profesjonalne video AI z kontrolą nad ruchem i stylizacją",
-    },
-    {
-      icon: PlayCircle,
-      title: "Wan Video AI",
-      description: "Szybkie generowanie video do social media i reklam",
+      title: "Generowanie Video AI",
+      description: "Twórz dynamiczne wideo produktów z Kling AI, VEO 3, Runway Gen-3, Wan",
     },
   ];
 
