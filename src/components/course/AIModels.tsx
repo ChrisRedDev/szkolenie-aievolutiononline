@@ -35,7 +35,7 @@ const AIModels = () => {
     },
     {
       name: "Kling AI",
-      subtitle: "Video from First & Last Frame",
+      subtitle: "Wideo z Pierwszej i Ostatniej Klatki",
       icon: Video,
       color: "accent",
       features: [
@@ -77,7 +77,7 @@ const AIModels = () => {
     <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
-          AI Models inside Freepik – How They Work
+          Modele AI w Freepik – Jak Działają
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           Poznaj zaawansowane modele AI dostępne w Freepik i dowiedz się, jak wykorzystać je w swoich projektach
