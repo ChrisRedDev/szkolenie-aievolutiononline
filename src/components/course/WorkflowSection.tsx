@@ -95,6 +95,34 @@ const WorkflowSection = () => {
           </div>
         </div>
 
+        <div className="mb-12">
+          <h3 className="text-2xl font-semibold mb-8 text-center">
+            Efekty - Generacje
+          </h3>
+          <Carousel className="w-full max-w-5xl mx-auto">
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {creationImages.map((image, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1">
+                    <Card className="border-border/50 overflow-hidden hover-scale transition-all duration-300">
+                      <CardContent className="p-0">
+                        <img 
+                          src={image} 
+                          alt={`Przykład generacji ${index + 1}`}
+                          className="w-full h-auto object-cover animate-fade-in"
+                          loading="lazy"
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="transition-all duration-200 hover:scale-110" />
+            <CarouselNext className="transition-all duration-200 hover:scale-110" />
+          </Carousel>
+        </div>
+
         <div className="mb-16">
           <h3 className="text-2xl font-semibold mb-8 text-center">
             Przykładowy Workflow do e-commerce
@@ -147,21 +175,21 @@ const WorkflowSection = () => {
           </CardContent>
         </Card>
 
-        <div className="mb-12">
+        <div className="mb-8">
           <h3 className="text-2xl font-semibold mb-8 text-center">
             Efekty - Przykłady
           </h3>
           <Carousel className="w-full max-w-5xl mx-auto">
-            <CarouselContent>
+            <CarouselContent className="-ml-2 md:-ml-4">
               {exampleImages.map((image, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-2">
-                    <Card className="border-border/50 overflow-hidden">
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1">
+                    <Card className="border-border/50 overflow-hidden hover-scale transition-all duration-300">
                       <CardContent className="p-0">
                         <img 
                           src={image} 
                           alt={`Przykład ${index + 1}`}
-                          className="w-full h-auto object-cover"
+                          className="w-full h-auto object-cover animate-fade-in"
                           loading="lazy"
                         />
                       </CardContent>
@@ -170,36 +198,8 @@ const WorkflowSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </div>
-
-        <div className="mb-8">
-          <h3 className="text-2xl font-semibold mb-8 text-center">
-            Efekty - Generacje
-          </h3>
-          <Carousel className="w-full max-w-5xl mx-auto">
-            <CarouselContent>
-              {creationImages.map((image, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-2">
-                    <Card className="border-border/50 overflow-hidden">
-                      <CardContent className="p-0">
-                        <img 
-                          src={image} 
-                          alt={`Przykład generacji ${index + 1}`}
-                          className="w-full h-auto object-cover"
-                          loading="lazy"
-                        />
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="transition-all duration-200 hover:scale-110" />
+            <CarouselNext className="transition-all duration-200 hover:scale-110" />
           </Carousel>
         </div>
       </div>
