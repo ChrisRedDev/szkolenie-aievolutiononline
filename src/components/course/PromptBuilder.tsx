@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bot, Zap, Target } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Bot, Zap, Target, ExternalLink } from "lucide-react";
 
 const PromptBuilder = () => {
   const capabilities = [
@@ -130,6 +131,42 @@ const PromptBuilder = () => {
             </p>
           </CardContent>
         </Card>
+
+        <div className="mt-12">
+          <h3 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
+            Agenci AI Workflow
+          </h3>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <Button 
+              asChild 
+              size="lg" 
+              className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 h-auto py-4"
+            >
+              <a href="https://gemini.google.com/gem/1N_bDMpbu0uDf0tsYPrEI6XIHRYT9PTfQ?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
+                <span className="flex items-center gap-2">
+                  Gemini Workflow Agent
+                  <ExternalLink className="w-5 h-5" />
+                </span>
+              </a>
+            </Button>
+            
+            <Button 
+              asChild 
+              size="lg" 
+              className="bg-gradient-to-r from-green-600 to-emerald-500 hover:from-green-700 hover:to-emerald-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 h-auto py-4"
+            >
+              <a href="https://chatgpt.com/g/g-691f773244d48191b239aa8fccbd7ab4-ai-evolution-agent-frepik-workflow" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
+                <span className="flex items-center gap-2">
+                  ChatGPT Workflow Agent
+                  <ExternalLink className="w-5 h-5" />
+                </span>
+              </a>
+            </Button>
+          </div>
+          <p className="text-center text-muted-foreground mt-6 text-sm max-w-2xl mx-auto">
+            Warto testować jeden i drugi model, aby znaleźć najlepsze rozwiązanie dla Twoich potrzeb.
+          </p>
+        </div>
       </div>
     </section>
   );
