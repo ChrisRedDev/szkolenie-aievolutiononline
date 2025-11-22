@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Layers, Grid3x3, ImageIcon, Maximize, Zap } from "lucide-react";
+import { Layers, Grid3x3, ImageIcon, Maximize, Zap, Video, Film, Clapperboard, PlayCircle } from "lucide-react";
 
 const ExtraFeatures = () => {
   const features = [
@@ -28,6 +28,26 @@ const ExtraFeatures = () => {
       title: "Batch Mode",
       description: "Automatyczne generowanie kontentu dla wielu produktów naraz",
     },
+    {
+      icon: Video,
+      title: "Kling AI Video",
+      description: "Generowanie płynnych animacji video z pierwszej i ostatniej klatki",
+    },
+    {
+      icon: Film,
+      title: "VEO 3 by Google",
+      description: "Najnowszy model video od Google - realistyczne i dynamiczne wideo",
+    },
+    {
+      icon: Clapperboard,
+      title: "Runway Gen-3",
+      description: "Profesjonalne video AI z kontrolą nad ruchem i stylizacją",
+    },
+    {
+      icon: PlayCircle,
+      title: "Wan Video AI",
+      description: "Szybkie generowanie video do social media i reklam",
+    },
   ];
 
   return (
@@ -36,8 +56,8 @@ const ExtraFeatures = () => {
         <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
           Nasze workflow daje Ci niesamowite możliwości.
         </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Zaawansowane funkcje, które warto dodać do swojego workflow
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto text-lg leading-relaxed">
+          Twoje reklamy mogą wyglądać lepiej już dziś. Jedno narzędzie robi robotę całego zespołu. Ulepszysz zdjęcia produktów i podniesiesz sprzedaż. Oszczędzasz mnóstwo kasy.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
