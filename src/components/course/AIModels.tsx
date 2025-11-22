@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Brain, Sparkles, Video, Palette } from "lucide-react";
+import { Hexagon, Diamond, Triangle, Octagon } from "lucide-react";
 
 const AIModels = () => {
   const models = [
@@ -7,10 +7,11 @@ const AIModels = () => {
       emoji: "🔵",
       name: "NanoBanana Pro",
       subtitle: "Gemini 3.0 Pro Image Model (najnowsza wersja)",
-      icon: Brain,
+      icon: Hexagon,
       color: "from-blue-500 to-cyan-400",
       bgColor: "bg-blue-500/10",
       borderColor: "border-blue-500/30",
+      iconColor: "text-blue-500",
       features: [
         "Najdokładniejszy model fotograficzny dostępny w Freepik",
         "Świetnie radzi sobie z twarzami i skórą",
@@ -25,10 +26,11 @@ const AIModels = () => {
       emoji: "🟣",
       name: "SeeDream 4.0",
       subtitle: "ByteDance Vision Model",
-      icon: Sparkles,
+      icon: Diamond,
       color: "from-purple-500 to-pink-400",
       bgColor: "bg-purple-500/10",
       borderColor: "border-purple-500/30",
+      iconColor: "text-purple-500",
       features: [
         "Wysoka ostrość i szczegółowość (może generować w 4K)",
         "Idealny do mockupów, architektury i ujęć studyjnych",
@@ -41,10 +43,11 @@ const AIModels = () => {
       emoji: "🟪",
       name: "Kling AI / CleanAI",
       subtitle: "Video from First & Last Frame",
-      icon: Video,
+      icon: Triangle,
       color: "from-violet-500 to-purple-400",
       bgColor: "bg-violet-500/10",
       borderColor: "border-violet-500/30",
+      iconColor: "text-violet-500",
       features: [
         "Generuje płynne wideo na podstawie pierwszej i ostatniej klatki",
         "Tworzy naturalny, smooth transition między ujęciami",
@@ -57,10 +60,11 @@ const AIModels = () => {
       emoji: "⚫",
       name: "Inne Modele",
       subtitle: "Dostępne w Freepik Workspace",
-      icon: Palette,
+      icon: Octagon,
       color: "from-gray-500 to-slate-400",
       bgColor: "bg-gray-500/10",
       borderColor: "border-gray-500/30",
+      iconColor: "text-gray-500",
       features: [
         "Mystic 2.5 – Styl artystyczny, bardzo dobre kolory i tekstury",
         "DreamShaper – Mocny styl designerski, popularny do social media",
@@ -101,11 +105,8 @@ const AIModels = () => {
                 <CardHeader className="relative z-10">
                   <div className="flex items-start gap-4 mb-3">
                     <div className="flex items-center gap-4">
-                      <span className="text-5xl filter drop-shadow-lg">{model.emoji}</span>
-                      <div className={`p-4 ${model.bgColor} rounded-2xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg`}>
-                        <Icon className={`w-8 h-8 text-transparent bg-gradient-to-br ${model.color} bg-clip-text`} style={{
-                          filter: 'drop-shadow(0 0 8px currentColor)'
-                        }} />
+                      <div className={`p-5 ${model.bgColor} rounded-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-2xl border-2 ${model.borderColor}`}>
+                        <Icon className={`w-12 h-12 ${model.iconColor} filter drop-shadow-lg`} strokeWidth={2.5} />
                       </div>
                     </div>
                   </div>

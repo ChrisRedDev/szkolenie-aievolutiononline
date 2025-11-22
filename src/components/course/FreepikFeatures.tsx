@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Sparkles, Infinity } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sparkles, Infinity, ExternalLink } from "lucide-react";
 
 const FreepikFeatures = () => {
   return (
@@ -80,6 +81,19 @@ const FreepikFeatures = () => {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        <div className="flex justify-center mt-12">
+          <Button 
+            asChild 
+            size="lg" 
+            className="bg-gradient-to-r from-neon-blue to-neon-purple hover:from-neon-blue/80 hover:to-neon-purple/80 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <a href="https://www.freepik.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              Przejdź do Freepik
+              <ExternalLink className="w-5 h-5" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>
