@@ -4,109 +4,124 @@ import { Brain, Sparkles, Video, Palette } from "lucide-react";
 const AIModels = () => {
   const models = [
     {
-      name: "Nano Banana Pro",
-      subtitle: "Gemini Pro Image Model",
+      emoji: "🔵",
+      name: "NanoBanana Pro",
+      subtitle: "Gemini 3.0 Pro Image Model (najnowsza wersja)",
       icon: Brain,
-      color: "primary",
+      color: "from-blue-500 to-cyan-400",
+      bgColor: "bg-blue-500/10",
+      borderColor: "border-blue-500/30",
       features: [
-        "Model Google Gemini 2.5 (wersja Nano Banana Pro)",
-        "Świetnie radzi sobie z twarzami i realizmem",
-        "Doskonałe szczegóły skóry",
-        "Idealny do produktów i scen lifestylowych",
-        "Obsługuje multi-reference (1-4 obrazki wejściowe)",
-        "Perfekcyjny do e-commerce",
-        "Działa szybko i stabilnie",
-        "Zachowuje spójność przedmiotu"
+        "Najdokładniejszy model fotograficzny dostępny w Freepik",
+        "Świetnie radzi sobie z twarzami i skórą",
+        "Bardzo dobra spójność kształtu produktu (ważne przy e-commerce)",
+        "Obsługuje multi-reference (1–4 zdjęcia wejściowe)",
+        "Idealny do scen lifestyle, mockupów i packshotów",
+        "Bardzo stabilny, szybki i przewidywalny",
+        "Perfekcyjny do generowania wizualizacji kolekcji produktów"
       ]
     },
     {
-      name: "Seedream 4.0",
-      subtitle: "ByteDance Model",
+      emoji: "🟣",
+      name: "SeeDream 4.0",
+      subtitle: "ByteDance Vision Model",
       icon: Sparkles,
-      color: "secondary",
+      color: "from-purple-500 to-pink-400",
+      bgColor: "bg-purple-500/10",
+      borderColor: "border-purple-500/30",
       features: [
-        "Model ByteDance",
-        "Natywna generacja w 4K",
-        "Bardzo wysoka ostrość",
-        "Świetny do mockupów i architektury",
-        "Doskonały do produktów",
-        "Dobrze renderuje tekst na obiektach (etykiety, napisy)"
+        "Wysoka ostrość i szczegółowość (może generować w 4K)",
+        "Idealny do mockupów, architektury i ujęć studyjnych",
+        "Dobre odwzorowanie światła i materiałów",
+        "Bardzo czyste krawędzie i dobrze renderowany tekst (etykiety, naklejki)",
+        "Świetny do profesjonalnych wizualizacji reklamowych"
       ]
     },
     {
-      name: "Kling AI",
-      subtitle: "Wideo z Pierwszej i Ostatniej Klatki",
+      emoji: "🟪",
+      name: "Kling AI / CleanAI",
+      subtitle: "Video from First & Last Frame",
       icon: Video,
-      color: "accent",
+      color: "from-violet-500 to-purple-400",
+      bgColor: "bg-violet-500/10",
+      borderColor: "border-violet-500/30",
       features: [
-        "Narzędzie do generowania wideo AI",
-        "Wpisujemy pierwszą i ostatnią klatkę",
-        "AI generuje brakujące ruchy",
-        "Idealne do animacji produktów",
-        "Świetne do pokazania produktu w ruchu"
+        "Generuje płynne wideo na podstawie pierwszej i ostatniej klatki",
+        "Tworzy naturalny, smooth transition między ujęciami",
+        "Idealny do animacji produktów i dynamicznych prezentacji",
+        "Świetny do reklam, reelsów i pakietów contentowych",
+        "Doskonałe narzędzie do ożywiania statycznych zdjęć"
       ]
     },
     {
+      emoji: "⚫",
       name: "Inne Modele",
-      subtitle: "Dostępne w Freepik",
+      subtitle: "Dostępne w Freepik Workspace",
       icon: Palette,
-      color: "muted",
+      color: "from-gray-500 to-slate-400",
+      bgColor: "bg-gray-500/10",
+      borderColor: "border-gray-500/30",
       features: [
-        "Mystic 2.5",
-        "DreamShaper",
-        "RealVision",
-        "Modele artystyczne i ilustracyjne",
-        "Modele do renderów 3D",
-        "Modele stylizowane pod social media",
-        "Modele cartoon/anime"
+        "Mystic 2.5 – Styl artystyczny, bardzo dobre kolory i tekstury",
+        "DreamShaper – Mocny styl designerski, popularny do social media",
+        "RealVision – Wysoka fotorealistyka, dobre odwzorowanie materiałów",
+        "Modele 3D & Stylizowane",
+        "Modele cartoon/anime",
+        "Modele renderingowe 3D",
+        "Lekkie modele do szybkich konceptów"
       ]
     }
   ];
 
-  const getColorClass = (color: string) => {
-    const colors: Record<string, string> = {
-      primary: "text-primary",
-      secondary: "text-secondary",
-      accent: "text-accent",
-      muted: "text-muted-foreground"
-    };
-    return colors[color] || colors.primary;
-  };
 
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
+    <section className="py-20 px-6 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-secondary/5 pointer-events-none" />
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-blue bg-clip-text text-transparent animate-pulse-glow">
           Modele AI w Freepik – Jak Działają
         </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Poznaj zaawansowane modele AI dostępne w Freepik i dowiedz się, jak wykorzystać je w swoich projektach
+        <p className="text-center text-muted-foreground mb-16 max-w-3xl mx-auto text-lg leading-relaxed">
+          Poznaj najważniejsze modele dostępne w Freepik Workspace i sprawdź, jak wykorzystać je do tworzenia profesjonalnych wizualizacji produktów oraz materiałów marketingowych.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-8">
           {models.map((model, index) => {
             const Icon = model.icon;
             return (
               <Card 
                 key={index}
-                className="bg-card border-border/50 hover:border-primary/50 transition-all duration-300 neon-glow"
+                className={`bg-card/50 backdrop-blur-sm ${model.borderColor} border-2 hover:scale-[1.02] transition-all duration-500 hover:shadow-2xl group relative overflow-hidden`}
               >
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 bg-card-foreground/5 rounded-lg">
-                      <Icon className={`w-6 h-6 ${getColorClass(model.color)}`} />
-                    </div>
-                    <div>
-                      <CardTitle className="text-xl">{model.name}</CardTitle>
-                      <CardDescription className="text-sm">{model.subtitle}</CardDescription>
+                {/* Background gradient effect */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${model.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                
+                <CardHeader className="relative z-10">
+                  <div className="flex items-start gap-4 mb-3">
+                    <div className="flex items-center gap-3">
+                      <span className="text-4xl">{model.emoji}</span>
+                      <div className={`p-3 ${model.bgColor} rounded-xl group-hover:scale-110 transition-transform duration-300`}>
+                        <Icon className={`w-7 h-7 bg-gradient-to-br ${model.color} bg-clip-text text-transparent`} />
+                      </div>
                     </div>
                   </div>
+                  <CardTitle className={`text-2xl mb-2 bg-gradient-to-r ${model.color} bg-clip-text text-transparent font-bold`}>
+                    {model.name}
+                  </CardTitle>
+                  <CardDescription className="text-base font-medium text-muted-foreground/80">
+                    {model.subtitle}
+                  </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-2">
+                
+                <CardContent className="space-y-3 relative z-10">
                   {model.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
-                      <div className={`w-1.5 h-1.5 ${getColorClass(model.color)} rounded-full mt-2`} />
-                      <p className="text-sm text-muted-foreground">{feature}</p>
+                    <div key={idx} className="flex items-start gap-3 group/item">
+                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${model.color} mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform`} />
+                      <p className="text-sm text-foreground/90 leading-relaxed group-hover/item:text-foreground transition-colors">
+                        {feature}
+                      </p>
                     </div>
                   ))}
                 </CardContent>
