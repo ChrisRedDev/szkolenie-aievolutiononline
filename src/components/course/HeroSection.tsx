@@ -14,7 +14,7 @@ const HeroSection = () => {
           </div>
           <div className="p-8">
             <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
-              Introduction to Freepik Workspace & Spaces – Full Automation Workflow
+              Wprowadzenie do Freepik Workspace & Spaces – Pełna Automatyzacja Workflow
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               Obejrzyj film, aby zobaczyć jak działa Freepik Workspace i jak dzięki Spaces możesz zbudować maszynę do generowania nieograniczonego kontentu.

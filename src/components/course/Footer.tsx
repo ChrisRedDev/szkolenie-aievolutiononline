@@ -10,7 +10,7 @@ const Footer = () => {
               AI Evolution Polska
             </h3>
             <p className="text-sm text-muted-foreground">
-              Advanced AI Content Automation
+              Zaawansowana Automatyzacja Contentu AI
             </p>
           </div>
 
@@ -37,7 +37,7 @@ const Footer = () => {
 
         <div className="mt-8 pt-8 border-t border-border/30 text-center">
           <p className="text-xs text-muted-foreground">
-            © 2024 AI Evolution Polska. All rights reserved.
+            © 2024 AI Evolution Polska. Wszelkie prawa zastrzeżone.
           </p>
         </div>
       </div>

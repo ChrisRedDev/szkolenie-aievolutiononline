@@ -16,7 +16,7 @@ const WorkflowSection = () => {
     "1:1 Instagram",
     "9:16 TikTok",
     "4:5 Allegro",
-    "16:9 Banner Shop"
+    "16:9 Banner Sklep"
   ];
 
   return (
@@ -65,7 +65,7 @@ const WorkflowSection = () => {
 
         <Card className="bg-card border-border/50 neon-glow">
           <CardHeader>
-            <CardTitle className="text-2xl text-center">Output Formats</CardTitle>
+            <CardTitle className="text-2xl text-center">Formaty Wyjściowe</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

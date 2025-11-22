@@ -15,10 +15,10 @@ const GatePage = () => {
 
     setTimeout(() => {
       if (password === "evolutionmachine") {
-        toast.success("Access Granted");
+        toast.success("Dostęp Przyznany");
         navigate("/course");
       } else {
-        toast.error("Invalid Access Code");
+        toast.error("Nieprawidłowy Kod Dostępu");
       }
       setIsLoading(false);
     }, 1000);
@@ -38,7 +38,7 @@ const GatePage = () => {
             EVOLUTION<br />MACHINE
           </h1>
           <p className="text-muted-foreground text-sm tracking-wider">
-            Advanced AI Content Automation Course<br />
+            Zaawansowany Kurs Automatyzacji Contentu AI<br />
             by AI Evolution Polska
           </p>
         </div>
@@ -47,7 +47,7 @@ const GatePage = () => {
           <div className="relative">
             <Input
               type="password"
-              placeholder="Enter Access Code"
+              placeholder="Wpisz Kod Dostępu"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="h-14 bg-card border-border/50 text-center text-lg tracking-widest focus:border-primary transition-all duration-300 neon-glow"
@@ -59,7 +59,7 @@ const GatePage = () => {
             disabled={isLoading}
             className="w-full h-14 bg-gradient-to-r from-neon-blue to-neon-purple hover:opacity-90 transition-all duration-300 text-lg font-semibold neon-glow"
           >
-            {isLoading ? "VERIFYING..." : "ACCESS COURSE"}
+            {isLoading ? "WERYFIKACJA..." : "DOSTĘP DO KURSU"}
           </Button>
         </form>
 
