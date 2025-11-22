@@ -76,7 +76,7 @@ const AIModels = () => {
 
 
   return (
-    <section className="py-20 px-6 relative overflow-hidden">
+    <section className="py-20 px-6 relative overflow-hidden bg-gradient-subtle bg-grid-pattern">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-secondary/5 pointer-events-none" />
       
