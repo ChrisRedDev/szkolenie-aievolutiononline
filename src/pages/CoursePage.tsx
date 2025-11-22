@@ -4,6 +4,7 @@ import AIModels from "@/components/course/AIModels";
 import WorkflowSection from "@/components/course/WorkflowSection";
 import PromptBuilder from "@/components/course/PromptBuilder";
 import ExtraFeatures from "@/components/course/ExtraFeatures";
+import PromptDatabase from "@/components/course/PromptDatabase";
 import Footer from "@/components/course/Footer";
 
 const CoursePage = () => {
@@ -15,6 +16,7 @@ const CoursePage = () => {
       <WorkflowSection />
       <PromptBuilder />
       <ExtraFeatures />
+      <PromptDatabase />
       <Footer />
     </div>
   );
