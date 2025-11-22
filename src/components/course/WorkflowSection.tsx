@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { Image, Scissors, Paintbrush, Mountain, Layers, ArrowUp, Download } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import workflowImage from "@/assets/workflow-example.jpg";
 import referenceImage from "@/assets/reference.jpg";
@@ -23,13 +23,13 @@ import creation8 from "@/assets/creation-8.jpg";
 
 const WorkflowSection = () => {
   const workflowSteps = [
-    { step: "1", title: "Input Node", description: "Zdjęcie produktu" },
-    { step: "2", title: "Background Removal", description: "Usunięcie tła" },
-    { step: "3", title: "Style Node", description: "Studio, lifestyle, minimal" },
-    { step: "4", title: "Scene Generator", description: "Generuje tło" },
-    { step: "5", title: "Composite", description: "Łączy produkt z tłem" },
-    { step: "6", title: "Upscale Node", description: "Poprawa jakości" },
-    { step: "7", title: "Output Node", description: "Eksport w wielu formatach" }
+    { step: "1", title: "Input Node", description: "Zdjęcie produktu", icon: Image },
+    { step: "2", title: "Background Removal", description: "Usunięcie tła", icon: Scissors },
+    { step: "3", title: "Style Node", description: "Studio, lifestyle, minimal", icon: Paintbrush },
+    { step: "4", title: "Scene Generator", description: "Generuje tło", icon: Mountain },
+    { step: "5", title: "Composite", description: "Łączy produkt z tłem", icon: Layers },
+    { step: "6", title: "Upscale Node", description: "Poprawa jakości", icon: ArrowUp },
+    { step: "7", title: "Output Node", description: "Eksport w wielu formatach", icon: Download }
   ];
 
   const outputFormats = [
@@ -125,35 +125,136 @@ const WorkflowSection = () => {
         </div>
 
         <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-8 text-center">
-            Przykładowy Workflow do e-commerce
+          <h3 className="text-3xl font-bold mb-3 text-center bg-gradient-to-r from-neon-blue via-neon-purple to-cyan-400 bg-clip-text text-transparent">
+            Przykładowy Workflow dla e-commerce
           </h3>
+          <p className="text-center text-muted-foreground mb-12 text-sm uppercase tracking-wider">
+            AI-Powered Automation
+          </p>
           
-          <div className="relative">
-            <div className="grid gap-4">
-              {workflowSteps.map((step, index) => (
-                <div key={index} className="relative">
-                  <Card className="bg-card border-border/50 hover:border-primary/50 transition-all duration-300 neon-glow">
-                    <CardHeader className="pb-3">
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center text-xl font-bold">
+          {/* Desktop: Horizontal Layout */}
+          <div className="hidden lg:block relative">
+            <div className="relative flex items-center justify-between px-8">
+              {/* Connecting Line */}
+              <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-neon-blue via-neon-purple to-cyan-400 opacity-30 blur-sm" 
+                   style={{ transform: 'translateY(-50%)', zIndex: 0 }} />
+              <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-neon-blue via-neon-purple to-cyan-400" 
+                   style={{ transform: 'translateY(-50%)', zIndex: 0 }} />
+              
+              {workflowSteps.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div key={index} className="relative flex-1 flex justify-center" style={{ zIndex: 1 }}>
+                    <div className="group relative">
+                      {/* Card */}
+                      <div className="relative bg-card/40 backdrop-blur-md border border-border/50 rounded-xl p-6 
+                                    hover:border-primary/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] 
+                                    transition-all duration-300 hover:-translate-y-2 w-36 h-44 flex flex-col items-center">
+                        {/* Icon Circle */}
+                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue via-neon-purple to-cyan-400 
+                                      flex items-center justify-center mb-3 shadow-glow group-hover:scale-110 transition-transform duration-300">
+                          <Icon className="w-8 h-8 text-white" />
+                        </div>
+                        
+                        {/* Step Number */}
+                        <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-gradient-to-r from-cyan-400 to-neon-blue 
+                                      flex items-center justify-center text-xs font-bold shadow-glow">
                           {step.step}
                         </div>
-                        <div>
-                          <CardTitle className="text-lg">{step.title}</CardTitle>
-                          <p className="text-sm text-muted-foreground">{step.description}</p>
+                        
+                        {/* Content */}
+                        <div className="text-center flex-1 flex flex-col justify-center">
+                          <h4 className="text-xs font-bold mb-1 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
+                            {step.title}
+                          </h4>
+                          <p className="text-[10px] text-muted-foreground leading-tight">
+                            {step.description}
+                          </p>
                         </div>
                       </div>
-                    </CardHeader>
-                  </Card>
-                  
-                  {index < workflowSteps.length - 1 && (
-                    <div className="flex justify-center my-2">
-                      <ArrowRight className="w-6 h-6 text-primary rotate-90" />
                     </div>
-                  )}
-                </div>
-              ))}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Tablet: Wrapped Horizontal Layout */}
+          <div className="hidden md:block lg:hidden relative">
+            <div className="grid grid-cols-4 gap-6 px-4">
+              {workflowSteps.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div key={index} className="relative">
+                    <div className="group relative">
+                      <div className="relative bg-card/40 backdrop-blur-md border border-border/50 rounded-xl p-4 
+                                    hover:border-primary/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] 
+                                    transition-all duration-300 hover:-translate-y-2 h-40 flex flex-col items-center">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue via-neon-purple to-cyan-400 
+                                      flex items-center justify-center mb-2 shadow-glow group-hover:scale-110 transition-transform duration-300">
+                          <Icon className="w-6 h-6 text-white" />
+                        </div>
+                        
+                        <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-gradient-to-r from-cyan-400 to-neon-blue 
+                                      flex items-center justify-center text-xs font-bold shadow-glow">
+                          {step.step}
+                        </div>
+                        
+                        <div className="text-center flex-1 flex flex-col justify-center">
+                          <h4 className="text-xs font-bold mb-1 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
+                            {step.title}
+                          </h4>
+                          <p className="text-[9px] text-muted-foreground leading-tight">
+                            {step.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Mobile: Vertical Layout */}
+          <div className="block md:hidden relative">
+            <div className="relative space-y-4 px-4">
+              {/* Vertical Connecting Line */}
+              <div className="absolute left-12 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neon-blue via-neon-purple to-cyan-400 opacity-30 blur-sm" />
+              <div className="absolute left-12 top-0 bottom-0 w-px bg-gradient-to-b from-neon-blue via-neon-purple to-cyan-400" />
+              
+              {workflowSteps.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div key={index} className="relative pl-8">
+                    <div className="group relative">
+                      <div className="relative bg-card/40 backdrop-blur-md border border-border/50 rounded-xl p-4 
+                                    hover:border-primary/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] 
+                                    transition-all duration-300">
+                        <div className="flex items-center gap-4">
+                          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-neon-blue via-neon-purple to-cyan-400 
+                                        flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-300 relative">
+                            <Icon className="w-7 h-7 text-white" />
+                            <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-neon-blue 
+                                          flex items-center justify-center text-xs font-bold shadow-glow">
+                              {step.step}
+                            </div>
+                          </div>
+                          
+                          <div className="flex-1">
+                            <h4 className="text-sm font-bold mb-1 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
+                              {step.title}
+                            </h4>
+                            <p className="text-xs text-muted-foreground">
+                              {step.description}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
