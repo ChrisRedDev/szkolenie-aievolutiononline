@@ -6,7 +6,7 @@ const HeroSection = () => {
           <div className="aspect-video bg-muted relative">
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              src="https://www.youtube.com/embed/dCoUSKzLujs"
               title="Course Introduction Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

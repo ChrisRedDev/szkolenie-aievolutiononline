@@ -47,45 +47,28 @@ const GatePage = () => {
       </div>
 
       {/* Top Banner */}
-      <div className="relative z-10 w-full px-4 pt-6 pb-4 animate-fade-in">
+      <div className="relative z-10 w-full px-4 pt-12 pb-8 animate-fade-in">
         <div className="max-w-5xl mx-auto">
           <div className="rounded-2xl overflow-hidden border-2 border-primary/30 shadow-[0_0_30px_rgba(0,212,255,0.3)] hover:shadow-[0_0_50px_rgba(0,212,255,0.5)] transition-all duration-500">
             <img 
               src={bannerTop} 
               alt="AI Evolution Banner" 
-              className="w-full h-auto object-cover max-h-[20vh]"
+              className="w-full h-auto object-cover max-h-[25vh]"
             />
           </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex-1 flex items-center justify-center px-6 py-8">
+      <div className="relative z-10 flex-1 flex items-center justify-center px-4 py-4 sm:px-6 sm:py-8">
         <div className="w-full max-w-lg">
           <div className="text-center mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-cyan bg-clip-text text-transparent animate-float leading-tight px-4" style={{
-              textShadow: '0 0 40px rgba(0, 212, 255, 0.4), 0 0 80px rgba(176, 38, 255, 0.3)',
-              filter: 'drop-shadow(0 0 20px rgba(0, 212, 255, 0.5))'
-            }}>
-              Szkolenie AI Evolution
-            </h1>
-            <p className="text-muted-foreground text-base md:text-lg tracking-wide mb-8 px-4" style={{
-              textShadow: '0 0 10px rgba(0, 212, 255, 0.2)'
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-10 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-cyan bg-clip-text text-transparent leading-tight px-4" style={{
+              textShadow: '0 0 30px rgba(0, 212, 255, 0.4)',
+              filter: 'drop-shadow(0 0 15px rgba(0, 212, 255, 0.5))'
             }}>
               Kurs Automatyzacji Tworzenia Contentu AI
-            </p>
-            
-            {/* Logo */}
-            <div className="flex justify-center mb-10 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-neon-blue to-neon-purple rounded-xl blur-xl opacity-40 animate-pulse-glow" />
-                <img 
-                  src={logo} 
-                  alt="AI Evolution Polska Logo" 
-                  className="relative w-40 md:w-48 h-auto object-contain"
-                />
-              </div>
-            </div>
+            </h1>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in" style={{ animationDelay: "0.5s" }}>
@@ -111,6 +94,18 @@ const GatePage = () => {
               </Button>
             </div>
           </form>
+
+          {/* Logo */}
+          <div className="flex justify-center mt-8 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-neon-blue to-neon-purple rounded-xl blur-xl opacity-40 animate-pulse-glow" />
+              <img 
+                src={logo} 
+                alt="AI Evolution Polska Logo" 
+                className="relative w-32 md:w-40 h-auto object-contain"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
