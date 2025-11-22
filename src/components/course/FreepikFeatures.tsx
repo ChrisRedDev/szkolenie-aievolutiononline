@@ -6,7 +6,7 @@ const FreepikFeatures = () => {
     <section className="py-20 px-6 bg-muted/20">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
-          Co daje Freemium i Premium+ Freepik
+          Co daje nam narzędzie Freepik i subsrypcja Premium+
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           Poznaj możliwości Freepik Workspace i dowiedz się, dlaczego Premium+ to klucz do tego kursu
@@ -37,7 +37,7 @@ const FreepikFeatures = () => {
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                <p className="text-muted-foreground">Dostęp do modeli fotograficznych i artystycznych</p>
+                <p className="text-muted-foreground">Dostęp do wielu modeli ai</p>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2" />
@@ -45,7 +45,7 @@ const FreepikFeatures = () => {
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                <p className="text-muted-foreground">Dostęp do zaawansowanych edycji</p>
+                <p className="text-muted-foreground">Dostęp do modeli ai video</p>
               </div>
             </CardContent>
           </Card>
@@ -66,15 +66,17 @@ const FreepikFeatures = () => {
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-secondary rounded-full mt-2" />
-                <p className="text-muted-foreground">Potrzebujemy nieograniczonych iteracji</p>
+                <p className="text-muted-foreground">Potrzebujemy nieograniczonych generacji</p>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-secondary rounded-full mt-2" />
-                <p className="text-muted-foreground">AI ma być narzędziem do produkcji kontentu w ogromnej skali</p>
+                <p className="text-muted-foreground">Freepik daje mozliwosc do produkcji kontentu w ogromnej skali</p>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-secondary rounded-full mt-2" />
-                <p className="text-muted-foreground">Każdy uczestnik kursu musi mieć Premium+, aby workflow zadziałał</p>
+                <p className="text-muted-foreground">
+                  Każdy uczestnik kursu musi mieć Premium+, aby workflow działało poprawnie
+                </p>
               </div>
             </CardContent>
           </Card>
