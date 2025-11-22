@@ -1,17 +1,18 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Hexagon, Diamond, Triangle, Octagon } from "lucide-react";
+import nanoBananaIcon from "@/assets/nano-banana-icon.png";
+import mysticIcon from "@/assets/mystic-icon.png";
+import klingAiIcon from "@/assets/kling-ai-icon.png";
 
 const AIModels = () => {
   const models = [
     {
-      emoji: "🔵",
       name: "NanoBanana Pro",
       subtitle: "Gemini 3.0 Pro Image Model (najnowsza wersja)",
-      icon: Hexagon,
-      color: "from-blue-500 to-cyan-400",
-      bgColor: "bg-blue-500/10",
-      borderColor: "border-blue-500/30",
-      iconColor: "text-blue-500",
+      iconImage: nanoBananaIcon,
+      color: "from-yellow-400 to-orange-400",
+      bgColor: "bg-yellow-500/10",
+      borderColor: "border-yellow-500/30",
       features: [
         "Najdokładniejszy model fotograficzny dostępny w Freepik",
         "Świetnie radzi sobie z twarzami i skórą",
@@ -23,7 +24,6 @@ const AIModels = () => {
       ]
     },
     {
-      emoji: "🟣",
       name: "SeeDream 4.0",
       subtitle: "ByteDance Vision Model",
       icon: Diamond,
@@ -40,14 +40,12 @@ const AIModels = () => {
       ]
     },
     {
-      emoji: "🟪",
-      name: "Kling AI / CleanAI",
+      name: "KlingAI",
       subtitle: "Video from First & Last Frame",
-      icon: Triangle,
-      color: "from-violet-500 to-purple-400",
-      bgColor: "bg-violet-500/10",
-      borderColor: "border-violet-500/30",
-      iconColor: "text-violet-500",
+      iconImage: klingAiIcon,
+      color: "from-cyan-400 via-blue-500 to-green-400",
+      bgColor: "bg-cyan-500/10",
+      borderColor: "border-cyan-500/30",
       features: [
         "Generuje płynne wideo na podstawie pierwszej i ostatniej klatki",
         "Tworzy naturalny, smooth transition między ujęciami",
@@ -57,7 +55,6 @@ const AIModels = () => {
       ]
     },
     {
-      emoji: "⚫",
       name: "Inne Modele",
       subtitle: "Dostępne w Freepik Workspace",
       icon: Octagon,
@@ -106,7 +103,11 @@ const AIModels = () => {
                   <div className="flex items-start gap-4 mb-3">
                     <div className="flex items-center gap-4">
                       <div className={`p-5 ${model.bgColor} rounded-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-2xl border-2 ${model.borderColor}`}>
-                        <Icon className={`w-12 h-12 ${model.iconColor} filter drop-shadow-lg`} strokeWidth={2.5} />
+                        {model.iconImage ? (
+                          <img src={model.iconImage} alt={model.name} className="w-12 h-12 object-contain" />
+                        ) : Icon ? (
+                          <Icon className={`w-12 h-12 ${model.iconColor} filter drop-shadow-lg`} strokeWidth={2.5} />
+                        ) : null}
                       </div>
                     </div>
                   </div>
