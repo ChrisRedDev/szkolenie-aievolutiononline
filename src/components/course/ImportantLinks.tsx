@@ -1,4 +1,4 @@
-import { ExternalLink, Palette, Sparkles, MessageSquare, Bot, FileText } from "lucide-react";
+import { ExternalLink, Palette, Sparkles, MessageSquare, Bot, FileText, Zap } from "lucide-react";
 
 const ImportantLinks = () => {
   const links = [
@@ -41,6 +41,14 @@ const ImportantLinks = () => {
       icon: FileText,
       gradient: "from-amber-500 via-orange-500 to-red-600",
       glowColor: "shadow-orange-500/30"
+    },
+    {
+      title: "AI Evolution Polska",
+      description: "Platforma edukacyjna AI",
+      url: "https://ai-evolution.pl/",
+      icon: Zap,
+      gradient: "from-violet-500 via-purple-500 to-fuchsia-600",
+      glowColor: "shadow-violet-500/30"
     }
   ];
 
