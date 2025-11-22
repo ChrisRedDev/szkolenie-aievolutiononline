@@ -6,9 +6,16 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent mb-2">
-              AI Evolution Polska
-            </h3>
+            <a 
+              href="https://ai-evolution.pl/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent mb-2 hover:opacity-80 transition-opacity">
+                AI Evolution Polska
+              </h3>
+            </a>
             <p className="text-sm text-muted-foreground">
               Zaawansowana Automatyzacja Contentu AI
             </p>
@@ -16,7 +23,7 @@ const Footer = () => {
 
           <div className="flex items-center gap-6">
             <a 
-              href="https://facebook.com" 
+              href="https://www.facebook.com/groups/1322215268929827" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
@@ -26,7 +33,7 @@ const Footer = () => {
             </a>
             
             <a 
-              href="mailto:contact@aievopl.com"
+              href="mailto:kontakt@aievolution.pl"
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail className="w-5 h-5" />
