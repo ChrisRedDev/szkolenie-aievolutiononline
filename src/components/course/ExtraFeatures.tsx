@@ -36,8 +36,8 @@ const ExtraFeatures = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-muted/20">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-6 bg-gradient-glow bg-grid-small relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
           Nasze workflow daje Ci niesamowite możliwości.
         </h2>
@@ -49,18 +49,20 @@ const ExtraFeatures = () => {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <Card
+              <div
                 key={index}
-                className="bg-card border-border/50 hover:border-primary/50 transition-all duration-300 neon-glow group"
+                className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-6 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10 hover:border-primary/30 hover:scale-[1.02] transition-all duration-300 group"
               >
-                <CardHeader>
-                  <div className="p-3 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10 rounded-xl w-fit mb-3 group-hover:from-neon-blue/20 group-hover:to-neon-purple/20 transition-all duration-300">
-                    <Icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">{feature.title}</CardTitle>
-                  <CardDescription className="text-sm">{feature.description}</CardDescription>
-                </CardHeader>
-              </Card>
+                <div className="p-3 bg-primary/20 rounded-xl w-fit mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                  <Icon className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold mb-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {feature.description}
+                </p>
+              </div>
             );
           })}
         </div>
