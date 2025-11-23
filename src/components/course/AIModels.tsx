@@ -4,6 +4,7 @@ import nanoBananaIcon from "@/assets/nano-banana-icon.png";
 import mysticIcon from "@/assets/mystic-icon.png";
 import klingAiIcon from "@/assets/kling-ai-icon.png";
 import seedreamIcon from "@/assets/seedream-icon.png";
+import aiIcon from "@/assets/ai-icon.png";
 
 const AIModels = () => {
   const models = [
@@ -57,11 +58,10 @@ const AIModels = () => {
     {
       name: "Inne Modele",
       subtitle: "Dostępne w Freepik Workspace",
-      icon: Octagon,
+      iconImage: aiIcon,
       color: "from-gray-500 to-slate-400",
       bgColor: "bg-gray-500/10",
       borderColor: "border-gray-500/30",
-      iconColor: "text-gray-500",
       features: [
         "Mystic 2.5 – Styl artystyczny, bardzo dobre kolory i tekstury",
         "DreamShaper – Mocny styl designerski, popularny do social media",
@@ -90,7 +90,6 @@ const AIModels = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           {models.map((model, index) => {
-            const Icon = model.icon;
             return (
               <div 
                 key={index}
@@ -102,11 +101,7 @@ const AIModels = () => {
                 <div className="relative z-10">
                   <div className="flex items-start gap-4 mb-6">
                     <div className={`${model.bgColor} rounded-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-2xl border-2 ${model.borderColor} w-28 h-28 flex items-center justify-center overflow-hidden`}>
-                      {model.iconImage ? (
-                        <img src={model.iconImage} alt={model.name} className="w-full h-full object-cover" />
-                      ) : Icon ? (
-                        <Icon className={`w-16 h-16 ${model.iconColor} filter drop-shadow-lg`} strokeWidth={2.5} />
-                      ) : null}
+                      <img src={model.iconImage} alt={model.name} className="w-full h-full object-cover" />
                     </div>
                   </div>
                   <h3 className={`text-2xl font-bold mb-2 bg-gradient-to-r ${model.color} bg-clip-text text-transparent`}>
