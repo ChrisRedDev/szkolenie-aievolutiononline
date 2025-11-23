@@ -1,8 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Hexagon, Diamond, Triangle, Octagon } from "lucide-react";
+import { Octagon } from "lucide-react";
 import nanoBananaIcon from "@/assets/nano-banana-icon.png";
 import mysticIcon from "@/assets/mystic-icon.png";
 import klingAiIcon from "@/assets/kling-ai-icon.png";
+import seedreamIcon from "@/assets/seedream-icon.png";
 
 const AIModels = () => {
   const models = [
@@ -26,11 +27,10 @@ const AIModels = () => {
     {
       name: "SeeDream 4.0",
       subtitle: "ByteDance Vision Model",
-      icon: Diamond,
+      iconImage: seedreamIcon,
       color: "from-purple-500 to-pink-400",
       bgColor: "bg-purple-500/10",
       borderColor: "border-purple-500/30",
-      iconColor: "text-purple-500",
       features: [
         "Wysoka ostrość i szczegółowość (może generować w 4K)",
         "Idealny do mockupów, architektury i ujęć studyjnych",
