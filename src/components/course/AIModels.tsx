@@ -101,9 +101,9 @@ const AIModels = () => {
                 
                 <div className="relative z-10">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className={`p-6 ${model.bgColor} rounded-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-2xl border-2 ${model.borderColor}`}>
+                    <div className={`${model.bgColor} rounded-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-2xl border-2 ${model.borderColor} w-28 h-28 flex items-center justify-center overflow-hidden`}>
                       {model.iconImage ? (
-                        <img src={model.iconImage} alt={model.name} className="w-16 h-16 object-contain" />
+                        <img src={model.iconImage} alt={model.name} className="w-full h-full object-cover" />
                       ) : Icon ? (
                         <Icon className={`w-16 h-16 ${model.iconColor} filter drop-shadow-lg`} strokeWidth={2.5} />
                       ) : null}
