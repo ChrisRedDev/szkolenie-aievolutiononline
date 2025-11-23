@@ -41,87 +41,73 @@ const PromptBuilder = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <Card className="bg-card border-border/50 hover:border-primary/50 transition-all duration-300 neon-glow">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <Zap className="w-5 h-5 text-primary" />
-                </div>
-                <CardTitle className="text-lg">Krok 1</CardTitle>
+          <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-6 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10 hover:border-primary/30 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-primary/20 rounded-lg">
+                <Zap className="w-5 h-5 text-primary" />
               </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Wrzuć zdjęcie produktu do systemu
-              </p>
-            </CardContent>
-          </Card>
+              <h3 className="text-lg font-bold">Krok 1</h3>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Wrzuć zdjęcie produktu do systemu
+            </p>
+          </div>
 
-          <Card className="bg-card border-border/50 hover:border-primary/50 transition-all duration-300 neon-glow">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <Bot className="w-5 h-5 text-primary" />
-                </div>
-                <CardTitle className="text-lg">Krok 2</CardTitle>
+          <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-6 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10 hover:border-primary/30 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-primary/20 rounded-lg">
+                <Bot className="w-5 h-5 text-primary" />
               </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Agent analizuje kształt i dopasowuje model
-              </p>
-            </CardContent>
-          </Card>
+              <h3 className="text-lg font-bold">Krok 2</h3>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Agent analizuje kształt i dopasowuje model
+            </p>
+          </div>
 
-          <Card className="bg-card border-border/50 hover:border-primary/50 transition-all duration-300 neon-glow">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <Target className="w-5 h-5 text-primary" />
-                </div>
-                <CardTitle className="text-lg">Krok 3</CardTitle>
+          <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-6 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10 hover:border-primary/30 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-primary/20 rounded-lg">
+                <Target className="w-5 h-5 text-primary" />
               </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Otrzymujesz 20-40 gotowych promptów
-              </p>
-            </CardContent>
-          </Card>
+              <h3 className="text-lg font-bold">Krok 3</h3>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Otrzymujesz 20-40 gotowych promptów
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="bg-card border-border/50 neon-glow">
-            <CardHeader>
-              <CardTitle className="text-xl">Co agent potrafi rozpoznać?</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2">
+          <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-8 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10">
+            <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Co agent potrafi rozpoznać?
+            </h3>
+            <div className="space-y-3">
               {capabilities.map((capability, index) => (
                 <div key={index} className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full" />
                   <p className="text-sm text-muted-foreground">{capability}</p>
                 </div>
               ))}
-            </CardContent>
-          </Card>
+            </div>
+          </div>
 
-          <Card className="bg-card border-border/50 neon-glow">
-            <CardHeader>
-              <CardTitle className="text-xl">Typy generowanych promptów</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-2 gap-3">
-                {promptTypes.map((type, index) => (
-                  <div 
-                    key={index}
-                    className="p-3 bg-muted/50 rounded-lg text-center border border-border/50 hover:border-primary/50 transition-all duration-300"
-                  >
-                    <p className="text-sm font-medium">{type}</p>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+          <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-8 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10">
+            <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Typy generowanych promptów
+            </h3>
+            <div className="grid grid-cols-2 gap-3">
+              {promptTypes.map((type, index) => (
+                <div 
+                  key={index}
+                  className="p-3 bg-card/50 backdrop-blur-sm rounded-lg text-center border border-border/50 hover:border-primary/50 transition-all duration-300"
+                >
+                  <p className="text-sm font-medium">{type}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         <Card className="mt-8 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10 border-primary/30 neon-glow">
