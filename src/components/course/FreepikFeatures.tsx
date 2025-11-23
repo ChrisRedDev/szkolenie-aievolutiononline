@@ -14,16 +14,16 @@ const FreepikFeatures = () => {
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="bg-card border-border/50 hover:border-primary/50 transition-all duration-300 neon-glow">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <Sparkles className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-2xl">Freepik Premium+ Overview</CardTitle>
+          <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-8 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10 hover:border-primary/30 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2 bg-primary/20 rounded-lg">
+                <Sparkles className="w-6 h-6 text-primary" />
               </div>
-            </CardHeader>
-            <CardContent className="space-y-3">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Freepik Premium+ Overview
+              </h3>
+            </div>
+            <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2" />
                 <p className="text-muted-foreground">Dostęp do Unlimited Image Generation</p>
@@ -48,19 +48,19 @@ const FreepikFeatures = () => {
                 <div className="w-2 h-2 bg-primary rounded-full mt-2" />
                 <p className="text-muted-foreground">Dostęp do modeli ai video</p>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
 
-          <Card className="bg-card border-border/50 hover:border-secondary/50 transition-all duration-300 neon-glow">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <div className="p-2 bg-secondary/10 rounded-lg">
-                  <Infinity className="w-6 h-6 text-secondary" />
-                </div>
-                <CardTitle className="text-2xl">Dlaczego Unlimited ma znaczenie?</CardTitle>
+          <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-8 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10 hover:border-primary/30 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2 bg-secondary/20 rounded-lg">
+                <Infinity className="w-6 h-6 text-secondary" />
               </div>
-            </CardHeader>
-            <CardContent className="space-y-3">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
+                Dlaczego Unlimited ma znaczenie?
+              </h3>
+            </div>
+            <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-secondary rounded-full mt-2" />
                 <p className="text-muted-foreground">Kurs opiera się na generowaniu dużej ilości wizualizacji</p>
@@ -79,8 +79,8 @@ const FreepikFeatures = () => {
                   Każdy uczestnik kursu musi mieć Premium+, aby workflow działało poprawnie
                 </p>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
 
         <div className="flex justify-center mt-12">

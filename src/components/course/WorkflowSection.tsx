@@ -259,23 +259,21 @@ const WorkflowSection = () => {
           </div>
         </div>
 
-        <Card className="bg-card border-border/50 neon-glow mb-12">
-          <CardHeader>
-            <CardTitle className="text-2xl text-center">Formaty Wyjściowe</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {outputFormats.map((format, index) => (
-                <div 
-                  key={index}
-                  className="p-4 bg-muted/50 rounded-lg text-center border border-border/50 hover:border-primary/50 transition-all duration-300"
-                >
-                  <p className="font-medium text-sm">{format}</p>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+        <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-8 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10 mb-12">
+          <h3 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            Formaty Wyjściowe
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {outputFormats.map((format, index) => (
+              <div 
+                key={index}
+                className="p-4 bg-card/50 backdrop-blur-sm rounded-lg text-center border border-border/50 hover:border-primary/50 transition-all duration-300"
+              >
+                <p className="font-medium text-sm">{format}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div className="mb-8">
           <h3 className="text-2xl font-semibold mb-8 text-center">

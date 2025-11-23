@@ -17,6 +17,7 @@ const GatePage = () => {
 
     setTimeout(() => {
       if (password === "evolutionmachine") {
+        sessionStorage.setItem("courseAccess", "granted");
         toast.success("Dostęp Przyznany");
         navigate("/course");
       } else {

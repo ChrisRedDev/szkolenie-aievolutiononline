@@ -92,44 +92,42 @@ const AIModels = () => {
           {models.map((model, index) => {
             const Icon = model.icon;
             return (
-              <Card 
+              <div 
                 key={index}
-                className={`bg-card/50 backdrop-blur-sm ${model.borderColor} border-2 hover:scale-[1.02] transition-all duration-500 hover:shadow-2xl group relative overflow-hidden`}
+                className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-8 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10 hover:border-primary/30 hover:scale-[1.02] transition-all duration-500 group relative overflow-hidden"
               >
                 {/* Background gradient effect */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${model.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
                 
-                <CardHeader className="relative z-10">
-                  <div className="flex items-start gap-4 mb-3">
-                    <div className="flex items-center gap-4">
-                      <div className={`p-5 ${model.bgColor} rounded-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-2xl border-2 ${model.borderColor}`}>
-                        {model.iconImage ? (
-                          <img src={model.iconImage} alt={model.name} className="w-12 h-12 object-contain" />
-                        ) : Icon ? (
-                          <Icon className={`w-12 h-12 ${model.iconColor} filter drop-shadow-lg`} strokeWidth={2.5} />
-                        ) : null}
-                      </div>
+                <div className="relative z-10">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className={`p-5 ${model.bgColor} rounded-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-2xl border-2 ${model.borderColor}`}>
+                      {model.iconImage ? (
+                        <img src={model.iconImage} alt={model.name} className="w-12 h-12 object-contain" />
+                      ) : Icon ? (
+                        <Icon className={`w-12 h-12 ${model.iconColor} filter drop-shadow-lg`} strokeWidth={2.5} />
+                      ) : null}
                     </div>
                   </div>
-                  <CardTitle className={`text-2xl mb-2 bg-gradient-to-r ${model.color} bg-clip-text text-transparent font-bold`}>
+                  <h3 className={`text-2xl font-bold mb-2 bg-gradient-to-r ${model.color} bg-clip-text text-transparent`}>
                     {model.name}
-                  </CardTitle>
-                  <CardDescription className="text-base font-medium text-muted-foreground/80">
+                  </h3>
+                  <p className="text-base font-medium text-muted-foreground/80 mb-6">
                     {model.subtitle}
-                  </CardDescription>
-                </CardHeader>
-                
-                <CardContent className="space-y-3 relative z-10">
-                  {model.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-start gap-3 group/item">
-                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${model.color} mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform`} />
-                      <p className="text-sm text-foreground/90 leading-relaxed group-hover/item:text-foreground transition-colors">
-                        {feature}
-                      </p>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
+                  </p>
+                  
+                  <div className="space-y-3">
+                    {model.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-start gap-3 group/item">
+                        <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${model.color} mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform`} />
+                        <p className="text-sm text-foreground/90 leading-relaxed group-hover/item:text-foreground transition-colors">
+                          {feature}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             );
           })}
         </div>
