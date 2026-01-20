@@ -41,17 +41,17 @@ const ImportantLinks = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-slate-900 via-amber-950/15 to-slate-950 relative overflow-hidden">
-      {/* Amber/Orange accent glow */}
-      <div className="absolute top-1/4 left-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-500/8 rounded-full blur-3xl pointer-events-none" />
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-6 bg-gradient-to-br from-slate-100 via-amber-50/40 to-orange-50/30 relative overflow-hidden">
+      {/* Light amber/orange accent glow */}
+      <div className="absolute top-1/4 left-0 w-80 h-80 bg-amber-200/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-200/30 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 animate-fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Ważne <span className="text-gradient">Linki</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Ważne <span className="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">Linki</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-slate-600">
             Wszystkie narzędzia i zasoby w jednym miejscu
           </p>
         </div>
@@ -66,23 +66,23 @@ const ImportantLinks = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-card rounded-2xl p-6 border border-border shadow-md card-hover animate-fade-up flex items-start gap-4"
+                className="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-amber-100 shadow-lg shadow-amber-100/30 hover:shadow-xl hover:shadow-amber-200/50 hover:border-amber-300 transition-all duration-300 animate-fade-up flex items-start gap-4"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 {/* Icon */}
-                <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors flex-shrink-0">
-                  <IconComponent className="w-6 h-6 text-primary" />
+                <div className="p-3 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl group-hover:from-amber-200 group-hover:to-orange-200 transition-colors flex-shrink-0">
+                  <IconComponent className="w-6 h-6 text-amber-600" />
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors truncate">
+                    <h3 className="font-semibold text-slate-900 group-hover:text-amber-700 transition-colors truncate">
                       {link.title}
                     </h3>
-                    <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                    <ExternalLink className="w-4 h-4 text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                   </div>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-slate-600">
                     {link.description}
                   </p>
                 </div>

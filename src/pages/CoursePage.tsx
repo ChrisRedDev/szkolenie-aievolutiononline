@@ -7,7 +7,6 @@ import AIModels from "@/components/course/AIModels";
 import WorkflowSection from "@/components/course/WorkflowSection";
 import FreepikSpaces from "@/components/course/FreepikSpaces";
 import PromptBuilder from "@/components/course/PromptBuilder";
-import ExtraFeatures from "@/components/course/ExtraFeatures";
 import SocialMediaGenerator from "@/components/course/SocialMediaGenerator";
 import Footer from "@/components/course/Footer";
 
@@ -31,12 +30,11 @@ const CoursePage = () => {
       <div className="relative z-10">
         <HeroSection />
         <FreepikFeatures />
-        <ImportantLinks />
         <AIModels />
         <WorkflowSection />
         <FreepikSpaces />
         <PromptBuilder />
-        <ExtraFeatures />
+        <ImportantLinks />
         <SocialMediaGenerator />
         <Footer />
       </div>

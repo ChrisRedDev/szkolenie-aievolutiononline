@@ -19,17 +19,17 @@ const FreepikFeatures = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-slate-950 via-emerald-950/20 to-slate-900 relative overflow-hidden">
-      {/* Emerald accent glow */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-teal-500/8 rounded-full blur-3xl pointer-events-none" />
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-6 bg-gradient-to-br from-slate-100 via-emerald-50/50 to-slate-50 relative overflow-hidden">
+      {/* Light emerald accent glow */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-200/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-teal-200/30 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Co daje Freepik <span className="text-gradient">Premium+</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Co daje Freepik <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Premium+</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Poznaj możliwości Freepik Workspace i dowiedz się, dlaczego Premium+ to klucz do tego kursu
           </p>
         </div>
@@ -37,44 +37,44 @@ const FreepikFeatures = () => {
         {/* Feature Cards */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Premium+ Card */}
-          <div className="bg-card rounded-2xl p-8 border border-border shadow-lg card-hover animate-fade-up delay-100">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-emerald-100 shadow-lg shadow-emerald-100/50 hover:shadow-xl hover:shadow-emerald-200/50 transition-all duration-300 animate-fade-up delay-100">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 bg-primary/10 rounded-xl">
-                <Sparkles className="w-6 h-6 text-primary" />
+              <div className="p-3 bg-emerald-100 rounded-xl">
+                <Sparkles className="w-6 h-6 text-emerald-600" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground">
+              <h3 className="text-xl font-semibold text-slate-900">
                 Freepik Premium+ Overview
               </h3>
             </div>
             <ul className="space-y-4">
               {premiumFeatures.map((feature, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <div className="mt-0.5 p-1 bg-secondary/10 rounded-full flex-shrink-0">
-                    <Check className="w-3 h-3 text-secondary" />
+                  <div className="mt-0.5 p-1 bg-emerald-100 rounded-full flex-shrink-0">
+                    <Check className="w-3 h-3 text-emerald-600" />
                   </div>
-                  <span className="text-muted-foreground">{feature}</span>
+                  <span className="text-slate-700">{feature}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Why Unlimited Card */}
-          <div className="bg-card rounded-2xl p-8 border border-border shadow-lg card-hover animate-fade-up delay-200">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-teal-100 shadow-lg shadow-teal-100/50 hover:shadow-xl hover:shadow-teal-200/50 transition-all duration-300 animate-fade-up delay-200">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 bg-secondary/10 rounded-xl">
-                <Infinity className="w-6 h-6 text-secondary" />
+              <div className="p-3 bg-teal-100 rounded-xl">
+                <Infinity className="w-6 h-6 text-teal-600" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground">
+              <h3 className="text-xl font-semibold text-slate-900">
                 Dlaczego Unlimited ma znaczenie?
               </h3>
             </div>
             <ul className="space-y-4">
               {unlimitedReasons.map((reason, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <div className="mt-0.5 p-1 bg-primary/10 rounded-full flex-shrink-0">
-                    <Check className="w-3 h-3 text-primary" />
+                  <div className="mt-0.5 p-1 bg-teal-100 rounded-full flex-shrink-0">
+                    <Check className="w-3 h-3 text-teal-600" />
                   </div>
-                  <span className="text-muted-foreground">{reason}</span>
+                  <span className="text-slate-700">{reason}</span>
                 </li>
               ))}
             </ul>
@@ -86,7 +86,7 @@ const FreepikFeatures = () => {
           <Button 
             asChild 
             size="lg" 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground btn-glow group h-14 px-8 text-base"
+            className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white shadow-lg shadow-emerald-200 group h-14 px-8 text-base"
           >
             <a href="https://www.freepik.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
               Przejdź do Freepik
