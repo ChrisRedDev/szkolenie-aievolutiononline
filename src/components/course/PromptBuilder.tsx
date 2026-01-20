@@ -29,7 +29,9 @@ const PromptBuilder = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-background">
+    <section className="py-20 px-6 bg-gradient-to-b from-background via-accent/5 to-muted/20 relative overflow-hidden">
+      {/* Accent glow */}
+      <div className="absolute top-0 left-1/3 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">

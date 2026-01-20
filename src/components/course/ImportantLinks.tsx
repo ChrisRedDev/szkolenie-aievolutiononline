@@ -41,7 +41,9 @@ const ImportantLinks = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-background">
+    <section className="py-20 px-6 bg-gradient-to-b from-muted/40 via-background to-muted/20 relative">
+      {/* Subtle accent glow */}
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12 animate-fade-up">

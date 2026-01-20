@@ -35,7 +35,9 @@ const ExtraFeatures = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-background">
+    <section className="py-20 px-6 bg-gradient-to-b from-muted/20 via-primary/5 to-background relative overflow-hidden">
+      {/* Subtle mesh background */}
+      <div className="absolute inset-0 bg-grid-subtle pointer-events-none opacity-30" />
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
