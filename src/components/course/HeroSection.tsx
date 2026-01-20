@@ -1,12 +1,10 @@
 import { Play, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import AnimatedAIBackground from "@/components/AnimatedAIBackground";
+import { AuraBackground } from "@/components/ui/aura-background";
 
 const HeroSection = () => {
   return (
-    <section className="relative py-16 md:py-24 px-6 bg-background overflow-hidden">
-      {/* Animated AI Background */}
-      <AnimatedAIBackground />
+    <AuraBackground className="relative py-16 md:py-24 px-6 overflow-hidden">
 
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Hero Header */}
@@ -51,7 +49,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </AuraBackground>
   );
 };
 
