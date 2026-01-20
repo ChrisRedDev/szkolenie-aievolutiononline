@@ -41,9 +41,10 @@ const ImportantLinks = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-muted/40 via-background to-muted/20 relative">
-      {/* Subtle accent glow */}
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+    <section className="py-20 px-6 bg-gradient-to-br from-slate-900 via-amber-950/15 to-slate-950 relative overflow-hidden">
+      {/* Amber/Orange accent glow */}
+      <div className="absolute top-1/4 left-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-500/8 rounded-full blur-3xl pointer-events-none" />
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12 animate-fade-up">

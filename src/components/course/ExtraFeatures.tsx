@@ -35,9 +35,10 @@ const ExtraFeatures = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-muted/20 via-primary/5 to-background relative overflow-hidden">
-      {/* Subtle mesh background */}
-      <div className="absolute inset-0 bg-grid-subtle pointer-events-none opacity-30" />
+    <section className="py-20 px-6 bg-gradient-to-br from-slate-900 via-sky-950/15 to-slate-950 relative overflow-hidden">
+      {/* Sky/Blue accent glow */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-500/8 rounded-full blur-3xl pointer-events-none" />
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
