@@ -157,34 +157,40 @@ const SocialMediaGenerator = () => {
   };
 
   return (
-    <section className="relative py-20 px-6 overflow-hidden">
-      {/* Unique gradient mesh background */}
+    <section className="relative py-24 px-6 overflow-hidden">
+      {/* Dynamic gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-primary/5 to-slate-950" />
       <div className="absolute inset-0 bg-gradient-mesh" />
-      <div className="absolute inset-0 bg-grid-small opacity-30" />
+      <div className="absolute inset-0 bg-grid-small opacity-20" />
       
-      {/* Top and bottom gradient lines */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+      {/* Animated glow orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/15 rounded-full blur-3xl animate-pulse delay-500" />
+      
+      {/* Top and bottom gradient lines - enhanced */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12 animate-fade-up">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 glass-dark rounded-full text-sm font-semibold mb-6 border border-white/10">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-white/90">Generator AI</span>
+        {/* Header - Combined Post Creator + Generator */}
+        <div className="text-center mb-14 animate-fade-up">
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full text-sm font-bold mb-8 border border-primary/30 ai-glow">
+            <Sparkles className="w-5 h-5 text-primary" />
+            <span className="text-white">Post Creator – Social Media w sekundy</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 drop-shadow-lg">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 drop-shadow-lg tracking-tight">
             Generator Postów <span className="text-gradient-full">Social Media</span>
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto font-medium">
-            Wgraj zdjęcie produktu, opisz go i wygeneruj angażujące posty dopasowane do każdej platformy
+          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto font-medium leading-relaxed">
+            Inteligentny agent AI analizuje Twój produkt i tworzy angażujące treści.
+            Dodaj zdjęcie — a Post Creator przygotuje gotowy tekst do publikacji.
           </p>
         </div>
 
         {/* Main Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 animate-fade-up delay-200">
+        <div className="grid lg:grid-cols-2 gap-10 animate-fade-up delay-200">
           {/* Configuration Panel */}
-          <div className="glass-dark rounded-2xl p-6 md:p-8 border-neon">
+          <div className="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 md:p-10 border border-white/10 shadow-2xl shadow-primary/5 hover:border-primary/30 transition-all duration-500">
             <h3 className="text-xl font-bold text-white mb-6">Konfiguracja</h3>
 
             {/* Image Upload */}
@@ -368,24 +374,29 @@ const SocialMediaGenerator = () => {
           </div>
 
           {/* Results Panel */}
-          <div className="glass-dark rounded-2xl p-6 md:p-8 border-neon">
-            <h3 className="text-xl font-bold text-white mb-6">Wygenerowane posty</h3>
+          <div className="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 md:p-10 border border-white/10 shadow-2xl shadow-secondary/5 hover:border-secondary/30 transition-all duration-500">
+            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
+                <Sparkles className="w-5 h-5 text-white" />
+              </div>
+              Wygenerowane posty
+            </h3>
 
             {generatedVersions.length === 0 ? (
-              <div className="flex flex-col items-center justify-center h-[400px] border-2 border-dashed border-white/20 rounded-xl bg-black/20">
-                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-4">
-                  <Sparkles className="w-8 h-8 text-primary" />
+              <div className="flex flex-col items-center justify-center h-[400px] border-2 border-dashed border-white/15 rounded-2xl bg-slate-950/50">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl flex items-center justify-center mb-6 ai-glow">
+                  <Sparkles className="w-10 h-10 text-primary" />
                 </div>
-                <p className="text-white/60 text-center font-medium">
+                <p className="text-white/50 text-center font-medium text-lg">
                   Wygenerowana treść pojawi się tutaj
                 </p>
               </div>
             ) : (
-              <div className="space-y-6 max-h-[600px] overflow-y-auto pr-2">
+              <div className="space-y-6 max-h-[600px] overflow-y-auto pr-2 scrollbar-thin">
                 {generatedVersions.map((version) => (
                   <div
                     key={version.id}
-                    className="bg-black/30 rounded-xl p-5 border border-white/10"
+                    className="bg-slate-950/70 rounded-2xl p-6 border border-white/10 hover:border-primary/30 transition-all duration-300"
                   >
                     <div className="flex items-center justify-between mb-4">
                       <span className="text-sm font-bold text-primary">
