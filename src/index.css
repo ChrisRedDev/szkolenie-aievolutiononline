@@ -8,7 +8,7 @@
 
 @layer base {
   :root {
-    /* Light Theme - Clean & Professional */
+    /* Light Theme - AI/Tech Style */
     --background: 0 0% 100%;
     --foreground: 0 0% 5%;
 
@@ -18,44 +18,48 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 5%;
 
-    /* Primary CTA - Strong Blue */
-    --primary: 217 91% 50%;
+    /* Primary - AI Blue */
+    --primary: 220 90% 60%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Teal Accent */
-    --secondary: 171 100% 39%;
+    /* Secondary - Violet */
+    --secondary: 280 70% 55%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 215 16% 47%;
-
-    --accent: 217 91% 50%;
+    /* Accent - Cyan/Teal */
+    --accent: 173 80% 45%;
     --accent-foreground: 0 0% 100%;
+
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 16% 47%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 217 91% 50%;
+    --border: 220 30% 90%;
+    --input: 220 30% 90%;
+    --ring: 220 90% 60%;
 
     --radius: 0.75rem;
 
-    /* Brand Colors */
-    --brand-blue: 217 91% 50%;
-    --brand-teal: 171 100% 39%;
-    --brand-dark: 0 0% 5%;
+    /* AI Theme Colors */
+    --ai-blue: 220 90% 60%;
+    --ai-violet: 280 70% 55%;
+    --ai-cyan: 173 80% 45%;
+    --ai-pink: 320 70% 50%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 50%), hsl(171 100% 39%));
-    --gradient-hero: linear-gradient(180deg, hsl(217 91% 50% / 0.05) 0%, transparent 50%);
+    --gradient-primary: linear-gradient(135deg, hsl(220 90% 60%), hsl(280 70% 55%));
+    --gradient-accent: linear-gradient(135deg, hsl(280 70% 55%), hsl(173 80% 45%));
+    --gradient-full: linear-gradient(135deg, hsl(220 90% 60%), hsl(280 70% 55%), hsl(173 80% 45%));
     
-    /* Shadows */
+    /* Shadows with color */
     --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.05);
     --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
     --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
     --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 8px 10px -6px hsl(0 0% 0% / 0.1);
-    --shadow-primary: 0 4px 14px hsl(217 91% 50% / 0.25);
+    --shadow-primary: 0 4px 20px hsl(220 90% 60% / 0.35);
+    --shadow-glow: 0 0 40px hsl(220 90% 60% / 0.2);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -97,9 +101,16 @@
     transform: translateY(-4px);
   }
 
-  /* Text Gradient */
+  /* Text Gradient - AI Theme */
   .text-gradient {
     background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-full {
+    background: var(--gradient-full);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -115,19 +126,32 @@
     color: hsl(var(--primary));
   }
 
+  /* Glassmorphism Card */
+  .glass-card {
+    background: hsl(0 0% 100% / 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  /* AI Glow Effect */
+  .ai-glow {
+    box-shadow: 
+      0 0 20px hsl(220 90% 60% / 0.2),
+      0 0 40px hsl(280 70% 55% / 0.1),
+      0 0 60px hsl(173 80% 45% / 0.05);
+  }
+
   /* Subtle Grid Background */
   .bg-grid-subtle {
     background-image: 
-      linear-gradient(to right, hsl(var(--border) / 0.5) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--border) / 0.5) 1px, transparent 1px);
+      linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
-  /* Hero Gradient Background */
+  /* Hero Gradient Background - AI Theme */
   .bg-hero-gradient {
-    background: 
-      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(217 91% 50% / 0.08) 0%, transparent 50%),
-      hsl(var(--background));
+    background: hsl(var(--background));
   }
 
   /* Section Gradient */
