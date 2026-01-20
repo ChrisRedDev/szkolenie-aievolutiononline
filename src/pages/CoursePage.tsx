@@ -24,7 +24,7 @@ const CoursePage = () => {
 
   return (
     <AuraBackground className="min-h-screen">
-      <div className="min-h-screen bg-background/90 backdrop-blur-sm">
+      <div className="min-h-screen bg-black/70 backdrop-blur-sm">
         <HeroSection />
         <FreepikFeatures />
         <ImportantLinks />
