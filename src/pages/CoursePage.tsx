@@ -8,7 +8,7 @@ import WorkflowSection from "@/components/course/WorkflowSection";
 import PromptBuilder from "@/components/course/PromptBuilder";
 import PostCreator from "@/components/course/PostCreator";
 import ExtraFeatures from "@/components/course/ExtraFeatures";
-import PromptDatabase from "@/components/course/PromptDatabase";
+import SocialMediaGenerator from "@/components/course/SocialMediaGenerator";
 import Footer from "@/components/course/Footer";
 
 const CoursePage = () => {
@@ -31,7 +31,7 @@ const CoursePage = () => {
       <PromptBuilder />
       <PostCreator />
       <ExtraFeatures />
-      <PromptDatabase />
+      <SocialMediaGenerator />
       <Footer />
     </div>
   );
