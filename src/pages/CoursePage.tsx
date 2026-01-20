@@ -24,17 +24,23 @@ const CoursePage = () => {
 
   return (
     <AuraBackground className="min-h-screen">
-      <div className="min-h-screen bg-black/70 backdrop-blur-sm">
-        <HeroSection />
-        <FreepikFeatures />
-        <ImportantLinks />
-        <AIModels />
-        <WorkflowSection />
-        <PromptBuilder />
-        <PostCreator />
-        <ExtraFeatures />
-        <SocialMediaGenerator />
-        <Footer />
+      <div className="min-h-screen relative">
+        {/* Dark overlay for contrast and readability */}
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
+        
+        {/* Content */}
+        <div className="relative z-10">
+          <HeroSection />
+          <FreepikFeatures />
+          <ImportantLinks />
+          <AIModels />
+          <WorkflowSection />
+          <PromptBuilder />
+          <PostCreator />
+          <ExtraFeatures />
+          <SocialMediaGenerator />
+          <Footer />
+        </div>
       </div>
     </AuraBackground>
   );
