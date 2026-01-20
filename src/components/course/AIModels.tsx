@@ -1,5 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Octagon } from "lucide-react";
+import { Check } from "lucide-react";
 import nanoBananaIcon from "@/assets/nano-banana-icon.png";
 import mysticIcon from "@/assets/mystic-icon.png";
 import klingAiIcon from "@/assets/kling-ai-icon.png";
@@ -12,119 +11,113 @@ const AIModels = () => {
       name: "NanoBanana Pro",
       subtitle: "Gemini 3.0 Pro Image Model (najnowsza wersja)",
       iconImage: nanoBananaIcon,
-      color: "from-yellow-400 to-orange-400",
-      bgColor: "bg-yellow-500/10",
-      borderColor: "border-yellow-500/30",
+      accentColor: "bg-amber-500",
       features: [
         "Najdokładniejszy model fotograficzny dostępny w Freepik",
         "Świetnie radzi sobie z twarzami i skórą",
-        "Bardzo dobra spójność kształtu produktu (ważne przy e-commerce)",
+        "Bardzo dobra spójność kształtu produktu",
         "Obsługuje multi-reference (1–4 zdjęcia wejściowe)",
         "Idealny do scen lifestyle, mockupów i packshotów",
         "Bardzo stabilny, szybki i przewidywalny",
-        "Perfekcyjny do generowania wizualizacji kolekcji produktów"
       ]
     },
     {
       name: "SeeDream 4.0",
       subtitle: "ByteDance Vision Model",
       iconImage: seedreamIcon,
-      color: "from-purple-500 to-pink-400",
-      bgColor: "bg-purple-500/10",
-      borderColor: "border-purple-500/30",
+      accentColor: "bg-violet-500",
       features: [
         "Wysoka ostrość i szczegółowość (może generować w 4K)",
         "Idealny do mockupów, architektury i ujęć studyjnych",
         "Dobre odwzorowanie światła i materiałów",
-        "Bardzo czyste krawędzie i dobrze renderowany tekst (etykiety, naklejki)",
-        "Świetny do profesjonalnych wizualizacji reklamowych"
+        "Bardzo czyste krawędzie i dobrze renderowany tekst",
+        "Świetny do profesjonalnych wizualizacji reklamowych",
       ]
     },
     {
       name: "KlingAI",
       subtitle: "Video from First & Last Frame",
       iconImage: klingAiIcon,
-      color: "from-cyan-400 via-blue-500 to-green-400",
-      bgColor: "bg-cyan-500/10",
-      borderColor: "border-cyan-500/30",
+      accentColor: "bg-cyan-500",
       features: [
         "Generuje płynne wideo na podstawie pierwszej i ostatniej klatki",
         "Tworzy naturalny, smooth transition między ujęciami",
         "Idealny do animacji produktów i dynamicznych prezentacji",
         "Świetny do reklam, reelsów i pakietów contentowych",
-        "Doskonałe narzędzie do ożywiania statycznych zdjęć"
+        "Doskonałe narzędzie do ożywiania statycznych zdjęć",
       ]
     },
     {
       name: "Inne Modele",
       subtitle: "Dostępne w Freepik Workspace",
       iconImage: aiIcon,
-      color: "from-gray-500 to-slate-400",
-      bgColor: "bg-gray-500/10",
-      borderColor: "border-gray-500/30",
+      accentColor: "bg-slate-500",
       features: [
-        "Mystic 2.5 – Styl artystyczny, bardzo dobre kolory i tekstury",
+        "Mystic 2.5 – Styl artystyczny, bardzo dobre kolory",
         "DreamShaper – Mocny styl designerski, popularny do social media",
         "RealVision – Wysoka fotorealistyka, dobre odwzorowanie materiałów",
         "Modele 3D & Stylizowane",
         "Modele cartoon/anime",
-        "Modele renderingowe 3D",
-        "Lekkie modele do szybkich konceptów"
+        "Lekkie modele do szybkich konceptów",
       ]
     }
   ];
 
-
   return (
-    <section className="py-20 px-6 relative overflow-hidden bg-gradient-subtle bg-grid-pattern">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-secondary/5 pointer-events-none" />
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-blue bg-clip-text text-transparent">
-          Modele AI w Freepik – Jak Działają
-        </h2>
-        <p className="text-center text-muted-foreground mb-16 max-w-3xl mx-auto text-lg leading-relaxed">
-          Poznaj najważniejsze modele dostępne w Freepik Workspace i sprawdź, jak wykorzystać je do tworzenia profesjonalnych wizualizacji produktów oraz materiałów marketingowych.
-        </p>
+    <section className="py-20 px-6 bg-background">
+      <div className="max-w-6xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16 animate-fade-up">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Modele AI w <span className="text-gradient">Freepik</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Poznaj najważniejsze modele dostępne w Freepik Workspace i sprawdź, jak wykorzystać je do tworzenia profesjonalnych wizualizacji
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {models.map((model, index) => {
-            return (
-              <div 
-                key={index}
-                className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-8 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10 hover:border-primary/30 hover:scale-[1.02] transition-all duration-500 group relative overflow-hidden"
-              >
-                {/* Background gradient effect */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${model.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-                
-                <div className="relative z-10">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className={`${model.bgColor} rounded-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-2xl border-2 ${model.borderColor} w-28 h-28 flex items-center justify-center overflow-hidden`}>
-                      <img src={model.iconImage} alt={model.name} className="w-full h-full object-cover" />
-                    </div>
-                  </div>
-                  <h3 className={`text-2xl font-bold mb-2 bg-gradient-to-r ${model.color} bg-clip-text text-transparent`}>
+        {/* Models Grid */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {models.map((model, index) => (
+            <div 
+              key={index}
+              className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-md card-hover animate-fade-up"
+              style={{ animationDelay: `${(index + 1) * 100}ms` }}
+            >
+              {/* Header */}
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 shadow-lg border border-border">
+                  <img 
+                    src={model.iconImage} 
+                    alt={model.name} 
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-1">
                     {model.name}
                   </h3>
-                  <p className="text-base font-medium text-muted-foreground/80 mb-6">
+                  <p className="text-sm text-muted-foreground">
                     {model.subtitle}
                   </p>
-                  
-                  <div className="space-y-3">
-                    {model.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-3 group/item">
-                        <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${model.color} mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform`} />
-                        <p className="text-sm text-foreground/90 leading-relaxed group-hover/item:text-foreground transition-colors">
-                          {feature}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
                 </div>
               </div>
-            );
-          })}
+
+              {/* Features List */}
+              <ul className="space-y-3">
+                {model.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-3 group">
+                    <div className={`mt-1 p-1 ${model.accentColor}/10 rounded-full flex-shrink-0`}>
+                      <div className={`w-1.5 h-1.5 rounded-full ${model.accentColor}`} />
+                    </div>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                      {feature}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>

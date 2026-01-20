@@ -1,21 +1,23 @@
 import { Button } from "@/components/ui/button";
-import { FileText } from "lucide-react";
+import { FileText, ExternalLink } from "lucide-react";
 
 const PromptDatabase = () => {
   return (
-    <section className="py-16 px-4 border-t border-primary/20 bg-gradient-radial bg-grid-pattern relative overflow-hidden">
-      <div className="container mx-auto max-w-4xl text-center relative z-10">
-        <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-8 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10">
-          <FileText className="w-12 h-12 mx-auto mb-4 text-primary animate-pulse" />
-          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            Baza Promptów - Przykłady
+    <section className="py-16 px-6 bg-section-gradient">
+      <div className="max-w-3xl mx-auto text-center animate-fade-up">
+        <div className="bg-card rounded-2xl p-8 md:p-12 border border-border shadow-lg">
+          <div className="w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center">
+            <FileText className="w-8 h-8 text-primary" />
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+            Baza Promptów - <span className="text-gradient">Przykłady</span>
           </h2>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
             Gotowe szablony i przykłady promptów do generowania grafik produktowych
           </p>
           <Button
             size="lg"
-            className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all duration-300"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground btn-glow h-14 px-8 text-base group"
             asChild
           >
             <a
@@ -24,6 +26,7 @@ const PromptDatabase = () => {
               rel="noopener noreferrer"
             >
               Otwórz Bazę Promptów
+              <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>
         </div>
