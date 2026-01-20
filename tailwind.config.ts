@@ -47,10 +47,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        brand: {
-          blue: "hsl(var(--brand-blue))",
-          teal: "hsl(var(--brand-teal))",
-          dark: "hsl(var(--brand-dark))",
+        ai: {
+          blue: "hsl(var(--ai-blue))",
+          violet: "hsl(var(--ai-violet))",
+          cyan: "hsl(var(--ai-cyan))",
+          pink: "hsl(var(--ai-pink))",
         },
       },
       borderRadius: {
@@ -91,8 +92,9 @@ export default {
         "slide-in-right": "slide-in-right 0.4s ease-out forwards",
       },
       boxShadow: {
-        'primary': '0 4px 14px hsl(217 91% 50% / 0.25)',
-        'primary-lg': '0 6px 20px hsl(217 91% 50% / 0.35)',
+        'primary': '0 4px 20px hsl(220 90% 60% / 0.35)',
+        'primary-lg': '0 6px 30px hsl(220 90% 60% / 0.4)',
+        'ai-glow': '0 0 40px hsl(220 90% 60% / 0.2), 0 0 60px hsl(280 70% 55% / 0.1)',
       },
     },
   },
