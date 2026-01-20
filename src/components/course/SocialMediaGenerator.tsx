@@ -157,18 +157,26 @@ const SocialMediaGenerator = () => {
   };
 
   return (
-    <section className="py-20 px-6 bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-20 px-6 overflow-hidden">
+      {/* Unique gradient mesh background */}
+      <div className="absolute inset-0 bg-gradient-mesh" />
+      <div className="absolute inset-0 bg-grid-small opacity-30" />
+      
+      {/* Top and bottom gradient lines */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+
+      <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 animate-fade-up">
-          <div className="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 glass-dark rounded-full text-sm font-semibold mb-6 border border-white/10">
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-muted-foreground">Generator AI</span>
+            <span className="text-white/90">Generator AI</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 drop-shadow-lg">
             Generator Postów <span className="text-gradient-full">Social Media</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-white/70 max-w-2xl mx-auto font-medium">
             Wgraj zdjęcie produktu, opisz go i wygeneruj angażujące posty dopasowane do każdej platformy
           </p>
         </div>
@@ -176,18 +184,18 @@ const SocialMediaGenerator = () => {
         {/* Main Grid */}
         <div className="grid lg:grid-cols-2 gap-8 animate-fade-up delay-200">
           {/* Configuration Panel */}
-          <div className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
-            <h3 className="text-xl font-semibold text-foreground mb-6">Konfiguracja</h3>
+          <div className="glass-dark rounded-2xl p-6 md:p-8 border-neon">
+            <h3 className="text-xl font-bold text-white mb-6">Konfiguracja</h3>
 
             {/* Image Upload */}
             <div className="mb-6">
-              <Label className="text-sm font-medium text-foreground mb-2 block">
+              <Label className="text-sm font-medium text-white mb-2 block">
                 Zdjęcie produktu
               </Label>
               <div
                 onDrop={handleDrop}
                 onDragOver={handleDragOver}
-                className="relative border-2 border-dashed border-border rounded-xl p-6 text-center hover:border-primary/50 transition-colors cursor-pointer bg-muted/30"
+                className="relative border-2 border-dashed border-white/20 rounded-xl p-6 text-center hover:border-primary/50 transition-colors cursor-pointer bg-black/30"
               >
                 <input
                   type="file"
@@ -202,18 +210,18 @@ const SocialMediaGenerator = () => {
                       alt="Preview"
                       className="max-h-40 mx-auto rounded-lg object-contain"
                     />
-                    <p className="text-sm text-muted-foreground">Kliknij aby zmienić</p>
+                    <p className="text-sm text-white/60">Kliknij aby zmienić</p>
                   </div>
                 ) : (
                   <div className="space-y-3">
-                    <div className="w-12 h-12 mx-auto bg-primary/10 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 mx-auto bg-primary/20 rounded-xl flex items-center justify-center">
                       <ImageIcon className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-foreground">
+                      <p className="text-sm font-medium text-white">
                         Kliknij lub przeciągnij zdjęcie
                       </p>
-                      <p className="text-xs text-muted-foreground mt-1">
+                      <p className="text-xs text-white/50 mt-1">
                         PNG, JPG do 5MB
                       </p>
                     </div>
@@ -224,7 +232,7 @@ const SocialMediaGenerator = () => {
 
             {/* Description */}
             <div className="mb-6">
-              <Label htmlFor="description" className="text-sm font-medium text-foreground mb-2 block">
+              <Label htmlFor="description" className="text-sm font-medium text-white mb-2 block">
                 Opis produktu
               </Label>
               <Textarea
@@ -232,19 +240,19 @@ const SocialMediaGenerator = () => {
                 placeholder="Nowoczesny smartwatch z funkcją monitorowania zdrowia, elegancki design..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                className="min-h-[100px] bg-background border-border focus:border-primary resize-none"
+                className="min-h-[100px] bg-black/30 border-white/20 text-white placeholder:text-white/40 focus:border-primary resize-none"
               />
             </div>
 
             {/* Platform & Category */}
             <div className="grid sm:grid-cols-2 gap-4 mb-6">
               <div>
-                <Label className="text-sm font-medium text-foreground mb-2 block">Platforma</Label>
+                <Label className="text-sm font-medium text-white mb-2 block">Platforma</Label>
                 <Select value={platform} onValueChange={(v) => setPlatform(v as Platform)}>
-                  <SelectTrigger className="bg-background border-border">
+                  <SelectTrigger className="bg-black/30 border-white/20 text-white">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-card border-white/20">
                     <SelectItem value="facebook">Facebook</SelectItem>
                     <SelectItem value="instagram">Instagram</SelectItem>
                     <SelectItem value="linkedin">LinkedIn</SelectItem>
@@ -253,12 +261,12 @@ const SocialMediaGenerator = () => {
                 </Select>
               </div>
               <div>
-                <Label className="text-sm font-medium text-foreground mb-2 block">Kategoria</Label>
+                <Label className="text-sm font-medium text-white mb-2 block">Kategoria</Label>
                 <Select value={category} onValueChange={(v) => setCategory(v as Category)}>
-                  <SelectTrigger className="bg-background border-border">
+                  <SelectTrigger className="bg-black/30 border-white/20 text-white">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-card border-white/20">
                     <SelectItem value="fashion">Moda</SelectItem>
                     <SelectItem value="electronics">Elektronika</SelectItem>
                     <SelectItem value="home">Dom i Wnętrza</SelectItem>
@@ -273,7 +281,7 @@ const SocialMediaGenerator = () => {
 
             {/* Tone */}
             <div className="mb-6">
-              <Label className="text-sm font-medium text-foreground mb-3 block">Ton komunikacji</Label>
+              <Label className="text-sm font-medium text-white mb-3 block">Ton komunikacji</Label>
               <div className="grid grid-cols-2 gap-3">
                 {[
                   { value: "professional", label: "Profesjonalny" },
@@ -287,8 +295,8 @@ const SocialMediaGenerator = () => {
                     onClick={() => setTone(option.value as Tone)}
                     className={`p-3 rounded-xl border text-sm font-medium transition-all ${
                       tone === option.value
-                        ? "border-primary bg-primary/10 text-primary"
-                        : "border-border bg-background text-muted-foreground hover:border-primary/50"
+                        ? "border-primary bg-primary/20 text-primary"
+                        : "border-white/20 bg-black/30 text-white/70 hover:border-primary/50"
                     }`}
                   >
                     {option.label}
@@ -299,7 +307,7 @@ const SocialMediaGenerator = () => {
 
             {/* Content Length */}
             <div className="mb-6">
-              <Label className="text-sm font-medium text-foreground mb-3 block">Długość treści</Label>
+              <Label className="text-sm font-medium text-white mb-3 block">Długość treści</Label>
               <div className="flex gap-3">
                 {[
                   { value: "short", label: "Krótka" },
@@ -312,8 +320,8 @@ const SocialMediaGenerator = () => {
                     onClick={() => setContentLength(option.value as ContentLength)}
                     className={`flex-1 p-3 rounded-xl border text-sm font-medium transition-all ${
                       contentLength === option.value
-                        ? "border-primary bg-primary/10 text-primary"
-                        : "border-border bg-background text-muted-foreground hover:border-primary/50"
+                        ? "border-primary bg-primary/20 text-primary"
+                        : "border-white/20 bg-black/30 text-white/70 hover:border-primary/50"
                     }`}
                   >
                     {option.label}
@@ -324,12 +332,12 @@ const SocialMediaGenerator = () => {
 
             {/* Target Audience */}
             <div className="mb-8">
-              <Label className="text-sm font-medium text-foreground mb-2 block">Grupa docelowa</Label>
+              <Label className="text-sm font-medium text-white mb-2 block">Grupa docelowa</Label>
               <Select value={targetAudience} onValueChange={(v) => setTargetAudience(v as TargetAudience)}>
-                <SelectTrigger className="bg-background border-border">
+                <SelectTrigger className="bg-black/30 border-white/20 text-white">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-card border-white/20">
                   <SelectItem value="18-25">18-25 lat (Gen Z)</SelectItem>
                   <SelectItem value="26-35">26-35 lat (Millennials)</SelectItem>
                   <SelectItem value="36-50">36-50 lat (Gen X)</SelectItem>
@@ -343,7 +351,7 @@ const SocialMediaGenerator = () => {
             <Button
               onClick={handleGenerate}
               disabled={isLoading}
-              className="w-full h-14 bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 text-primary-foreground text-base font-semibold ai-glow transition-all duration-300"
+              className="w-full h-14 bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 text-white text-base font-bold ai-glow transition-all duration-300"
             >
               {isLoading ? (
                 <>
@@ -360,15 +368,15 @@ const SocialMediaGenerator = () => {
           </div>
 
           {/* Results Panel */}
-          <div className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
-            <h3 className="text-xl font-semibold text-foreground mb-6">Wygenerowane posty</h3>
+          <div className="glass-dark rounded-2xl p-6 md:p-8 border-neon">
+            <h3 className="text-xl font-bold text-white mb-6">Wygenerowane posty</h3>
 
             {generatedVersions.length === 0 ? (
-              <div className="flex flex-col items-center justify-center h-[400px] border-2 border-dashed border-border rounded-xl">
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
+              <div className="flex flex-col items-center justify-center h-[400px] border-2 border-dashed border-white/20 rounded-xl bg-black/20">
+                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-4">
                   <Sparkles className="w-8 h-8 text-primary" />
                 </div>
-                <p className="text-muted-foreground text-center">
+                <p className="text-white/60 text-center font-medium">
                   Wygenerowana treść pojawi się tutaj
                 </p>
               </div>
@@ -377,17 +385,17 @@ const SocialMediaGenerator = () => {
                 {generatedVersions.map((version) => (
                   <div
                     key={version.id}
-                    className="bg-muted/30 rounded-xl p-5 border border-border"
+                    className="bg-black/30 rounded-xl p-5 border border-white/10"
                   >
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-sm font-medium text-primary">
+                      <span className="text-sm font-bold text-primary">
                         Wersja {version.id}
                       </span>
                       <Button
                         variant="ghost"
                         size="sm"
                         onClick={() => handleCopy(version.id, version.content)}
-                        className="h-8 px-3"
+                        className="h-8 px-3 text-white/70 hover:text-white hover:bg-white/10"
                       >
                         {copiedId === version.id ? (
                           <Check className="w-4 h-4 text-accent" />
@@ -396,7 +404,7 @@ const SocialMediaGenerator = () => {
                         )}
                       </Button>
                     </div>
-                    <p className="text-foreground leading-relaxed whitespace-pre-wrap">
+                    <p className="text-white/90 leading-relaxed whitespace-pre-wrap">
                       {version.content}
                     </p>
                   </div>
