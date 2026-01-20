@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Image, Scissors, Paintbrush, Mountain, Layers, ArrowUp, Download } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Image, Scissors, Paintbrush, Mountain, Layers, ArrowUp, Download, ChevronRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import workflowImage from "@/assets/workflow-example.jpg";
 import referenceImage from "@/assets/reference.jpg";
@@ -39,282 +39,179 @@ const WorkflowSection = () => {
     "16:9 Banner Sklep"
   ];
 
-  const exampleImages = [
-    example1,
-    example2,
-    example3,
-    example4,
-    example5,
-    example6,
-    example8,
-    example9,
-  ];
-
-  const creationImages = [
-    creation1,
-    creation2,
-    creation3,
-    creation4,
-    creation5,
-    creation6,
-    creation7,
-    creation8,
-  ];
+  const exampleImages = [example1, example2, example3, example4, example5, example6, example8, example9];
+  const creationImages = [creation1, creation2, creation3, creation4, creation5, creation6, creation7, creation8];
 
   return (
-    <section className="py-20 px-6 bg-gradient-grid relative overflow-hidden">
-      <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
-          Jak działa Freepik Spaces
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-          Freepik Spaces to narzędzie node-based, gdzie łączymy blok po bloku działania AI: background removal, style presets, generacja scen, consistency filters, upscaling i output w wielu rozmiarach.
-        </p>
+    <section className="py-20 px-6 bg-section-gradient">
+      <div className="max-w-6xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16 animate-fade-up">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Jak działa <span className="text-gradient">Freepik Spaces</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Narzędzie node-based, gdzie łączymy blok po bloku: background removal, style presets, generacja scen, consistency filters, upscaling i output w wielu rozmiarach.
+          </p>
+        </div>
 
-        <div className="mb-12">
-          <div className="flex justify-center mb-8">
+        {/* Furniture Set Image */}
+        <div className="mb-16 animate-fade-up delay-100">
+          <div className="rounded-2xl overflow-hidden shadow-xl border border-border">
             <img 
               src={furnitureSet} 
-              alt="Furniture set example Freepik Spaces" 
-              className="max-w-full h-auto rounded-lg shadow-glow border border-border/50"
+              alt="Furniture set example" 
+              className="w-full h-auto"
               loading="lazy"
             />
           </div>
         </div>
 
-        <div className="mb-12">
-          <h3 className="text-2xl font-semibold mb-6 text-center">
+        {/* Workflow Image */}
+        <div className="mb-16 animate-fade-up delay-200">
+          <h3 className="text-2xl font-semibold text-foreground text-center mb-6">
             Przykładowe Workflow
           </h3>
-          <div className="flex justify-center mb-8">
+          <div className="rounded-2xl overflow-hidden shadow-xl border border-border">
             <img 
               src={workflowImage} 
-              alt="Przykładowe workflow Freepik Spaces" 
-              className="max-w-full h-auto rounded-lg shadow-glow border border-border/50"
+              alt="Przykładowe workflow" 
+              className="w-full h-auto"
               loading="lazy"
             />
           </div>
         </div>
 
-        <div className="mb-12">
-          <h3 className="text-2xl font-semibold mb-8 text-center">
+        {/* Creations Carousel */}
+        <div className="mb-16 animate-fade-up delay-300">
+          <h3 className="text-2xl font-semibold text-foreground text-center mb-8">
             Efekty - Generacje
           </h3>
           <Carousel className="w-full max-w-5xl mx-auto">
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-4">
               {creationImages.map((image, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1">
-                    <Card className="border-border/50 overflow-hidden hover-scale transition-all duration-300">
-                      <CardContent className="p-0">
-                        <img 
-                          src={image} 
-                          alt={`Przykład generacji ${index + 1}`}
-                          className="w-full h-auto object-cover animate-fade-in"
-                          loading="lazy"
-                        />
-                      </CardContent>
-                    </Card>
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="rounded-xl overflow-hidden shadow-lg border border-border card-hover">
+                    <img 
+                      src={image} 
+                      alt={`Przykład generacji ${index + 1}`}
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="transition-all duration-200 hover:scale-110" />
-            <CarouselNext className="transition-all duration-200 hover:scale-110" />
+            <CarouselPrevious className="hover:bg-primary hover:text-primary-foreground transition-colors" />
+            <CarouselNext className="hover:bg-primary hover:text-primary-foreground transition-colors" />
           </Carousel>
         </div>
 
+        {/* Workflow Steps */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold mb-3 text-center bg-gradient-to-r from-neon-blue via-neon-purple to-cyan-400 bg-clip-text text-transparent">
+          <h3 className="text-2xl font-semibold text-foreground text-center mb-4">
             Przykładowy Workflow dla e-commerce
           </h3>
           <p className="text-center text-muted-foreground mb-12 text-sm uppercase tracking-wider">
             AI-Powered Automation
           </p>
           
-          {/* Desktop: Horizontal Layout */}
-          <div className="hidden lg:block relative">
-            <div className="relative flex items-center justify-between px-8">
-              {/* Connecting Line */}
-              <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-neon-blue via-neon-purple to-cyan-400 opacity-30 blur-sm" 
-                   style={{ transform: 'translateY(-50%)', zIndex: 0 }} />
-              <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-neon-blue via-neon-purple to-cyan-400" 
-                   style={{ transform: 'translateY(-50%)', zIndex: 0 }} />
-              
-              {workflowSteps.map((step, index) => {
-                const Icon = step.icon;
-                return (
-                  <div key={index} className="relative flex-1 flex justify-center" style={{ zIndex: 1 }}>
-                    <div className="group relative">
-                      {/* Card */}
-                      <div className="relative bg-card/40 backdrop-blur-md border border-border/50 rounded-xl p-6 
-                                    hover:border-primary/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] 
-                                    transition-all duration-300 hover:-translate-y-2 w-36 h-44 flex flex-col items-center">
-                        {/* Icon Circle */}
-                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue via-neon-purple to-cyan-400 
-                                      flex items-center justify-center mb-3 shadow-glow group-hover:scale-110 transition-transform duration-300">
-                          <Icon className="w-8 h-8 text-white" />
-                        </div>
-                        
-                        {/* Step Number */}
-                        <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-gradient-to-r from-cyan-400 to-neon-blue 
-                                      flex items-center justify-center text-xs font-bold shadow-glow">
-                          {step.step}
-                        </div>
-                        
-                        {/* Content */}
-                        <div className="text-center flex-1 flex flex-col justify-center">
-                          <h4 className="text-xs font-bold mb-1 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
-                            {step.title}
-                          </h4>
-                          <p className="text-[10px] text-muted-foreground leading-tight">
-                            {step.description}
-                          </p>
-                        </div>
-                      </div>
+          {/* Desktop Steps */}
+          <div className="hidden lg:flex items-center justify-between gap-2">
+            {workflowSteps.map((step, index) => {
+              const Icon = step.icon;
+              return (
+                <div key={index} className="flex items-center">
+                  <div className="bg-card rounded-xl p-4 border border-border shadow-md card-hover text-center min-w-[120px]">
+                    <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-primary" />
                     </div>
+                    <div className="text-xs font-medium text-primary mb-1">Krok {step.step}</div>
+                    <h4 className="text-sm font-semibold text-foreground mb-1">{step.title}</h4>
+                    <p className="text-xs text-muted-foreground">{step.description}</p>
                   </div>
-                );
-              })}
-            </div>
+                  {index < workflowSteps.length - 1 && (
+                    <ChevronRight className="w-5 h-5 text-muted-foreground mx-1 flex-shrink-0" />
+                  )}
+                </div>
+              );
+            })}
           </div>
 
-          {/* Tablet: Wrapped Horizontal Layout */}
-          <div className="hidden md:block lg:hidden relative">
-            <div className="grid grid-cols-4 gap-6 px-4">
-              {workflowSteps.map((step, index) => {
-                const Icon = step.icon;
-                return (
-                  <div key={index} className="relative">
-                    <div className="group relative">
-                      <div className="relative bg-card/40 backdrop-blur-md border border-border/50 rounded-xl p-4 
-                                    hover:border-primary/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] 
-                                    transition-all duration-300 hover:-translate-y-2 h-40 flex flex-col items-center">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue via-neon-purple to-cyan-400 
-                                      flex items-center justify-center mb-2 shadow-glow group-hover:scale-110 transition-transform duration-300">
-                          <Icon className="w-6 h-6 text-white" />
-                        </div>
-                        
-                        <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-gradient-to-r from-cyan-400 to-neon-blue 
-                                      flex items-center justify-center text-xs font-bold shadow-glow">
-                          {step.step}
-                        </div>
-                        
-                        <div className="text-center flex-1 flex flex-col justify-center">
-                          <h4 className="text-xs font-bold mb-1 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
-                            {step.title}
-                          </h4>
-                          <p className="text-[9px] text-muted-foreground leading-tight">
-                            {step.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+          {/* Mobile Steps */}
+          <div className="lg:hidden space-y-4">
+            {workflowSteps.map((step, index) => {
+              const Icon = step.icon;
+              return (
+                <div key={index} className="bg-card rounded-xl p-4 border border-border shadow-md flex items-center gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-6 h-6 text-primary" />
                   </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Mobile: Vertical Layout */}
-          <div className="block md:hidden relative">
-            <div className="relative space-y-4 px-4">
-              {/* Vertical Connecting Line */}
-              <div className="absolute left-12 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neon-blue via-neon-purple to-cyan-400 opacity-30 blur-sm" />
-              <div className="absolute left-12 top-0 bottom-0 w-px bg-gradient-to-b from-neon-blue via-neon-purple to-cyan-400" />
-              
-              {workflowSteps.map((step, index) => {
-                const Icon = step.icon;
-                return (
-                  <div key={index} className="relative pl-8">
-                    <div className="group relative">
-                      <div className="relative bg-card/40 backdrop-blur-md border border-border/50 rounded-xl p-4 
-                                    hover:border-primary/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] 
-                                    transition-all duration-300">
-                        <div className="flex items-center gap-4">
-                          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-neon-blue via-neon-purple to-cyan-400 
-                                        flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-300 relative">
-                            <Icon className="w-7 h-7 text-white" />
-                            <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-neon-blue 
-                                          flex items-center justify-center text-xs font-bold shadow-glow">
-                              {step.step}
-                            </div>
-                          </div>
-                          
-                          <div className="flex-1">
-                            <h4 className="text-sm font-bold mb-1 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
-                              {step.title}
-                            </h4>
-                            <p className="text-xs text-muted-foreground">
-                              {step.description}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="flex-1">
+                    <div className="text-xs font-medium text-primary mb-1">Krok {step.step}</div>
+                    <h4 className="text-sm font-semibold text-foreground">{step.title}</h4>
+                    <p className="text-xs text-muted-foreground">{step.description}</p>
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-8 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10 mb-12">
-          <h3 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+        {/* Output Formats */}
+        <div className="bg-card rounded-2xl p-8 border border-border shadow-lg mb-16 animate-fade-up">
+          <h3 className="text-xl font-semibold text-foreground text-center mb-6">
             Formaty Wyjściowe
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {outputFormats.map((format, index) => (
               <div 
                 key={index}
-                className="p-4 bg-card/50 backdrop-blur-sm rounded-lg text-center border border-border/50 hover:border-primary/50 transition-all duration-300"
+                className="p-4 bg-muted/50 rounded-xl text-center border border-border hover:border-primary/50 transition-colors"
               >
-                <p className="font-medium text-sm">{format}</p>
+                <p className="font-medium text-sm text-foreground">{format}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mb-8">
-          <h3 className="text-2xl font-semibold mb-8 text-center">
+        {/* Reference & Examples */}
+        <div className="animate-fade-up">
+          <h3 className="text-2xl font-semibold text-foreground text-center mb-8">
             Efekty - Przykłady
           </h3>
           
-          <div className="mb-8">
-            <h4 className="text-xl font-semibold mb-4 text-center">
+          <div className="mb-8 max-w-md mx-auto">
+            <h4 className="text-lg font-medium text-foreground text-center mb-4">
               Obraz Referencyjny
             </h4>
-            <div className="flex justify-center mb-8">
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-border">
               <img 
                 src={referenceImage} 
-                alt="Reference image Freepik Spaces" 
-                className="max-w-full h-auto rounded-lg shadow-glow border border-border/50"
+                alt="Reference image" 
+                className="w-full h-auto"
                 loading="lazy"
               />
             </div>
           </div>
 
           <Carousel className="w-full max-w-5xl mx-auto">
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-4">
               {exampleImages.map((image, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1">
-                    <Card className="border-border/50 overflow-hidden hover-scale transition-all duration-300">
-                      <CardContent className="p-0">
-                        <img 
-                          src={image} 
-                          alt={`Przykład ${index + 1}`}
-                          className="w-full h-auto object-cover animate-fade-in"
-                          loading="lazy"
-                        />
-                      </CardContent>
-                    </Card>
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="rounded-xl overflow-hidden shadow-lg border border-border card-hover">
+                    <img 
+                      src={image} 
+                      alt={`Przykład ${index + 1}`}
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="transition-all duration-200 hover:scale-110" />
-            <CarouselNext className="transition-all duration-200 hover:scale-110" />
+            <CarouselPrevious className="hover:bg-primary hover:text-primary-foreground transition-colors" />
+            <CarouselNext className="hover:bg-primary hover:text-primary-foreground transition-colors" />
           </Carousel>
         </div>
       </div>

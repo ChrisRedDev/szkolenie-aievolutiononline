@@ -1,6 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Bot, Zap, Target, ExternalLink } from "lucide-react";
+import { Bot, Zap, Target, ExternalLink, Check } from "lucide-react";
 
 const PromptBuilder = () => {
   const capabilities = [
@@ -23,134 +22,118 @@ const PromptBuilder = () => {
     "Styl w białym tle"
   ];
 
+  const steps = [
+    { icon: Zap, title: "Krok 1", description: "Wrzuć zdjęcie produktu do systemu" },
+    { icon: Bot, title: "Krok 2", description: "Agent analizuje kształt i dopasowuje model" },
+    { icon: Target, title: "Krok 3", description: "Otrzymujesz 20-40 gotowych promptów" },
+  ];
+
   return (
-    <section className="py-20 px-6 bg-gradient-glow bg-grid-small relative overflow-hidden">
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-12">
-          <div className="flex justify-center mb-4">
-            <div className="p-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-2xl neon-glow">
-              <Bot className="w-12 h-12" />
-            </div>
+    <section className="py-20 px-6 bg-background">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16 animate-fade-up">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
+            <Bot className="w-8 h-8 text-primary" />
           </div>
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
-            Prompt Builder AI – GPT + Gemini
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Prompt Builder AI – <span className="text-gradient">GPT + Gemini</span>
           </h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto">
-            Stworzyliśmy dedykowanego agenta AI opartego o GPT oraz Gemini, który generuje gotowe prompty dla użytkownika.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Dedykowany agent AI oparty o GPT oraz Gemini, który generuje gotowe prompty dla użytkownika.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-6 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10 hover:border-primary/30 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-primary/20 rounded-lg">
-                <Zap className="w-5 h-5 text-primary" />
+        {/* Steps */}
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          {steps.map((step, index) => (
+            <div 
+              key={index}
+              className="bg-card rounded-2xl p-6 border border-border shadow-md card-hover text-center animate-fade-up"
+              style={{ animationDelay: `${(index + 1) * 100}ms` }}
+            >
+              <div className="w-14 h-14 mx-auto mb-4 bg-primary/10 rounded-xl flex items-center justify-center">
+                <step.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="text-lg font-bold">Krok 1</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-2">{step.title}</h3>
+              <p className="text-sm text-muted-foreground">{step.description}</p>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Wrzuć zdjęcie produktu do systemu
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-6 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10 hover:border-primary/30 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-primary/20 rounded-lg">
-                <Bot className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-lg font-bold">Krok 2</h3>
-            </div>
-            <p className="text-sm text-muted-foreground">
-              Agent analizuje kształt i dopasowuje model
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-6 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10 hover:border-primary/30 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-primary/20 rounded-lg">
-                <Target className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-lg font-bold">Krok 3</h3>
-            </div>
-            <p className="text-sm text-muted-foreground">
-              Otrzymujesz 20-40 gotowych promptów
-            </p>
-          </div>
+          ))}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-8 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10">
-            <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+        {/* Capabilities & Types */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="bg-card rounded-2xl p-8 border border-border shadow-lg animate-fade-up delay-200">
+            <h3 className="text-xl font-semibold text-foreground mb-6">
               Co agent potrafi rozpoznać?
             </h3>
-            <div className="space-y-3">
+            <ul className="space-y-3">
               {capabilities.map((capability, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                  <p className="text-sm text-muted-foreground">{capability}</p>
-                </div>
+                <li key={index} className="flex items-center gap-3">
+                  <div className="p-1 bg-secondary/10 rounded-full">
+                    <Check className="w-3 h-3 text-secondary" />
+                  </div>
+                  <span className="text-muted-foreground">{capability}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-8 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10">
-            <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <div className="bg-card rounded-2xl p-8 border border-border shadow-lg animate-fade-up delay-300">
+            <h3 className="text-xl font-semibold text-foreground mb-6">
               Typy generowanych promptów
             </h3>
             <div className="grid grid-cols-2 gap-3">
               {promptTypes.map((type, index) => (
                 <div 
                   key={index}
-                  className="p-3 bg-card/50 backdrop-blur-sm rounded-lg text-center border border-border/50 hover:border-primary/50 transition-all duration-300"
+                  className="p-3 bg-muted/50 rounded-xl text-center border border-border hover:border-primary/50 transition-colors"
                 >
-                  <p className="text-sm font-medium">{type}</p>
+                  <p className="text-sm font-medium text-foreground">{type}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <Card className="mt-8 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10 border-primary/30 neon-glow">
-          <CardContent className="p-6">
-            <p className="text-center text-sm">
-              <span className="font-semibold text-primary">Prompt Builder zwraca gotowe prompty</span>, które generują obrazy w Freepik z jednym kliknięciem.
-            </p>
-          </CardContent>
-        </Card>
+        {/* Info Card */}
+        <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 mb-12 text-center animate-fade-up delay-400">
+          <p className="text-foreground">
+            <span className="font-semibold text-primary">Prompt Builder zwraca gotowe prompty</span>, które generują obrazy w Freepik z jednym kliknięciem.
+          </p>
+        </div>
 
-        <div className="mt-12">
-          <h3 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
+        {/* Agent Buttons */}
+        <div className="text-center animate-fade-up delay-500">
+          <h3 className="text-xl font-semibold text-foreground mb-6">
             Agenci AI Workflow
           </h3>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
             <Button 
               asChild 
               size="lg" 
-              className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 h-auto py-4"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground btn-glow h-14 text-base group"
             >
-              <a href="https://gemini.google.com/gem/1N_bDMpbu0uDf0tsYPrEI6XIHRYT9PTfQ?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
-                <span className="flex items-center gap-2">
-                  Gemini Workflow Agent
-                  <ExternalLink className="w-5 h-5" />
-                </span>
+              <a href="https://gemini.google.com/gem/1N_bDMpbu0uDf0tsYPrEI6XIHRYT9PTfQ?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                Gemini Workflow Agent
+                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
             
             <Button 
               asChild 
               size="lg" 
-              className="bg-gradient-to-r from-green-600 to-emerald-500 hover:from-green-700 hover:to-emerald-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 h-auto py-4"
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground h-14 text-base group"
             >
-              <a href="https://chatgpt.com/g/g-691f773244d48191b239aa8fccbd7ab4-ai-evolution-agent-frepik-workflow" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
-                <span className="flex items-center gap-2">
-                  ChatGPT Workflow Agent
-                  <ExternalLink className="w-5 h-5" />
-                </span>
+              <a href="https://chatgpt.com/g/g-691f773244d48191b239aa8fccbd7ab4-ai-evolution-agent-frepik-workflow" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                ChatGPT Workflow Agent
+                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
           </div>
-          <p className="text-center text-muted-foreground mt-6 text-sm max-w-2xl mx-auto">
-            Warto testować jeden i drugi model, aby znaleźć najlepsze rozwiązanie dla Twoich potrzeb.
+          <p className="text-sm text-muted-foreground mt-6 max-w-md mx-auto">
+            Warto testować oba modele, aby znaleźć najlepsze rozwiązanie dla Twoich potrzeb.
           </p>
         </div>
       </div>

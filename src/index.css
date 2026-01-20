@@ -2,60 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Modern SaaS Design System - Light Theme
+   All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 220 30% 5%;
-    --foreground: 210 100% 98%;
+    /* Light Theme - Clean & Professional */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
 
-    --card: 220 25% 8%;
-    --card-foreground: 210 100% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
 
-    --popover: 220 25% 8%;
-    --popover-foreground: 210 100% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
 
-    --primary: 195 100% 50%;
-    --primary-foreground: 220 30% 5%;
+    /* Primary CTA - Strong Blue */
+    --primary: 217 91% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 100% 60%;
-    --secondary-foreground: 210 100% 98%;
+    /* Secondary - Teal Accent */
+    --secondary: 171 100% 39%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 20% 15%;
-    --muted-foreground: 210 20% 65%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 270 100% 60%;
-    --accent-foreground: 210 100% 98%;
+    --accent: 217 91% 50%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 100% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 15%;
-    --ring: 195 100% 50%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 50%;
 
     --radius: 0.75rem;
 
-    /* Futuristic neon colors */
-    --neon-blue: 195 100% 50%;
-    --neon-purple: 270 100% 60%;
-    --neon-cyan: 180 100% 50%;
+    /* Brand Colors */
+    --brand-blue: 217 91% 50%;
+    --brand-teal: 171 100% 39%;
+    --brand-dark: 0 0% 5%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(195 100% 50%), hsl(270 100% 60%));
-    --gradient-glow: linear-gradient(180deg, hsl(195 100% 50% / 0.1), transparent);
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 50%), hsl(171 100% 39%));
+    --gradient-hero: linear-gradient(180deg, hsl(217 91% 50% / 0.05) 0%, transparent 50%);
     
     /* Shadows */
-    --shadow-neon: 0 0 20px hsl(195 100% 50% / 0.3);
-    --shadow-glow: 0 0 40px hsl(195 100% 50% / 0.2);
-    --shadow-card: 0 10px 30px -10px hsl(195 100% 50% / 0.2);
+    --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 8px 10px -6px hsl(0 0% 0% / 0.1);
+    --shadow-primary: 0 4px 14px hsl(217 91% 50% / 0.25);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   * {
@@ -63,90 +70,127 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
-  
-  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 }
 
 @layer utilities {
-  .neon-glow {
-    box-shadow: var(--shadow-neon);
+  /* Primary Button Glow */
+  .btn-glow {
+    box-shadow: var(--shadow-primary);
+    transition: var(--transition-smooth);
   }
   
-  .text-neon {
-    color: hsl(var(--neon-blue));
-    text-shadow: 0 0 10px hsl(var(--neon-blue) / 0.5);
+  .btn-glow:hover {
+    box-shadow: 0 6px 20px hsl(217 91% 50% / 0.35);
+    transform: translateY(-2px);
+  }
+
+  /* Card Hover Effect */
+  .card-hover {
+    transition: var(--transition-smooth);
   }
   
-  .bg-gradient-primary {
+  .card-hover:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px);
+  }
+
+  /* Text Gradient */
+  .text-gradient {
     background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Icon Hover */
+  .icon-hover {
+    transition: var(--transition-smooth);
   }
   
-  /* Grid Pattern Backgrounds */
-  .bg-grid-pattern {
+  .icon-hover:hover {
+    transform: scale(1.1);
+    color: hsl(var(--primary));
+  }
+
+  /* Subtle Grid Background */
+  .bg-grid-subtle {
     background-image: 
-      linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px);
-    background-size: 40px 40px;
+      linear-gradient(to right, hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
   }
-  
-  .bg-grid-small {
-    background-image: 
-      linear-gradient(to right, hsl(var(--border) / 0.2) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--border) / 0.2) 1px, transparent 1px);
-    background-size: 20px 20px;
-  }
-  
-  /* Gradient Backgrounds with Grid */
-  .bg-gradient-grid {
-    background-image: 
-      radial-gradient(circle at 50% 0%, hsl(var(--neon-blue) / 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 100% 100%, hsl(var(--neon-purple) / 0.1) 0%, transparent 50%),
-      linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
-  }
-  
-  .bg-gradient-radial {
-    background: radial-gradient(circle at 50% 50%, hsl(var(--neon-blue) / 0.1) 0%, hsl(var(--background)) 50%);
-  }
-  
-  .bg-gradient-subtle {
-    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted) / 0.2) 100%);
-  }
-  
-  .bg-gradient-glow {
+
+  /* Hero Gradient Background */
+  .bg-hero-gradient {
     background: 
-      radial-gradient(circle at 20% 20%, hsl(var(--neon-blue) / 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, hsl(var(--neon-purple) / 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(217 91% 50% / 0.08) 0%, transparent 50%),
       hsl(var(--background));
   }
-  
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+
+  /* Section Gradient */
+  .bg-section-gradient {
+    background: linear-gradient(180deg, hsl(var(--muted) / 0.3) 0%, hsl(var(--background)) 100%);
   }
-  
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
+
+  /* Fade In Animation */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
-    50% {
-      transform: translateY(-20px);
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
-  
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
+
+  /* Stagger delay utilities */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+
+  /* Scroll reveal */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
-  
-  @keyframes pulse-glow {
-    0%, 100% {
-      box-shadow: 0 0 20px hsl(var(--neon-blue) / 0.3);
-    }
-    50% {
-      box-shadow: 0 0 40px hsl(var(--neon-blue) / 0.6);
-    }
+
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Smooth underline for links */
+  .link-underline {
+    position: relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: hsl(var(--primary));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-out;
+  }
+
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
   }
 }

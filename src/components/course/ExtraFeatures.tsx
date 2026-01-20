@@ -1,5 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Layers, Grid3x3, ImageIcon, Maximize, Zap, Video, Film, Clapperboard, PlayCircle } from "lucide-react";
+import { Layers, Grid3x3, ImageIcon, Maximize, Zap, Video } from "lucide-react";
 
 const ExtraFeatures = () => {
   const features = [
@@ -31,32 +30,37 @@ const ExtraFeatures = () => {
     {
       icon: Video,
       title: "Generowanie Video AI",
-      description: "Twórz dynamiczne wideo produktów z Kling AI, VEO 3, Runway Gen-3, Wan",
+      description: "Twórz dynamiczne wideo z Kling AI, VEO 3, Runway Gen-3, Wan",
     },
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-glow bg-grid-small relative overflow-hidden">
-      <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
-          Nasze workflow daje Ci niesamowite możliwości.
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto text-lg leading-relaxed">
-          Twoje reklamy mogą wyglądać lepiej już dziś. Jedno narzędzie robi robotę całego zespołu. Ulepszysz zdjęcia produktów i podniesiesz sprzedaż. Oszczędzasz mnóstwo kasy.
-        </p>
+    <section className="py-20 px-6 bg-background">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16 animate-fade-up">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Niesamowite <span className="text-gradient">możliwości</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Jedno narzędzie robi robotę całego zespołu. Ulepszysz zdjęcia produktów i podniesiesz sprzedaż.
+          </p>
+        </div>
 
+        {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={index}
-                className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-6 backdrop-blur-sm border border-primary/20 shadow-lg shadow-primary/10 hover:border-primary/30 hover:scale-[1.02] transition-all duration-300 group"
+                className="bg-card rounded-2xl p-6 border border-border shadow-md card-hover animate-fade-up group"
+                style={{ animationDelay: `${(index + 1) * 50}ms` }}
               >
-                <div className="p-3 bg-primary/20 rounded-xl w-fit mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                  <Icon className="w-8 h-8 text-primary" />
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-bold mb-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <h3 className="text-lg font-semibold text-foreground mb-2">
                   {feature.title}
                 </h3>
                 <p className="text-sm text-muted-foreground">
