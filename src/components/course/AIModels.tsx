@@ -64,7 +64,9 @@ const AIModels = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-background">
+    <section className="py-20 px-6 bg-gradient-to-b from-background via-primary/5 to-background relative overflow-hidden">
+      {/* Mesh gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-mesh pointer-events-none opacity-50" />
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-up">

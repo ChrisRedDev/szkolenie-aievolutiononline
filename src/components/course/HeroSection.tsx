@@ -12,11 +12,11 @@ const HeroSection = () => {
             <span className="text-white/90">Video wprowadzające</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-2xl">
-            Pełna Automatyzacja{" "}
-            <span className="text-gradient-full">Workflow AI</span>
+            Twoja Fabryka{" "}
+            <span className="text-gradient-full">Kontentu AI</span>
           </h1>
           <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto font-medium leading-relaxed">
-            Odkryj jak Freepik Workspace i Spaces pozwalają budować maszynę do generowania nieograniczonego kontentu
+            Od jednego zdjęcia do setek gotowych materiałów marketingowych.
           </p>
         </div>
 

@@ -5,6 +5,7 @@ import FreepikFeatures from "@/components/course/FreepikFeatures";
 import ImportantLinks from "@/components/course/ImportantLinks";
 import AIModels from "@/components/course/AIModels";
 import WorkflowSection from "@/components/course/WorkflowSection";
+import FreepikSpaces from "@/components/course/FreepikSpaces";
 import PromptBuilder from "@/components/course/PromptBuilder";
 import ExtraFeatures from "@/components/course/ExtraFeatures";
 import SocialMediaGenerator from "@/components/course/SocialMediaGenerator";
@@ -33,6 +34,7 @@ const CoursePage = () => {
         <ImportantLinks />
         <AIModels />
         <WorkflowSection />
+        <FreepikSpaces />
         <PromptBuilder />
         <ExtraFeatures />
         <SocialMediaGenerator />
