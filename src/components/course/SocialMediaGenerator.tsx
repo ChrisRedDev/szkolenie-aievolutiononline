@@ -157,19 +157,15 @@ const SocialMediaGenerator = () => {
   };
 
   return (
-    <section className="relative py-24 px-6 overflow-hidden">
-      {/* Dynamic gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-primary/5 to-slate-950" />
-      <div className="absolute inset-0 bg-gradient-mesh" />
-      <div className="absolute inset-0 bg-grid-small opacity-20" />
+    <section className="relative py-24 px-6 overflow-hidden bg-gradient-to-br from-slate-950 via-fuchsia-950/15 to-slate-900">
+      {/* Fuchsia/Magenta accent glow */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-fuchsia-500/15 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-grid-small opacity-10" />
       
-      {/* Animated glow orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/15 rounded-full blur-3xl animate-pulse delay-500" />
-      
-      {/* Top and bottom gradient lines - enhanced */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
+      {/* Top and bottom gradient lines */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-fuchsia-500/40 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-pink-500/40 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header - Combined Post Creator + Generator */}

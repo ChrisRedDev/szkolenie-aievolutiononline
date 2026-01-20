@@ -22,7 +22,7 @@ const AIModels = () => {
       ]
     },
     {
-      name: "SeeDream 4.0",
+      name: "SeeDream",
       subtitle: "ByteDance Vision Model",
       iconImage: seedreamIcon,
       accentColor: "bg-violet-500",
@@ -64,9 +64,10 @@ const AIModels = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-background via-primary/5 to-background relative overflow-hidden">
-      {/* Mesh gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-mesh pointer-events-none opacity-50" />
+    <section className="py-20 px-6 bg-gradient-to-br from-slate-950 via-rose-950/15 to-slate-900 relative overflow-hidden">
+      {/* Rose/Pink accent glow */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-pink-500/8 rounded-full blur-3xl pointer-events-none" />
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-up">

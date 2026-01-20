@@ -43,10 +43,10 @@ const WorkflowSection = () => {
   const creationImages = [creation1, creation2, creation3, creation4, creation5, creation6, creation7, creation8];
 
   return (
-    <section id="workflow-section" className="py-20 px-6 bg-gradient-to-b from-muted/30 via-secondary/5 to-background relative overflow-hidden">
-      {/* Subtle accent glows */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="workflow-section" className="py-20 px-6 bg-gradient-to-br from-slate-900 via-cyan-950/20 to-slate-950 relative overflow-hidden">
+      {/* Cyan/Teal accent glows */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-cyan-500/12 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-up">
