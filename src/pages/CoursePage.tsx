@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuraBackground } from "@/components/ui/aura-background";
 import HeroSection from "@/components/course/HeroSection";
 import FreepikFeatures from "@/components/course/FreepikFeatures";
 import ImportantLinks from "@/components/course/ImportantLinks";
@@ -23,26 +22,25 @@ const CoursePage = () => {
   }, [navigate]);
 
   return (
-    <AuraBackground className="min-h-screen">
-      <div className="min-h-screen relative">
-        {/* Dark overlay for contrast and readability */}
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
-        
-        {/* Content */}
-        <div className="relative z-10">
-          <HeroSection />
-          <FreepikFeatures />
-          <ImportantLinks />
-          <AIModels />
-          <WorkflowSection />
-          <PromptBuilder />
-          <PostCreator />
-          <ExtraFeatures />
-          <SocialMediaGenerator />
-          <Footer />
-        </div>
+    <div className="min-h-screen relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      {/* Gradient overlays */}
+      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/15 via-transparent to-transparent pointer-events-none" />
+      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-secondary/10 via-transparent to-transparent pointer-events-none" />
+      
+      {/* Content */}
+      <div className="relative z-10">
+        <HeroSection />
+        <FreepikFeatures />
+        <ImportantLinks />
+        <AIModels />
+        <WorkflowSection />
+        <PromptBuilder />
+        <PostCreator />
+        <ExtraFeatures />
+        <SocialMediaGenerator />
+        <Footer />
       </div>
-    </AuraBackground>
+    </div>
   );
 };
 
