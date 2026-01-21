@@ -43,15 +43,12 @@ const WorkflowSection = () => {
   const creationImages = [creation1, creation2, creation3, creation4, creation5, creation6, creation7, creation8];
 
   return (
-    <section id="workflow-section" className="py-20 px-6 bg-gradient-to-br from-slate-900 via-cyan-950/20 to-slate-950 relative overflow-hidden">
-      {/* Cyan/Teal accent glows */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-cyan-500/12 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+    <section id="workflow-section" className="section-spacing px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Jak działa <span className="text-gradient">Freepik Spaces</span>
+            Jak działa <span className="text-secondary">Freepik Spaces</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Narzędzie node-based, gdzie łączymy blok po bloku: background removal, style presets, generacja scen, consistency filters, upscaling i output w wielu rozmiarach.
@@ -60,7 +57,7 @@ const WorkflowSection = () => {
 
         {/* Furniture Set Image */}
         <div className="mb-16 animate-fade-up delay-100">
-          <div className="rounded-2xl overflow-hidden shadow-xl border border-border">
+          <div className="rounded-xl overflow-hidden shadow-lg border border-border">
             <img 
               src={furnitureSet} 
               alt="Furniture set example" 
@@ -75,7 +72,7 @@ const WorkflowSection = () => {
           <h3 className="text-2xl font-semibold text-foreground text-center mb-6">
             Przykładowe Workflow
           </h3>
-          <div className="rounded-2xl overflow-hidden shadow-xl border border-border">
+          <div className="rounded-xl overflow-hidden shadow-lg border border-border">
             <img 
               src={workflowImage} 
               alt="Przykładowe workflow" 
@@ -94,7 +91,7 @@ const WorkflowSection = () => {
             <CarouselContent className="-ml-4">
               {creationImages.map((image, index) => (
                 <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="rounded-xl overflow-hidden shadow-lg border border-border card-hover">
+                  <div className="rounded-xl overflow-hidden shadow-md border border-border card-hover">
                     <img 
                       src={image} 
                       alt={`Przykład generacji ${index + 1}`}
@@ -105,8 +102,8 @@ const WorkflowSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hover:bg-primary hover:text-primary-foreground transition-colors" />
-            <CarouselNext className="hover:bg-primary hover:text-primary-foreground transition-colors" />
+            <CarouselPrevious className="hover:bg-secondary hover:text-secondary-foreground transition-colors" />
+            <CarouselNext className="hover:bg-secondary hover:text-secondary-foreground transition-colors" />
           </Carousel>
         </div>
 
@@ -125,11 +122,11 @@ const WorkflowSection = () => {
               const Icon = step.icon;
               return (
                 <div key={index} className="flex items-center">
-                  <div className="bg-card rounded-xl p-4 border border-border shadow-md card-hover text-center min-w-[120px]">
-                    <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-xl flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-primary" />
+                  <div className="saas-card p-4 text-center min-w-[120px]">
+                    <div className="icon-container mx-auto mb-3">
+                      <Icon className="w-5 h-5" />
                     </div>
-                    <div className="text-xs font-medium text-primary mb-1">Krok {step.step}</div>
+                    <div className="text-xs font-medium text-secondary mb-1">Krok {step.step}</div>
                     <h4 className="text-sm font-semibold text-foreground mb-1">{step.title}</h4>
                     <p className="text-xs text-muted-foreground">{step.description}</p>
                   </div>
@@ -146,12 +143,12 @@ const WorkflowSection = () => {
             {workflowSteps.map((step, index) => {
               const Icon = step.icon;
               return (
-                <div key={index} className="bg-card rounded-xl p-4 border border-border shadow-md flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-6 h-6 text-primary" />
+                <div key={index} className="saas-card p-4 flex items-center gap-4">
+                  <div className="icon-container flex-shrink-0">
+                    <Icon className="w-5 h-5" />
                   </div>
                   <div className="flex-1">
-                    <div className="text-xs font-medium text-primary mb-1">Krok {step.step}</div>
+                    <div className="text-xs font-medium text-secondary mb-1">Krok {step.step}</div>
                     <h4 className="text-sm font-semibold text-foreground">{step.title}</h4>
                     <p className="text-xs text-muted-foreground">{step.description}</p>
                   </div>
@@ -162,7 +159,7 @@ const WorkflowSection = () => {
         </div>
 
         {/* Output Formats */}
-        <div className="bg-card rounded-2xl p-8 border border-border shadow-lg mb-16 animate-fade-up">
+        <div className="saas-card p-8 mb-16 animate-fade-up">
           <h3 className="text-xl font-semibold text-foreground text-center mb-6">
             Formaty Wyjściowe
           </h3>
@@ -170,7 +167,7 @@ const WorkflowSection = () => {
             {outputFormats.map((format, index) => (
               <div 
                 key={index}
-                className="p-4 bg-muted/50 rounded-xl text-center border border-border hover:border-primary/50 transition-colors"
+                className="p-4 bg-muted rounded-xl text-center border border-border hover:border-secondary/30 transition-colors"
               >
                 <p className="font-medium text-sm text-foreground">{format}</p>
               </div>
@@ -188,7 +185,7 @@ const WorkflowSection = () => {
             <h4 className="text-lg font-medium text-foreground text-center mb-4">
               Obraz Referencyjny
             </h4>
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-border">
+            <div className="rounded-xl overflow-hidden shadow-lg border border-border">
               <img 
                 src={referenceImage} 
                 alt="Reference image" 
@@ -202,7 +199,7 @@ const WorkflowSection = () => {
             <CarouselContent className="-ml-4">
               {exampleImages.map((image, index) => (
                 <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="rounded-xl overflow-hidden shadow-lg border border-border card-hover">
+                  <div className="rounded-xl overflow-hidden shadow-md border border-border card-hover">
                     <img 
                       src={image} 
                       alt={`Przykład ${index + 1}`}
@@ -213,8 +210,8 @@ const WorkflowSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hover:bg-primary hover:text-primary-foreground transition-colors" />
-            <CarouselNext className="hover:bg-primary hover:text-primary-foreground transition-colors" />
+            <CarouselPrevious className="hover:bg-secondary hover:text-secondary-foreground transition-colors" />
+            <CarouselNext className="hover:bg-secondary hover:text-secondary-foreground transition-colors" />
           </Carousel>
         </div>
       </div>

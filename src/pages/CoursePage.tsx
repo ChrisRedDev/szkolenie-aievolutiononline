@@ -21,23 +21,16 @@ const CoursePage = () => {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      {/* Gradient overlays */}
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/15 via-transparent to-transparent pointer-events-none" />
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-secondary/10 via-transparent to-transparent pointer-events-none" />
-      
-      {/* Content */}
-      <div className="relative z-10">
-        <HeroSection />
-        <FreepikFeatures />
-        <AIModels />
-        <WorkflowSection />
-        <FreepikSpaces />
-        <PromptBuilder />
-        <ImportantLinks />
-        <SocialMediaGenerator />
-        <Footer />
-      </div>
+    <div className="min-h-screen bg-background">
+      <HeroSection />
+      <FreepikFeatures />
+      <AIModels />
+      <WorkflowSection />
+      <FreepikSpaces />
+      <PromptBuilder />
+      <ImportantLinks />
+      <SocialMediaGenerator />
+      <Footer />
     </div>
   );
 };
