@@ -36,79 +36,74 @@ const GatePage = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-secondary/15 via-transparent to-transparent" />
-
+    <div className="min-h-screen flex flex-col bg-background">
       {/* Header */}
-      <header className="relative z-10 w-full px-6 py-6">
+      <header className="w-full px-6 py-6 border-b border-border">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <img 
             src={logo} 
             alt="AI Evolution Polska" 
-            className="h-12 w-auto animate-fade-up drop-shadow-lg"
+            className="h-10 w-auto animate-fade-up"
           />
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="relative z-10 flex-1 flex items-center justify-center px-4 py-6 sm:px-6 sm:py-8">
-        <div className="w-full max-w-xl">
+      <main className="flex-1 flex items-center justify-center px-4 py-12 sm:px-6">
+        <div className="w-full max-w-lg">
           {/* Hero Text */}
-          <div className="text-center mb-6 sm:mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 glass-dark rounded-full text-xs sm:text-sm font-semibold mb-5 animate-fade-up border-neon">
-              <Bot className="w-4 h-4 text-primary" />
-              <span className="text-white">Szkolenie od AI Evolution Polska</span>
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 rounded-full text-sm font-semibold mb-6 animate-fade-up border border-secondary/20">
+              <Bot className="w-4 h-4 text-secondary" />
+              <span className="text-secondary">Szkolenie od AI Evolution Polska</span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-5 animate-fade-up tracking-tight drop-shadow-2xl leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 animate-fade-up tracking-tight leading-tight">
               Witaj w kursie{" "}
               <span className="text-gradient-full">Fabryki Kontentu AI</span>
             </h1>
             
-            <p className="text-base sm:text-lg text-white/90 animate-fade-up delay-100 max-w-md mx-auto font-medium leading-relaxed drop-shadow-lg">
+            <p className="text-base sm:text-lg text-muted-foreground animate-fade-up delay-100 max-w-md mx-auto leading-relaxed">
               Ten kurs przeprowadzi Cię od zera do działającej automatyzacji.
             </p>
           </div>
 
           {/* Features */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-6 sm:mb-8 animate-fade-up delay-200">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 animate-fade-up delay-200">
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="group flex flex-col items-center gap-2 px-3 py-3 sm:py-4 glass-dark rounded-xl text-xs font-medium border border-white/10 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-primary/10"
-                style={{ animationDelay: `${index * 150}ms` }}
+                className="group flex flex-col items-center gap-2 px-3 py-4 bg-card rounded-xl text-xs font-medium border border-border hover:border-secondary/30 transition-all duration-300 hover:shadow-md"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="relative">
-                  <feature.icon className="w-5 h-5 text-primary transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12" />
-                  <div className="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="icon-container w-10 h-10">
+                  <feature.icon className="w-5 h-5" />
                 </div>
-                <span className="text-white/90 text-center text-[10px] sm:text-xs leading-tight group-hover:text-white transition-colors duration-300">{feature.text}</span>
+                <span className="text-muted-foreground text-center text-[11px] sm:text-xs leading-tight group-hover:text-foreground transition-colors">{feature.text}</span>
               </div>
             ))}
           </div>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4 animate-fade-up delay-300">
-            <div className="glass-dark rounded-xl p-1 border-neon">
+            <div className="bg-card rounded-xl border border-border overflow-hidden">
               <Input
                 type="password"
                 placeholder="Wpisz kod dostępu"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="h-12 sm:h-14 bg-transparent border-0 text-center text-base sm:text-lg text-white tracking-wider focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-white/50"
+                className="h-14 bg-transparent border-0 text-center text-lg text-foreground tracking-wider focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/50"
               />
             </div>
 
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full h-12 sm:h-14 bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 text-white text-base sm:text-lg font-bold ai-glow group transition-all duration-300 rounded-xl"
+              className="w-full h-14 bg-primary hover:bg-primary/90 text-primary-foreground text-base font-semibold group transition-all duration-300 rounded-xl shadow-md hover:shadow-lg"
             >
               {isLoading ? (
                 <span className="flex items-center gap-2">
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
                   Weryfikacja...
                 </span>
               ) : (
@@ -120,41 +115,37 @@ const GatePage = () => {
             </Button>
           </form>
 
-          {/* Hero Image with Glowing Frame */}
-          <div className="mt-8 sm:mt-10 animate-fade-up delay-400">
+          {/* Hero Image */}
+          <div className="mt-10 animate-fade-up delay-400">
             <div className="relative group">
-              {/* Outer glow */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-2xl blur-lg opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-              {/* Inner glow pulse */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-secondary to-accent rounded-2xl opacity-40 animate-pulse" />
-              {/* Image container */}
-              <div className="relative bg-slate-900/80 rounded-xl p-1 border border-white/20">
+              <div className="absolute -inset-1 bg-gradient-to-r from-secondary/20 to-primary/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-500" />
+              <div className="relative bg-card rounded-xl border border-border overflow-hidden shadow-lg">
                 <img 
                   src={heroImage} 
                   alt="Fabryka Kontentu AI" 
-                  className="w-full h-auto rounded-lg"
+                  className="w-full h-auto"
                 />
               </div>
             </div>
           </div>
 
           {/* Trust indicator */}
-          <p className="text-center text-sm text-white/70 mt-6 sm:mt-8 animate-fade-up delay-500 font-medium">
+          <p className="text-center text-sm text-muted-foreground mt-8 animate-fade-up delay-500">
             Dołącz do społeczności twórców AI Evolution Polska
           </p>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 py-6 px-6 text-center">
+      <footer className="py-6 px-6 text-center border-t border-border">
         <div className="flex justify-center mb-4">
           <img 
             src={logo} 
             alt="AI Evolution" 
-            className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+            className="h-8 w-auto opacity-60 hover:opacity-100 transition-opacity"
           />
         </div>
-        <p className="text-sm text-white/50 font-medium">
+        <p className="text-sm text-muted-foreground">
           © 2025 AI Evolution Polska
         </p>
       </footer>

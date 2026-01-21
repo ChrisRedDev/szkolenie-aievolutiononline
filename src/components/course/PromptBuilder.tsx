@@ -29,18 +29,15 @@ const PromptBuilder = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-slate-950 via-violet-950/20 to-slate-900 relative overflow-hidden">
-      {/* Violet/Purple accent glow */}
-      <div className="absolute top-0 left-1/3 w-96 h-96 bg-violet-500/12 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/8 rounded-full blur-3xl pointer-events-none" />
+    <section className="section-spacing px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
-            <Bot className="w-8 h-8 text-primary" />
+          <div className="icon-container w-16 h-16 mx-auto mb-6">
+            <Bot className="w-8 h-8" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Prompt Builder AI – <span className="text-gradient">GPT + Gemini</span>
+            Prompt Builder AI – <span className="text-secondary">GPT + Gemini</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Dedykowany agent AI oparty o GPT oraz Gemini, który generuje gotowe prompty dla użytkownika.
@@ -52,11 +49,11 @@ const PromptBuilder = () => {
           {steps.map((step, index) => (
             <div 
               key={index}
-              className="bg-card rounded-2xl p-6 border border-border shadow-md card-hover text-center animate-fade-up"
+              className="saas-card p-6 text-center animate-fade-up"
               style={{ animationDelay: `${(index + 1) * 100}ms` }}
             >
-              <div className="w-14 h-14 mx-auto mb-4 bg-primary/10 rounded-xl flex items-center justify-center">
-                <step.icon className="w-7 h-7 text-primary" />
+              <div className="icon-container w-14 h-14 mx-auto mb-4">
+                <step.icon className="w-7 h-7" />
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2">{step.title}</h3>
               <p className="text-sm text-muted-foreground">{step.description}</p>
@@ -66,7 +63,7 @@ const PromptBuilder = () => {
 
         {/* Capabilities & Types */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-card rounded-2xl p-8 border border-border shadow-lg animate-fade-up delay-200">
+          <div className="saas-card p-8 animate-fade-up delay-200">
             <h3 className="text-xl font-semibold text-foreground mb-6">
               Co agent potrafi rozpoznać?
             </h3>
@@ -82,7 +79,7 @@ const PromptBuilder = () => {
             </ul>
           </div>
 
-          <div className="bg-card rounded-2xl p-8 border border-border shadow-lg animate-fade-up delay-300">
+          <div className="saas-card p-8 animate-fade-up delay-300">
             <h3 className="text-xl font-semibold text-foreground mb-6">
               Typy generowanych promptów
             </h3>
@@ -90,7 +87,7 @@ const PromptBuilder = () => {
               {promptTypes.map((type, index) => (
                 <div 
                   key={index}
-                  className="p-3 bg-muted/50 rounded-xl text-center border border-border hover:border-primary/50 transition-colors"
+                  className="p-3 bg-muted rounded-xl text-center border border-border hover:border-secondary/30 transition-colors"
                 >
                   <p className="text-sm font-medium text-foreground">{type}</p>
                 </div>
@@ -100,9 +97,9 @@ const PromptBuilder = () => {
         </div>
 
         {/* Info Card */}
-        <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 mb-12 text-center animate-fade-up delay-400">
+        <div className="bg-secondary/5 border border-secondary/20 rounded-xl p-6 mb-12 text-center animate-fade-up delay-400">
           <p className="text-foreground">
-            <span className="font-semibold text-primary">Prompt Builder zwraca gotowe prompty</span>, które generują obrazy w Freepik z jednym kliknięciem.
+            <span className="font-semibold text-secondary">Prompt Builder zwraca gotowe prompty</span>, które generują obrazy w Freepik z jednym kliknięciem.
           </p>
         </div>
 
@@ -115,7 +112,7 @@ const PromptBuilder = () => {
             <Button 
               asChild 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground btn-glow h-14 text-base group"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-md h-12 group"
             >
               <a href="https://gemini.google.com/gem/1N_bDMpbu0uDf0tsYPrEI6XIHRYT9PTfQ?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                 Gemini Workflow Agent
@@ -127,7 +124,7 @@ const PromptBuilder = () => {
               asChild 
               size="lg" 
               variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground h-14 text-base group"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground h-12 group"
             >
               <a href="https://chatgpt.com/g/g-691f773244d48191b239aa8fccbd7ab4-ai-evolution-agent-frepik-workflow" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                 ChatGPT Workflow Agent

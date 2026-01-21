@@ -1,6 +1,5 @@
 import { Check } from "lucide-react";
 import nanoBananaIcon from "@/assets/nano-banana-icon.png";
-import mysticIcon from "@/assets/mystic-icon.png";
 import klingAiIcon from "@/assets/kling-ai-icon.png";
 import seedreamIcon from "@/assets/seedream-icon.png";
 import aiIcon from "@/assets/ai-icon.png";
@@ -64,15 +63,12 @@ const AIModels = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-slate-950 via-rose-950/15 to-slate-900 relative overflow-hidden">
-      {/* Rose/Pink accent glow */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-pink-500/8 rounded-full blur-3xl pointer-events-none" />
+    <section className="section-spacing px-6 bg-muted">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Modele AI w <span className="text-gradient">Freepik</span>
+            Modele AI w <span className="text-secondary">Freepik</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Poznaj najważniejsze modele dostępne w Freepik Workspace i sprawdź, jak wykorzystać je do tworzenia profesjonalnych wizualizacji
@@ -84,12 +80,12 @@ const AIModels = () => {
           {models.map((model, index) => (
             <div 
               key={index}
-              className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-md card-hover animate-fade-up"
+              className="saas-card p-6 md:p-8 animate-fade-up"
               style={{ animationDelay: `${(index + 1) * 100}ms` }}
             >
               {/* Header */}
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 shadow-lg border border-border">
+                <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 shadow-md border border-border">
                   <img 
                     src={model.iconImage} 
                     alt={model.name} 
@@ -97,7 +93,7 @@ const AIModels = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-1">
+                  <h3 className="text-lg font-semibold text-foreground mb-1">
                     {model.name}
                   </h3>
                   <p className="text-sm text-muted-foreground">
@@ -107,12 +103,10 @@ const AIModels = () => {
               </div>
 
               {/* Features List */}
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {model.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-3 group">
-                    <div className={`mt-1 p-1 ${model.accentColor}/10 rounded-full flex-shrink-0`}>
-                      <div className={`w-1.5 h-1.5 rounded-full ${model.accentColor}`} />
-                    </div>
+                    <div className={`mt-1.5 w-1.5 h-1.5 rounded-full ${model.accentColor} flex-shrink-0`} />
                     <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
                       {feature}
                     </p>
