@@ -46,14 +46,18 @@ const FreepikSpaces = () => {
   ];
 
   return (
-    <section className="section-spacing px-6 bg-muted">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative section-spacing px-6 section-gradient-cyan-deep overflow-hidden">
+      {/* Decorative glow orbs */}
+      <div className="absolute top-1/3 left-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-electric-blue/10 rounded-full blur-3xl pointer-events-none" />
+      
+      <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
-            Freepik Spaces: <span className="text-secondary">Automatyzacja tworzenia contentu</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+            Freepik Spaces: <span className="text-gradient">Automatyzacja tworzenia contentu</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-white/60 max-w-3xl mx-auto leading-relaxed">
             Jedno nieskończone płótno, na którym łączysz tekst, obrazy i wideo w logiczne workflow.
           </p>
         </div>
@@ -65,49 +69,49 @@ const FreepikSpaces = () => {
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
               {/* Text Node */}
               <div className="flex flex-col items-center gap-2">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-primary flex items-center justify-center shadow-md transform hover:scale-105 transition-transform">
-                  <Type className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground" />
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg glow-violet transform hover:scale-105 transition-transform">
+                  <Type className="w-8 h-8 md:w-10 md:h-10 text-white" />
                 </div>
-                <span className="text-xs md:text-sm font-medium text-muted-foreground">Tekst</span>
+                <span className="text-xs md:text-sm font-medium text-white/60">Tekst</span>
               </div>
 
               {/* Connecting line */}
-              <div className="hidden md:block w-12 h-1 bg-border rounded-full" />
+              <div className="hidden md:block w-12 h-1 bg-gradient-to-r from-primary/50 to-secondary/50 rounded-full" />
 
               {/* Image Node */}
               <div className="flex flex-col items-center gap-2">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-secondary flex items-center justify-center shadow-md transform hover:scale-105 transition-transform">
-                  <Image className="w-8 h-8 md:w-10 md:h-10 text-secondary-foreground" />
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-gradient-to-br from-secondary to-electric-blue flex items-center justify-center shadow-lg glow-cyan transform hover:scale-105 transition-transform">
+                  <Image className="w-8 h-8 md:w-10 md:h-10 text-white" />
                 </div>
-                <span className="text-xs md:text-sm font-medium text-muted-foreground">Obraz</span>
+                <span className="text-xs md:text-sm font-medium text-white/60">Obraz</span>
               </div>
 
               {/* Connecting line */}
-              <div className="hidden md:block w-12 h-1 bg-border rounded-full" />
+              <div className="hidden md:block w-12 h-1 bg-gradient-to-r from-secondary/50 to-amber/50 rounded-full" />
 
               {/* AI Node */}
               <div className="flex flex-col items-center gap-2">
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform ring-4 ring-secondary/20">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-gradient-to-br from-primary via-accent to-secondary flex items-center justify-center shadow-xl transform hover:scale-105 transition-transform ring-4 ring-white/10">
                   <Sparkles className="w-10 h-10 md:w-12 md:h-12 text-white" />
                 </div>
-                <span className="text-xs md:text-sm font-medium text-muted-foreground">AI</span>
+                <span className="text-xs md:text-sm font-medium text-white/60">AI</span>
               </div>
 
               {/* Connecting line */}
-              <div className="hidden md:block w-12 h-1 bg-border rounded-full" />
+              <div className="hidden md:block w-12 h-1 bg-gradient-to-r from-accent/50 to-amber/50 rounded-full" />
 
               {/* Video Node */}
               <div className="flex flex-col items-center gap-2">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-amber-500 flex items-center justify-center shadow-md transform hover:scale-105 transition-transform">
-                  <Video className="w-8 h-8 md:w-10 md:h-10 text-white" />
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-gradient-to-br from-amber to-gold-orange flex items-center justify-center shadow-lg glow-amber transform hover:scale-105 transition-transform">
+                  <Video className="w-8 h-8 md:w-10 md:h-10 text-slate-900" />
                 </div>
-                <span className="text-xs md:text-sm font-medium text-muted-foreground">Wideo</span>
+                <span className="text-xs md:text-sm font-medium text-white/60">Wideo</span>
               </div>
             </div>
 
             {/* Infinity canvas hint */}
-            <div className="absolute inset-0 pointer-events-none rounded-xl border-2 border-dashed border-border" />
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-card rounded-full text-xs text-muted-foreground shadow-sm border border-border">
+            <div className="absolute inset-0 pointer-events-none rounded-xl border-2 border-dashed border-white/10" />
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-slate-900 rounded-full text-xs text-white/60 shadow-sm border border-white/10">
               ∞ Nieskończone płótno
             </div>
           </div>
@@ -123,13 +127,13 @@ const FreepikSpaces = () => {
                 className={`saas-card p-5 animate-fade-up ${index === 4 ? 'col-span-2 lg:col-span-1' : ''}`}
                 style={{ animationDelay: `${(index + 1) * 100}ms` }}
               >
-                <div className="icon-container w-10 h-10 mb-3">
+                <div className="icon-container-cyan w-10 h-10 mb-3">
                   <Icon className="w-5 h-5" />
                 </div>
-                <h3 className="text-sm font-semibold text-foreground mb-2">
+                <h3 className="text-sm font-semibold text-white mb-2">
                   {card.title}
                 </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <p className="text-xs text-white/50 leading-relaxed">
                   {card.description}
                 </p>
               </div>
@@ -139,7 +143,7 @@ const FreepikSpaces = () => {
 
         {/* How it works - Steps */}
         <div className="animate-fade-up delay-300">
-          <h3 className="text-xl font-bold text-foreground text-center mb-10">
+          <h3 className="text-xl font-bold text-white text-center mb-10">
             Jak to działa krok po kroku
           </h3>
           
@@ -147,14 +151,14 @@ const FreepikSpaces = () => {
             {steps.map((step, index) => (
               <div key={index} className="flex items-center">
                 <div className="flex flex-col items-center text-center px-4 md:px-6">
-                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg shadow-md mb-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-secondary to-electric-blue flex items-center justify-center text-white font-bold text-lg shadow-lg glow-cyan mb-3">
                     {step.number}
                   </div>
-                  <h4 className="font-semibold text-foreground text-sm mb-1">{step.title}</h4>
-                  <p className="text-xs text-muted-foreground">{step.description}</p>
+                  <h4 className="font-semibold text-white text-sm mb-1">{step.title}</h4>
+                  <p className="text-xs text-white/50">{step.description}</p>
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block w-12 h-0.5 bg-border rounded-full" />
+                  <div className="hidden md:block w-12 h-0.5 bg-gradient-to-r from-secondary/30 to-transparent rounded-full" />
                 )}
               </div>
             ))}

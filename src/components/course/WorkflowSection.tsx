@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Image, Scissors, Paintbrush, Mountain, Layers, ArrowUp, Download, ChevronRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import workflowImage from "@/assets/workflow-example.jpg";
@@ -43,21 +42,25 @@ const WorkflowSection = () => {
   const creationImages = [creation1, creation2, creation3, creation4, creation5, creation6, creation7, creation8];
 
   return (
-    <section id="workflow-section" className="section-spacing px-6 bg-background">
-      <div className="max-w-6xl mx-auto">
+    <section id="workflow-section" className="relative section-spacing px-6 section-gradient-violet-deep overflow-hidden">
+      {/* Decorative glow orbs */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/3 left-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+      
+      <div className="relative z-10 max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Jak działa <span className="text-secondary">Freepik Spaces</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Jak działa <span className="text-gradient">Freepik Spaces</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-white/60 max-w-3xl mx-auto">
             Narzędzie node-based, gdzie łączymy blok po bloku: background removal, style presets, generacja scen, consistency filters, upscaling i output w wielu rozmiarach.
           </p>
         </div>
 
         {/* Furniture Set Image */}
         <div className="mb-16 animate-fade-up delay-100">
-          <div className="rounded-xl overflow-hidden shadow-lg border border-border">
+          <div className="rounded-xl overflow-hidden shadow-lg border border-white/10">
             <img 
               src={furnitureSet} 
               alt="Furniture set example" 
@@ -69,10 +72,10 @@ const WorkflowSection = () => {
 
         {/* Workflow Image */}
         <div className="mb-16 animate-fade-up delay-200">
-          <h3 className="text-2xl font-semibold text-foreground text-center mb-6">
+          <h3 className="text-2xl font-semibold text-white text-center mb-6">
             Przykładowe Workflow
           </h3>
-          <div className="rounded-xl overflow-hidden shadow-lg border border-border">
+          <div className="rounded-xl overflow-hidden shadow-lg border border-white/10">
             <img 
               src={workflowImage} 
               alt="Przykładowe workflow" 
@@ -84,14 +87,14 @@ const WorkflowSection = () => {
 
         {/* Creations Carousel */}
         <div className="mb-16 animate-fade-up delay-300">
-          <h3 className="text-2xl font-semibold text-foreground text-center mb-8">
+          <h3 className="text-2xl font-semibold text-white text-center mb-8">
             Efekty - Generacje
           </h3>
           <Carousel className="w-full max-w-5xl mx-auto">
             <CarouselContent className="-ml-4">
               {creationImages.map((image, index) => (
                 <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="rounded-xl overflow-hidden shadow-md border border-border card-hover">
+                  <div className="rounded-xl overflow-hidden shadow-md border border-white/10 card-hover">
                     <img 
                       src={image} 
                       alt={`Przykład generacji ${index + 1}`}
@@ -102,17 +105,17 @@ const WorkflowSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hover:bg-secondary hover:text-secondary-foreground transition-colors" />
-            <CarouselNext className="hover:bg-secondary hover:text-secondary-foreground transition-colors" />
+            <CarouselPrevious className="bg-slate-800 border-white/10 text-white hover:bg-primary hover:text-white transition-colors" />
+            <CarouselNext className="bg-slate-800 border-white/10 text-white hover:bg-primary hover:text-white transition-colors" />
           </Carousel>
         </div>
 
         {/* Workflow Steps */}
         <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-foreground text-center mb-4">
+          <h3 className="text-2xl font-semibold text-white text-center mb-4">
             Przykładowy Workflow dla e-commerce
           </h3>
-          <p className="text-center text-muted-foreground mb-12 text-sm uppercase tracking-wider">
+          <p className="text-center text-white/50 mb-12 text-sm uppercase tracking-wider">
             AI-Powered Automation
           </p>
           
@@ -127,11 +130,11 @@ const WorkflowSection = () => {
                       <Icon className="w-5 h-5" />
                     </div>
                     <div className="text-xs font-medium text-secondary mb-1">Krok {step.step}</div>
-                    <h4 className="text-sm font-semibold text-foreground mb-1">{step.title}</h4>
-                    <p className="text-xs text-muted-foreground">{step.description}</p>
+                    <h4 className="text-sm font-semibold text-white mb-1">{step.title}</h4>
+                    <p className="text-xs text-white/50">{step.description}</p>
                   </div>
                   {index < workflowSteps.length - 1 && (
-                    <ChevronRight className="w-5 h-5 text-muted-foreground mx-1 flex-shrink-0" />
+                    <ChevronRight className="w-5 h-5 text-white/30 mx-1 flex-shrink-0" />
                   )}
                 </div>
               );
@@ -149,8 +152,8 @@ const WorkflowSection = () => {
                   </div>
                   <div className="flex-1">
                     <div className="text-xs font-medium text-secondary mb-1">Krok {step.step}</div>
-                    <h4 className="text-sm font-semibold text-foreground">{step.title}</h4>
-                    <p className="text-xs text-muted-foreground">{step.description}</p>
+                    <h4 className="text-sm font-semibold text-white">{step.title}</h4>
+                    <p className="text-xs text-white/50">{step.description}</p>
                   </div>
                 </div>
               );
@@ -160,16 +163,16 @@ const WorkflowSection = () => {
 
         {/* Output Formats */}
         <div className="saas-card p-8 mb-16 animate-fade-up">
-          <h3 className="text-xl font-semibold text-foreground text-center mb-6">
+          <h3 className="text-xl font-semibold text-white text-center mb-6">
             Formaty Wyjściowe
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {outputFormats.map((format, index) => (
               <div 
                 key={index}
-                className="p-4 bg-muted rounded-xl text-center border border-border hover:border-secondary/30 transition-colors"
+                className="p-4 bg-slate-800/50 rounded-xl text-center border border-white/10 hover:border-secondary/30 transition-colors"
               >
-                <p className="font-medium text-sm text-foreground">{format}</p>
+                <p className="font-medium text-sm text-white">{format}</p>
               </div>
             ))}
           </div>
@@ -177,15 +180,15 @@ const WorkflowSection = () => {
 
         {/* Reference & Examples */}
         <div className="animate-fade-up">
-          <h3 className="text-2xl font-semibold text-foreground text-center mb-8">
+          <h3 className="text-2xl font-semibold text-white text-center mb-8">
             Efekty - Przykłady
           </h3>
           
           <div className="mb-8 max-w-md mx-auto">
-            <h4 className="text-lg font-medium text-foreground text-center mb-4">
+            <h4 className="text-lg font-medium text-white text-center mb-4">
               Obraz Referencyjny
             </h4>
-            <div className="rounded-xl overflow-hidden shadow-lg border border-border">
+            <div className="rounded-xl overflow-hidden shadow-lg border border-white/10">
               <img 
                 src={referenceImage} 
                 alt="Reference image" 
@@ -199,7 +202,7 @@ const WorkflowSection = () => {
             <CarouselContent className="-ml-4">
               {exampleImages.map((image, index) => (
                 <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="rounded-xl overflow-hidden shadow-md border border-border card-hover">
+                  <div className="rounded-xl overflow-hidden shadow-md border border-white/10 card-hover">
                     <img 
                       src={image} 
                       alt={`Przykład ${index + 1}`}
@@ -210,8 +213,8 @@ const WorkflowSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hover:bg-secondary hover:text-secondary-foreground transition-colors" />
-            <CarouselNext className="hover:bg-secondary hover:text-secondary-foreground transition-colors" />
+            <CarouselPrevious className="bg-slate-800 border-white/10 text-white hover:bg-primary hover:text-white transition-colors" />
+            <CarouselNext className="bg-slate-800 border-white/10 text-white hover:bg-primary hover:text-white transition-colors" />
           </Carousel>
         </div>
       </div>
