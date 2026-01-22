@@ -32,6 +32,16 @@ const Footer = () => {
                 <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
               <a 
+                href="https://fabryka-kontentu.pl/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 text-white/60 hover:text-secondary transition-colors font-medium group"
+              >
+                <Globe className="w-4 h-4" />
+                Fabryka Kontentu
+                <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </a>
+              <a 
                 href="https://www.facebook.com/groups/1322215268929827" 
                 target="_blank" 
                 rel="noopener noreferrer"
