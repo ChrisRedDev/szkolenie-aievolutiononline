@@ -53,11 +53,11 @@ const PromptBuilder = () => {
           {steps.map((step, index) => (
             <div 
               key={index}
-              className="saas-card p-6 text-center animate-fade-up"
+              className="bg-slate-800/60 backdrop-blur-sm p-6 text-center animate-fade-up rounded-2xl border border-white/10 hover:border-accent/30 transition-all duration-300"
               style={{ animationDelay: `${(index + 1) * 100}ms` }}
             >
-              <div className="icon-container w-14 h-14 mx-auto mb-4">
-                <step.icon className="w-7 h-7" />
+              <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl flex items-center justify-center border border-accent/20">
+                <step.icon className="w-7 h-7 text-accent" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
               <p className="text-sm text-white/60">{step.description}</p>
@@ -67,23 +67,23 @@ const PromptBuilder = () => {
 
         {/* Capabilities & Types */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="saas-card p-8 animate-fade-up delay-200">
+          <div className="bg-slate-800/60 backdrop-blur-sm p-8 animate-fade-up delay-200 rounded-2xl border border-white/10">
             <h3 className="text-xl font-semibold text-white mb-6">
               Co agent potrafi rozpoznać?
             </h3>
             <ul className="space-y-3">
               {capabilities.map((capability, index) => (
                 <li key={index} className="flex items-center gap-3">
-                  <div className="p-1 bg-secondary/20 rounded-full">
-                    <Check className="w-3 h-3 text-secondary" />
+                  <div className="p-1.5 bg-accent/20 rounded-lg">
+                    <Check className="w-3.5 h-3.5 text-accent" />
                   </div>
-                  <span className="text-white/70">{capability}</span>
+                  <span className="text-white/80">{capability}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="saas-card p-8 animate-fade-up delay-300">
+          <div className="bg-slate-800/60 backdrop-blur-sm p-8 animate-fade-up delay-300 rounded-2xl border border-white/10">
             <h3 className="text-xl font-semibold text-white mb-6">
               Typy generowanych promptów
             </h3>
@@ -91,7 +91,7 @@ const PromptBuilder = () => {
               {promptTypes.map((type, index) => (
                 <div 
                   key={index}
-                  className="p-3 bg-slate-800/50 rounded-xl text-center border border-white/10 hover:border-accent/30 transition-colors"
+                  className="p-3 bg-slate-700/50 rounded-xl text-center border border-white/10 hover:border-accent/30 hover:bg-slate-700/70 transition-all duration-200"
                 >
                   <p className="text-sm font-medium text-white">{type}</p>
                 </div>
