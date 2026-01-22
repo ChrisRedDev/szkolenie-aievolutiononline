@@ -21,9 +21,9 @@ const ImportantLinks = () => {
       icon: MessageSquare,
     },
     {
-      title: "Post Creator",
-      description: "Twórz posty social media",
-      url: "https://socialmediaagent.lovable.app",
+      title: "Oficjalna strona Fabryki Kontentu",
+      description: "Strona główna Fabryki Kontentu",
+      url: "https://fabryka-kontentu.pl/",
       icon: Bot,
     },
     {
@@ -67,7 +67,7 @@ const ImportantLinks = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group saas-card p-6 flex items-start gap-4 animate-fade-up hover:shadow-[0_0_25px_hsl(45_100%_50%/0.15)] transition-all duration-300"
+                className="group glass-card p-6 flex items-start gap-4 animate-fade-up border border-amber/20 hover:border-amber/50 hover:shadow-[0_0_30px_hsl(45_100%_50%/0.2)] transition-all duration-300"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 {/* Icon */}
@@ -83,7 +83,7 @@ const ImportantLinks = () => {
                     </h3>
                     <ExternalLink className="w-4 h-4 text-white/40 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                   </div>
-                  <p className="text-sm text-white/50">
+                  <p className="text-sm text-white/60">
                     {link.description}
                   </p>
                 </div>
