@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Bot, Zap, Target, ExternalLink, Check } from "lucide-react";
+import { Bot, Zap, Target, ExternalLink, Check, MessageSquare, Repeat } from "lucide-react";
 
 const PromptBuilder = () => {
   const capabilities = [
@@ -11,21 +11,10 @@ const PromptBuilder = () => {
     "Sceny zgodne z rynkiem e-commerce"
   ];
 
-  const promptTypes = [
-    "E-commerce",
-    "Social Media",
-    "Allegro Miniatury",
-    "Reklamy",
-    "Mockupy",
-    "Styl Lifestyle",
-    "Styl Studio",
-    "Styl w białym tle"
-  ];
-
   const steps = [
     { icon: Zap, title: "Krok 1", description: "Wrzuć zdjęcie produktu do systemu" },
     { icon: Bot, title: "Krok 2", description: "Agent analizuje kształt i dopasowuje model" },
-    { icon: Target, title: "Krok 3", description: "Otrzymujesz 20-40 gotowych promptów" },
+    { icon: Target, title: "Krok 3", description: "Otrzymujesz 12 gotowych promptów" },
   ];
 
   return (
@@ -33,7 +22,7 @@ const PromptBuilder = () => {
       {/* Decorative glow orbs */}
       <div className="absolute top-1/4 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/3 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-      
+
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
@@ -49,9 +38,9 @@ const PromptBuilder = () => {
         </div>
 
         {/* Steps */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
           {steps.map((step, index) => (
-            <div 
+            <div
               key={index}
               className="bg-slate-800/60 backdrop-blur-sm p-6 text-center animate-fade-up rounded-2xl border border-white/10 hover:border-accent/30 transition-all duration-300"
               style={{ animationDelay: `${(index + 1) * 100}ms` }}
@@ -65,78 +54,83 @@ const PromptBuilder = () => {
           ))}
         </div>
 
-        {/* Capabilities & Types */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-slate-800/60 backdrop-blur-sm p-8 animate-fade-up delay-200 rounded-2xl border border-white/10">
-            <h3 className="text-xl font-semibold text-white mb-6">
-              Co agent potrafi rozpoznać?
-            </h3>
-            <ul className="space-y-3">
-              {capabilities.map((capability, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <div className="p-1.5 bg-accent/20 rounded-lg">
-                    <Check className="w-3.5 h-3.5 text-accent" />
-                  </div>
-                  <span className="text-white/80">{capability}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* Iteration Step - The "Game Changer" */}
+        <div className="mb-16 animate-fade-up delay-200">
+          <div className="bg-gradient-to-r from-violet-600/20 to-fuchsia-600/20 rounded-2xl p-8 border border-white/10 relative overflow-hidden">
+            <div className="absolute right-0 top-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
-          <div className="bg-slate-800/60 backdrop-blur-sm p-8 animate-fade-up delay-300 rounded-2xl border border-white/10">
-            <h3 className="text-xl font-semibold text-white mb-6">
-              Typy generowanych promptów
-            </h3>
-            <div className="grid grid-cols-2 gap-3">
-              {promptTypes.map((type, index) => (
-                <div 
-                  key={index}
-                  className="p-3 bg-slate-700/50 rounded-xl text-center border border-white/10 hover:border-accent/30 hover:bg-slate-700/70 transition-all duration-200"
-                >
-                  <p className="text-sm font-medium text-white">{type}</p>
-                </div>
-              ))}
+            <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
+              <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 animate-pulse">
+                <Repeat className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                  To jeszcze nie koniec!
+                </h3>
+                <p className="text-white/80 leading-relaxed text-lg">
+                  Po otrzymaniu pierwszych wyników, możesz <strong>rozmawiać z asystentem</strong>.
+                  Napisz mu, w jakiej scenerii widzisz swój produkt (np. "na plaży", "w nowoczesnym biurze"),
+                  a on wygeneruje dla Ciebie <strong>kolejne 12 dopasowanych promptów</strong>.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Info Card */}
-        <div className="bg-accent/10 border border-accent/20 rounded-xl p-6 mb-12 text-center animate-fade-up delay-400">
-          <p className="text-white">
-            <span className="font-semibold text-accent">Prompt Builder zwraca gotowe prompty</span>, które generują obrazy w Freepik z jednym kliknięciem.
-          </p>
+        {/* Capabilities */}
+        <div className="bg-slate-800/60 backdrop-blur-sm p-8 animate-fade-up delay-200 rounded-2xl border border-white/10 mb-12">
+          <h3 className="text-xl font-semibold text-white mb-6 text-center">
+            Co agent potrafi rozpoznać?
+          </h3>
+          <div className="grid md:grid-cols-3 gap-4">
+            {capabilities.map((capability, index) => (
+              <div key={index} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
+                <div className="p-1.5 bg-accent/20 rounded-lg flex-shrink-0">
+                  <Check className="w-3.5 h-3.5 text-accent" />
+                </div>
+                <span className="text-white/80 text-sm font-medium">{capability}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Agent Buttons */}
         <div className="text-center animate-fade-up delay-500">
           <h3 className="text-xl font-semibold text-white mb-6">
-            Agenci AI Workflow
+            wybierz swojego Agenta
           </h3>
-          <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <Button 
-              asChild 
-              size="lg" 
-              className="btn-primary h-12 group"
+          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {/* Gemini - Active */}
+            <Button
+              asChild
+              size="lg"
+              className="btn-primary h-14 group relative overflow-hidden"
             >
               <a href="https://gemini.google.com/gem/1N_bDMpbu0uDf0tsYPrEI6XIHRYT9PTfQ?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                Gemini Workflow Agent
-                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                <span className="relative flex items-center gap-2">
+                  Gemini Workflow Agent
+                  <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
               </a>
             </Button>
-            
-            <Button 
-              asChild 
-              size="lg" 
-              className="bg-slate-800/80 border border-primary/50 text-white hover:bg-primary hover:text-white h-12 group"
+
+            <Button
+              asChild
+              size="lg"
+              className="btn-primary h-14 group relative overflow-hidden"
             >
-              <a href="https://chatgpt.com/g/g-691f773244d48191b239aa8fccbd7ab4-ai-evolution-agent-frepik-workflow" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                ChatGPT Workflow Agent
-                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                <span className="relative flex items-center gap-2">
+                  ChatGPT Workflow Agent
+                  <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
               </a>
             </Button>
           </div>
-          <p className="text-sm text-white/50 mt-6 max-w-md mx-auto">
-            Warto testować oba modele, aby znaleźć najlepsze rozwiązanie dla Twoich potrzeb.
+          <p className="text-sm text-white/40 mt-6 max-w-md mx-auto">
+            Wybierz agenta, z którym wolisz pracować. Oba realizują ten sam workflow.
           </p>
         </div>
       </div>

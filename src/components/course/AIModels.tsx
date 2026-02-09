@@ -1,6 +1,7 @@
 import nanoBananaIcon from "@/assets/nano-banana-icon.png";
 import klingAiIcon from "@/assets/kling-ai-icon.png";
 import seedreamIcon from "@/assets/seedream-icon.png";
+import mysticIcon from "@/assets/mystic-icon.png";
 import aiIcon from "@/assets/ai-icon.png";
 
 const AIModels = () => {
@@ -46,6 +47,22 @@ const AIModels = () => {
         "Idealny do animacji produktów i dynamicznych prezentacji",
         "Świetny do reklam, reelsów i pakietów contentowych",
         "Doskonałe narzędzie do ożywiania statycznych zdjęć",
+        "Wspiera resolution do 1080p dla social media"
+      ]
+    },
+    {
+      name: "Mystic 2.5",
+      subtitle: "Artistic & Vibrant Style Model",
+      iconImage: mysticIcon,
+      accentColor: "bg-pink-500",
+      glowClass: "group-hover:shadow-[0_0_20px_hsl(330_85%_55%/0.3)]",
+      features: [
+        "Piękne, żywe i nasycone kolory",
+        "Mocny styl artystyczny i designerski",
+        "Idealny do creative social media content",
+        "Świetnie renderuje ilustracje i graphics",
+        "Doskonały do mood boards i art direction",
+        "Kreatywne interpretacje promptów"
       ]
     },
     {
@@ -55,7 +72,6 @@ const AIModels = () => {
       accentColor: "bg-slate-500",
       glowClass: "group-hover:shadow-[0_0_20px_hsl(220_10%_50%/0.3)]",
       features: [
-        "Mystic 2.5 – Styl artystyczny, bardzo dobre kolory",
         "DreamShaper – Mocny styl designerski, popularny do social media",
         "RealVision – Wysoka fotorealistyka, dobre odwzorowanie materiałów",
         "Modele 3D & Stylizowane",
@@ -70,7 +86,7 @@ const AIModels = () => {
       {/* Decorative glow orbs */}
       <div className="absolute top-1/4 left-0 w-80 h-80 bg-amber/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/3 right-0 w-72 h-72 bg-gold-orange/10 rounded-full blur-3xl pointer-events-none" />
-      
+
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-up">
@@ -85,7 +101,7 @@ const AIModels = () => {
         {/* Models Grid */}
         <div className="grid md:grid-cols-2 gap-6">
           {models.map((model, index) => (
-            <div 
+            <div
               key={index}
               className={`group saas-card p-6 md:p-8 animate-fade-up transition-all duration-300 ${model.glowClass}`}
               style={{ animationDelay: `${(index + 1) * 100}ms` }}
@@ -93,10 +109,10 @@ const AIModels = () => {
               {/* Header */}
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 shadow-md border border-white/10">
-                  <img 
-                    src={model.iconImage} 
-                    alt={model.name} 
-                    className="w-full h-full object-cover" 
+                  <img
+                    src={model.iconImage}
+                    alt={model.name}
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div>
