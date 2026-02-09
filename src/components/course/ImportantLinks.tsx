@@ -16,11 +16,13 @@ const ImportantLinks = () => {
       icon: Sparkles,
       active: true
     },
-    title: "ChatGPT Workflow Agent",
-    description: "Agent workflow dla ChatGPT",
-    url: "#",
-    icon: MessageSquare,
-    active: true
+    {
+      title: "ChatGPT Workflow Agent",
+      description: "Agent workflow dla ChatGPT",
+      url: "#",
+      icon: MessageSquare,
+      active: true
+    },
     {
       title: "Oficjalna strona Fabryki Kontentu",
       description: "Strona główna Fabryki Kontentu",
