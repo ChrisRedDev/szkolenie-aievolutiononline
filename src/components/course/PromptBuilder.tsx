@@ -120,7 +120,7 @@ const PromptBuilder = () => {
               size="lg"
               className="btn-primary h-14 group relative overflow-hidden"
             >
-              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+              <a href="https://chatgpt.com/g/g-691f773244d48191b239aa8fccbd7ab4-freepik-prompt-generator-ai-evolution-agent" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                 <span className="relative flex items-center gap-2">
                   ChatGPT Workflow Agent
