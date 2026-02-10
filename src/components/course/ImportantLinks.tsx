@@ -19,7 +19,7 @@ const ImportantLinks = () => {
     {
       title: "ChatGPT Workflow Agent",
       description: "Agent workflow dla ChatGPT",
-      url: "#",
+      url: "https://chatgpt.com/g/g-691f773244d48191b239aa8fccbd7ab4-freepik-prompt-generator-ai-evolution-agent",
       icon: MessageSquare,
       active: true
     },
