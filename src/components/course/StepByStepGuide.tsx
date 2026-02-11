@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Play, CheckCircle2, ArrowRight, ChevronLeft, ChevronRight, Pause, Play as PlayIcon } from "lucide-react";
+import { Play, ArrowRight, ChevronLeft, ChevronRight, Pause, Play as PlayIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const StepByStepGuide = () => {
@@ -12,7 +12,7 @@ const StepByStepGuide = () => {
             title: "Pierwsze kroki z Freepik",
             duration: "5 min",
             difficulty: "Początkujący",
-            color: "from-emerald-500 to-teal-600",
+            color: "from-violet-500 to-purple-600",
             steps: [
                 {
                     step: "Załóż konto",
@@ -20,18 +20,22 @@ const StepByStepGuide = () => {
                 },
                 {
                     step: "Przejrzyj interfejs",
-                    description: "Zapoznaj się z menu, zakładkami: AI Image Generator, AI Video, Freepik Spaces"
+                    description: "Zapoznaj się z zakładkami: AI Image Generator, AI Video, Freepik Spaces, Mockup Generator"
                 },
                 {
                     step: "Wypróbuj pierwszy gen",
-                    description: "Kliknij AI Image Generator, wpisz prosty prompt np. \"sunset over ocean\" i wygeneruj"
+                    description: "Kliknij AI Image Generator, wybierz model (np. Flux), wpisz prompt i wygeneruj"
+                },
+                {
+                    step: "Eksploruj opcje",
+                    description: "Przetestuj zakładki Styles (styl wizualny) i Composition (proporcje, układ) przy generowaniu"
                 },
                 {
                     step: "Pobierz obraz",
                     description: "Po wygenerowaniu kliknij Download i zapisz pierwszą generację"
                 }
             ],
-            tips: "💡 Free plan daje 10 generacji dziennie - wystarczy na pierwsze próby!"
+            tips: "💡 Free plan daje 20 generacji dziennie - wystarczy na pierwsze próby!"
         },
         {
             number: "02",
@@ -45,12 +49,12 @@ const StepByStepGuide = () => {
                     description: "Zrób proste zdjęcie produktu na jasnym tle (nie musi być idealne)"
                 },
                 {
-                    step: "Użyj Background Removal",
-                    description: "W Freepik użyj narzędzia Background Removal aby usunąć tło"
+                    step: "Użyj Background Remover",
+                    description: "W Freepik użyj narzędzia Background Remover aby usunąć tło ze zdjęcia"
                 },
                 {
-                    step: "Wygeneruj nowe tło",
-                    description: "Użyj AI Image Generator z reference image (Twój produkt) + prompt opisujący tło"
+                    step: "Dodaj Object Reference",
+                    description: "W AI Image Generator kliknij 'Object reference' i wrzuć zdjęcie produktu - AI zachowa jego wygląd"
                 },
                 {
                     step: "Prompt dla lifestyle",
@@ -58,78 +62,74 @@ const StepByStepGuide = () => {
                 },
                 {
                     step: "Wypróbuj różne style",
-                    description: "Zmień prompt na: studio, outdoor, lifestyle, minimal - zobacz różnice"
+                    description: "Zmień prompt na: studio, outdoor, lifestyle, minimal - zobacz różnice w generacjach"
                 }
             ],
-            tips: "🎯 Używaj NanoBanana Pro dla najlepszej spójności produktu!"
+            tips: "🎯 Używaj NanoBanana Pro (Object reference) dla najlepszej spójności produktu!"
         },
         {
             number: "03",
             title: "Pierwszy Workflow w Spaces",
             duration: "20 min",
             difficulty: "Średnio-zaawansowany",
-            color: "from-violet-500 to-purple-600",
+            color: "from-primary to-accent",
             steps: [
                 {
                     step: "Otwórz Freepik Spaces",
-                    description: "Z menu głównego wybierz Freepik Spaces (wymaga Premium+)"
+                    description: "Z menu głównego wybierz Freepik Spaces - nieskończone płótno do łączenia narzędzi AI"
                 },
                 {
-                    step: "Dodaj Input Node",
-                    description: "Kliknij + i dodaj Image Input Node, wrzuć zdjęcie produktu"
+                    step: "Dodaj węzeł tekstowy",
+                    description: "Kliknij + i dodaj Text Node - wpisz swój prompt opisujący docelowy obraz"
                 },
                 {
-                    step: "Dodaj Background Removal",
-                    description: "Dodaj węzeł Background Removal, połącz zInput Node"
+                    step: "Dodaj węzeł obrazu",
+                    description: "Dodaj Image Node i wrzuć zdjęcie produktu jako referencję"
                 },
                 {
-                    step: "Dodaj AI Generator",
-                    description: "Dodaj AI Image Generator Node, ustaw model NanoBanana, napisz prompt"
+                    step: "Połącz z AI Generatorem",
+                    description: "Dodaj węzeł AI Image Generator, połącz z tekstem i obrazem - przeciągnij linie między węzłami"
                 },
                 {
-                    step: "Połącz węzły",
-                    description: "Połącz background removal → AI generator. Ustawić jako reference image"
+                    step: "Skonfiguruj model",
+                    description: "W ustawieniach węzła generatora wybierz model (np. NanoBanana Pro) i ustaw proporcje"
                 },
                 {
-                    step: "Dodaj Output",
-                    description: "Dodaj Output Node, ustaw format (16:9, 1:1, 4:5), połącz z generatorem"
-                },
-                {
-                    step: "Uruchom workflow",
-                    description: "Kliknij Run All - workflow automatycznie przetworzy obraz przez wszystkie kroki"
+                    step: "Uruchom generację",
+                    description: "Kliknij przycisk Generate na węźle - AI przetworzy połączone dane i wygeneruje obraz"
                 }
             ],
-            tips: "⚡ Spaces pozwala na batch processing - wrzuć 10 produktów, wygeneruj 100 wariacji!"
+            tips: "⚡ Spaces pozwala iterować wizualnie - zmieniaj prompt i regeneruj bez tracenia kontekstu!"
         },
         {
             number: "04",
-            title: "Multi-Reference Generation",
+            title: "Object, Character & Style Reference",
             duration: "15 min",
             difficulty: "Średnio-zaawansowany",
             color: "from-amber-500 to-orange-600",
             steps: [
                 {
-                    step: "Przygotuj 2-4 obrazy",
-                    description: "Np. produkt + styl background + mood lighting reference"
+                    step: "Object Reference",
+                    description: "Wrzuć zdjęcie produktu jako 'Object reference' - AI zachowa jego kształt i detale w nowej scenie"
                 },
                 {
-                    step: "Użyj multi-ref w generatorze",
-                    description: "W AI Image Generator kliknij opcję Multi-Reference, dodaj wszystkie obrazy"
+                    step: "Character Reference",
+                    description: "Wrzuć zdjęcie osoby/postaci jako 'Character reference' - AI zachowa twarz i sylwetkę"
                 },
                 {
-                    step: "Ustaw wagi (opcjonalnie)",
-                    description: "Możesz ustawić jak mocno każdy obraz wpływa na rezultat (50%, 30%, 20%)"
+                    step: "Style Reference",
+                    description: "Wrzuć obraz jako 'Style reference' - AI przejmie kolorystykę, oświetlenie i nastrój"
                 },
                 {
-                    step: "Napisz kontrolujący prompt",
-                    description: "Prompt powinien opisać jak połączyć elementy: \"Product from ref1 in scene from ref2\""
+                    step: "Łącz referencje",
+                    description: "Możesz użyć Object + Style jednocześnie: produkt w nowym stylu wizualnym"
                 },
                 {
-                    step: "Wygeneruj i porównaj",
-                    description: "Generuj kilka wariacji, zobacz jak AI łączy reference images"
+                    step: "Kontroluj promptem",
+                    description: "Prompt opisuje scenę, referencje kontrolują elementy - razem dają maksymalną precyzję"
                 }
             ],
-            tips: "🎨 Multi-ref daje maksymalną kontrolę - używaj gdy potrzebujesz precyzji!"
+            tips: "🎨 Object ref zachowuje PRODUKT, Character ref zachowuje OSOBĘ, Style ref zachowuje ESTETYKĘ!"
         },
         {
             number: "05",
@@ -140,26 +140,56 @@ const StepByStepGuide = () => {
             steps: [
                 {
                     step: "Wybierz najlepsze generacje",
-                    description: "Z wszystkich wariacji wybierz te które najlepiej Ci wyszły"
+                    description: "Z wszystkich wariacji wybierz te które najlepiej pasują do Twojego projektu"
                 },
                 {
-                    step: "Użyj Upscale",
-                    description: "Dla najlepszych obrazów użyj narzędzia Upscale aby zwiększyć rozdzielczość"
+                    step: "Użyj Image Upscaler",
+                    description: "Dla najlepszych obrazów użyj narzędzia Image Upscaler aby zwiększyć rozdzielczość do 4K"
                 },
                 {
-                    step: "SeeDream dla 4K",
-                    description: "Jeśli potrzebujesz 4K, re-generate używając modelu SeeDream"
+                    step: "Reimagine dla wariacji",
+                    description: "Użyj 'Reimagine' na obrazie aby wygenerować nowe wariacje zachowując ogólny styl i kompozycję"
                 },
                 {
                     step: "Eksportuj w różnych formatach",
-                    description: "Download w różnych rozmiarach: 1:1 (Instagram), 9:16 (Stories), 16:9 (Desktop)"
+                    description: "Download jako JPG, PNG lub SVG (Premium+). Wybierz proporcje: 1:1, 9:16, 16:9, 4:5"
                 },
                 {
                     step: "Organizuj pliki",
                     description: "Stwórz folder structure: projekt → raw → processed → final"
                 }
             ],
-            tips: "📦 Batch download pozwala pobrać wszystkie generacje jednocześnie!"
+            tips: "📦 Premium+ umożliwia eksport do SVG - idealny do logo i grafik wektorowych!"
+        },
+        {
+            number: "06",
+            title: "Custom Characters i Custom Style",
+            duration: "15 min",
+            difficulty: "Zaawansowany",
+            color: "from-emerald-500 to-teal-600",
+            steps: [
+                {
+                    step: "Stwórz Custom Character",
+                    description: "Wejdź w AI Image Generator → Custom Characters → Create. Wrzuć 3-5 zdjęć osoby/postaci"
+                },
+                {
+                    step: "Przetrenuj postać",
+                    description: "AI nauczy się rysów twarzy i sylwetki. Od teraz możesz generować tę osobę w dowolnej scenie"
+                },
+                {
+                    step: "Stwórz Custom Style",
+                    description: "Wrzuć 3-5 obrazów w jednym stylu wizualnym. AI nauczy się Twojej estetyki marki"
+                },
+                {
+                    step: "Generuj spójne serie",
+                    description: "Używaj swojego Custom Character + Custom Style razem - każda generacja będzie spójna z marką"
+                },
+                {
+                    step: "Seria postów social media",
+                    description: "Wygeneruj 10+ postów z tą samą postacią i stylem - idealna spójność wizualna!"
+                }
+            ],
+            tips: "👤 Custom Characters to klucz do spójności serii - twarz zawsze ta sama!"
         }
     ];
 
@@ -168,7 +198,7 @@ const StepByStepGuide = () => {
         if (!isPaused) {
             interval = setInterval(() => {
                 setActiveIndex((prev) => (prev + 1) % tutorials.length);
-            }, 3000);
+            }, 6000);
         }
         return () => clearInterval(interval);
     }, [isPaused, tutorials.length]);
@@ -177,7 +207,6 @@ const StepByStepGuide = () => {
 
     return (
         <section className="relative section-spacing px-6 section-gradient-amber-deep overflow-hidden">
-            {/* Decorative elements */}
             <div className="absolute top-20 left-10 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-20 right-10 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -260,7 +289,6 @@ const StepByStepGuide = () => {
                                 {/* Tips */}
                                 {activeTutorial.tips && (
                                     <div className="mt-8 p-4 bg-amber-500/10 rounded-xl border border-amber-500/20 flex items-start gap-3">
-                                        <span className="text-xl">💡</span>
                                         <p className="text-white/80 text-sm italic">
                                             {activeTutorial.tips}
                                         </p>
@@ -310,7 +338,7 @@ const StepByStepGuide = () => {
 
                     <div className="text-center mt-2">
                         <span className="text-xs text-white/30 uppercase tracking-widest">
-                            {isPaused ? "Zatrzymano" : "Autoplay: 3s"}
+                            {isPaused ? "Zatrzymano" : "Autoplay: 6s"}
                         </span>
                     </div>
 

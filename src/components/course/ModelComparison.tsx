@@ -1,7 +1,6 @@
-import { Zap, Sparkles, Video, Image as ImageIcon, AlertTriangle, Coins, Crown, Layers } from "lucide-react";
+import { Zap, Sparkles, Video, Image as ImageIcon, Coins, Crown, Layers } from "lucide-react";
 
 const ModelComparison = () => {
-    // Modele "Unlimited" - Nasza boza
     const unlimitedModels = [
         {
             name: "Flux.2 Pro",
@@ -25,19 +24,44 @@ const ModelComparison = () => {
             color: "from-emerald-500 to-teal-600"
         },
         {
+            name: "GPT Image",
+            badge: "UNLIMITED",
+            type: "Image",
+            icon: Zap,
+            color: "from-violet-500 to-purple-600"
+        }
+    ];
+
+    const unlimitedVideoModels = [
+        {
             name: "KlingAI 2.6",
             badge: "FREE 720p",
             type: "Video",
             icon: Video,
             color: "from-cyan-500 to-blue-600"
+        },
+        {
+            name: "Wan 2.2",
+            badge: "FREE 480p",
+            type: "Video",
+            icon: Video,
+            color: "from-pink-500 to-rose-600"
+        },
+        {
+            name: "Hailuo 2.3 Fast",
+            badge: "FREE 768p",
+            type: "Video",
+            icon: Video,
+            color: "from-amber-500 to-orange-600"
         }
     ];
 
-    // Modele Płatne (Kredyty)
     const paidImageModels = [
         "Google Imagen 4 Ultra", "Google Imagen 4 Fast", "Google Imagen 3",
         "Flux.2 Flex", "Flux.2 Klein", "Flux.2 Max", "Flux.1 Realism",
-        "Mystic 2.5 Fluid", "Mystic 1.0", "Z-Image", "Reve",
+        "Flux Kontext Pro", "Flux Kontext Max",
+        "Mystic 2.5 Fluid", "Mystic 1.0", "Ideogram 3",
+        "Z-Image", "Reve 1",
         "GPT 1.5 High", "GPT 1 - HQ"
     ];
 
@@ -68,11 +92,11 @@ const ModelComparison = () => {
                     </p>
                 </div>
 
-                {/* Sekcja UNLIMITED - Nasz Wybór */}
-                <div className="mb-20">
+                {/* Sekcja UNLIMITED Image */}
+                <div className="mb-12">
                     <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
                         <Crown className="w-6 h-6 text-amber-400" />
-                        Nasz "Core Stack" - <span className="text-emerald-400">Bez Limitów</span>
+                        Nasz "Core Stack" - <span className="text-emerald-400">Bez Limitów (Obraz)</span>
                     </h3>
                     <div className="grid md:grid-cols-4 gap-4">
                         {unlimitedModels.map((model, index) => {
@@ -90,12 +114,36 @@ const ModelComparison = () => {
                             );
                         })}
                     </div>
+                </div>
+
+                {/* Sekcja UNLIMITED Video */}
+                <div className="mb-12">
+                    <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                        <Video className="w-5 h-5 text-cyan-400" />
+                        Darmowe modele wideo
+                    </h3>
+                    <div className="grid md:grid-cols-3 gap-4">
+                        {unlimitedVideoModels.map((model, index) => {
+                            const Icon = model.icon;
+                            return (
+                                <div key={index} className="saas-card p-5 border-b-4 border-b-emerald-500 hover:-translate-y-1 transition-transform duration-300">
+                                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${model.color} flex items-center justify-center mb-3 shadow-lg`}>
+                                        <Icon className="w-5 h-5 text-white" />
+                                    </div>
+                                    <h4 className="font-bold text-white mb-1">{model.name}</h4>
+                                    <span className="inline-block px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                                        {model.badge}
+                                    </span>
+                                </div>
+                            );
+                        })}
+                    </div>
                     <p className="mt-4 text-sm text-white/50 text-center">
                         * Tych modeli używamy w kursie. Dają profesjonalną jakość i <strong>nie zużywają kredytów</strong> (w pakiecie Premium+).
                     </p>
                 </div>
 
-                {/* Sekcja PŁATNE - Ostrzeżenie */}
+                {/* Sekcja PŁATNE */}
                 <div className="mb-12 p-1 bg-gradient-to-r from-amber-500/50 to-orange-500/50 rounded-2xl animate-fade-up delay-200">
                     <div className="bg-slate-900 rounded-xl p-8 border border-white/10">
                         <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
@@ -107,7 +155,6 @@ const ModelComparison = () => {
                                 <p className="text-white/70 leading-relaxed">
                                     Poniższe modele są dostępne w Freepik, ale są <strong>dodatkowo płatne</strong> (zużywają kredyty).
                                     Są to często najnowsze, eksperymentalne silniki (jak Sora czy Runway Gen 4).
-                                    Możesz z nich korzystać, ale miej świadomość, że Twój pakiet kredytów może się szybko wyczerpać.
                                 </p>
                             </div>
                         </div>
@@ -116,7 +163,6 @@ const ModelComparison = () => {
 
                 {/* Lista Płatnych Modeli */}
                 <div className="grid md:grid-cols-2 gap-8 animate-fade-up delay-300">
-                    {/* Image Models */}
                     <div className="saas-card p-8 bg-slate-900/40">
                         <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
                             <ImageIcon className="w-5 h-5 text-purple-400" />
@@ -131,7 +177,6 @@ const ModelComparison = () => {
                         </div>
                     </div>
 
-                    {/* Video Models */}
                     <div className="saas-card p-8 bg-slate-900/40">
                         <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
                             <Video className="w-5 h-5 text-pink-400" />
@@ -146,7 +191,6 @@ const ModelComparison = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
     );

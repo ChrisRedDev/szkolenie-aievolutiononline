@@ -16,8 +16,8 @@ const HowModelsWork = () => {
         },
         {
             icon: ChefHat,
-            title: "3. Przepis na Sukces (Parametry)",
-            description: "Ty jesteś Szefem Kuchni. Model (np. Mystic) to Twój kucharz. Prompt to zamówienie. A parametry (CFG, Steps) to przyprawy – decydujesz, czy ma być ostro (kreatywnie) czy łagodnie (dokładnie).",
+            title: "3. Przepis na Sukces (Narzędzia)",
+            description: "Ty jesteś Szefem Kuchni. Model (np. NanoBanana Pro) to Twój kucharz. Prompt to zamówienie. A narzędzia (Object ref, Style ref, Custom Characters) to przyprawy – decydujesz o smaku końcowego dania.",
             color: "from-amber-500 to-orange-600"
         }
     ];

@@ -22,15 +22,19 @@ const BestPractices = () => {
                         <ul className="space-y-3">
                             <li className="flex gap-3 text-sm text-white/80">
                                 <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
-                                <span>Batch Processing: Zawsze generuj seriami w Spaces, nigdy pojedynczo.</span>
+                                <span>Custom Characters: Stwórz postać AI i generuj spójne serie zdjęć bez utraty tożsamości.</span>
                             </li>
                             <li className="flex gap-3 text-sm text-white/80">
                                 <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
-                                <span>Multi-Ref: Używaj min. 2 zdjęć (Produkt + Styl) dla kontroli.</span>
+                                <span>Object + Style Ref: Używaj Object reference (produkt) + Style reference (estetyka) dla pełnej kontroli.</span>
                             </li>
                             <li className="flex gap-3 text-sm text-white/80">
                                 <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
-                                <span>Template: Zapisz swój "Master Workflow" i kopiuj go do nowych projektów.</span>
+                                <span>Reimagine: Użyj na prawie idealnym obrazie aby wygenerować wariacje bez pisania nowego promptu.</span>
+                            </li>
+                            <li className="flex gap-3 text-sm text-white/80">
+                                <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
+                                <span>Custom Style: Zapisz swój styl wizualny marki i aplikuj go do każdej generacji.</span>
                             </li>
                         </ul>
                     </div>
@@ -44,11 +48,15 @@ const BestPractices = () => {
                         <ul className="space-y-3">
                             <li className="flex gap-3 text-sm text-white/80">
                                 <CheckCircle className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
-                                <span>Trzymaj się modeli Unlimited (Flux, Nano, Seedream) dla bazy.</span>
+                                <span>Trzymaj się modeli Unlimited (Flux, NanoBanana, Seedream, GPT Image) dla bazy.</span>
                             </li>
                             <li className="flex gap-3 text-sm text-white/80">
                                 <CheckCircle className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
                                 <span>KlingAI 720p jest FREE - używaj go do każdego wideo testowego.</span>
+                            </li>
+                            <li className="flex gap-3 text-sm text-white/80">
+                                <CheckCircle className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
+                                <span>Eksportuj do SVG (Premium+) - idealny format dla logo i grafik wektorowych.</span>
                             </li>
                             <li className="flex gap-3 text-sm text-white/80">
                                 <CheckCircle className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
